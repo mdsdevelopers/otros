@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="9a8d6c5f-dce4-4c44-a2e9-f1487b35fce7" name="ACALCAGNO@MDS-1163 2013-08-29 22:20:52" runUser="SDS_DOMAIN_1\ACALCAGNO" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="f84bc704-55e3-45b5-9b63-430cb4fff755">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="ACALCAGNO_MDS-1163 2013-08-29 22_20_52" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-08-29T22:20:52.3016177-03:00" queuing="2013-08-29T22:20:52.3126188-03:00" start="2013-08-29T22:20:52.3186194-03:00" finish="2013-08-29T22:20:53.0286904-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="deberia_poder_abrir_una_imagen_tiff_y_guardarla_en_png_8_bits" storage="c:\repositorio\javier\asistentedeescaneodelegajos\testasistentedeescaneodelegajos\bin\debug\testasistentedeescaneodelegajos.dll" id="310fb3de-2dbb-5784-25a5-936a4c6d8ab4">
+      <Execution id="e1aa0bba-0554-4e19-b03a-b368da6b9f67" />
+      <TestMethod codeBase="C:/Repositorio/Javier/AsistenteDeEscaneoDeLegajos/TestAsistenteDeEscaneoDeLegajos/bin/Debug/TestAsistenteDeEscaneoDeLegajos.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestAsistenteDeEscaneoDeLegajos.TestManipulacionDeImagenes, TestAsistenteDeEscaneoDeLegajos, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="deberia_poder_abrir_una_imagen_tiff_y_guardarla_en_png_8_bits" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="310fb3de-2dbb-5784-25a5-936a4c6d8ab4" executionId="e1aa0bba-0554-4e19-b03a-b368da6b9f67" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e1aa0bba-0554-4e19-b03a-b368da6b9f67" testId="310fb3de-2dbb-5784-25a5-936a4c6d8ab4" testName="deberia_poder_abrir_una_imagen_tiff_y_guardarla_en_png_8_bits" computerName="MDS-1163" duration="00:00:00.3390127" startTime="2013-08-29T22:20:52.3326208-03:00" endTime="2013-08-29T22:20:52.9486824-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e1aa0bba-0554-4e19-b03a-b368da6b9f67">
+    </UnitTestResult>
+  </Results>
+</TestRun>

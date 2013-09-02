@@ -1,0 +1,5 @@
+C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\TestAsistenteDeEscaneoDeLegajos\bin\Debug\TestAsistenteDeEscaneoDeLegajos.dll
+C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\TestAsistenteDeEscaneoDeLegajos\bin\Debug\TestAsistenteDeEscaneoDeLegajos.pdb
+C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\TestAsistenteDeEscaneoDeLegajos\obj\Debug\ResolveAssemblyReference.cache
+C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\TestAsistenteDeEscaneoDeLegajos\obj\Debug\TestAsistenteDeEscaneoDeLegajos.dll
+C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\TestAsistenteDeEscaneoDeLegajos\obj\Debug\TestAsistenteDeEscaneoDeLegajos.pdb
