@@ -1,0 +1,9 @@
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\bin\Release\AppLogic.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\bin\Release\AppLogic.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\bin\Release\DAL.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\bin\Release\Services.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\bin\Release\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\bin\Release\Services.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\obj\Release\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\obj\Release\AppLogic.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\AppLogic\obj\Release\AppLogic.pdb

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SQLMerge">
+</Property><Property Name="Archivo de la solución" Value="C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge.sln">
+</Property><Property Name="Archivo de opciones de usuario" Value="C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge.suo">
+</Property><Property Name="Date" Value="lunes, 12 de agosto de 2013">
+</Property><Property Name="Time" Value="19:36">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="SQLMerge.sln" Description="La copia C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="" Source="SQLMerge.suo" Description="La copia C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge.suo del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\aazSQLMerge.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\aazSQLMerge.csproj">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\FrmComparacionSimple.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\FrmComparacionSimple.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\FrmComparacionSimple.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\FrmComparacionSimple.Designer.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\FrmCopiaSeguridad.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\FrmCopiaSeguridad.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\FrmCopiaSeguridad.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\FrmCopiaSeguridad.Designer.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Principal.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Principal.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Principal.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Principal.Designer.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Program.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Program.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Properties\Resources.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Properties\Settings.Designer.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\App.config" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\App.config">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Properties\Settings.settings" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\icononuevo.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\icononuevo.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\icononuevotoolbar1.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\icononuevotoolbar1.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\login1.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\login1.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\ayuda1.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\ayuda1.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\salir1.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\salir1.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\backup2.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\backup2.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\iconobuscartoolbar.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\iconobuscartoolbar.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\iconoguardartoolbar.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\iconoguardartoolbar.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Resources\restoraurar.png" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Resources\restoraurar.png">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\FrmComparacionSimple.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\FrmComparacionSimple.resx">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\FrmCopiaSeguridad.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\FrmCopiaSeguridad.resx">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Principal.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Principal.resx">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\Properties\Resources.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\SQLMerge\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\aazSQLMerge.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="aazSQLMerge" Source="SQLMerge\aazSQLMerge.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\AppLogic.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\AppLogic\AppLogic.csproj">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\BaseDeDatos.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\AppLogic\BaseDeDatos.cs">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\Servidor.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\AppLogic\Servidor.cs">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\AppLogic\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\StoredProcedure.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\AppLogic\StoredProcedure.cs">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\AppLogic.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="AppLogic" Source="AppLogic\AppLogic.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\DAL\DAL.csproj">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DbSqlManager.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\DAL\DbSqlManager.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\DAL\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="DAL" Source="DAL\DAL.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Services" Source="Services\Services.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\Services\Services.csproj">
+</Event><Event ErrorLevel="0" Project="Services" Source="Services\Conectividad.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\Services\Conectividad.cs">
+</Event><Event ErrorLevel="0" Project="Services" Source="Services\Conexion.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\Services\Conexion.cs">
+</Event><Event ErrorLevel="0" Project="Services" Source="Services\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Backup\Services\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Services" Source="Services\Services.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="Services" Source="Services\Services.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SQLMerge.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="SQLMerge.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="aazSQLMerge" Source="SQLMerge\aazSQLMerge.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event><Event ErrorLevel="0" Project="AppLogic" Source="AppLogic\AppLogic.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event><Event ErrorLevel="0" Project="Services" Source="Services\Services.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>

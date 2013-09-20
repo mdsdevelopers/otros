@@ -1,0 +1,77 @@
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\Fenix\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\azambrano\Desktop\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\azambrano\Desktop\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\DAL\obj\Debug\DAL.pdb
