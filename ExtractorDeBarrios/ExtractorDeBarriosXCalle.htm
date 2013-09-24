@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+    <title>Codigos postales</title>
+    <script src="./ExtractorDeBarriosXCalle_files/piwik.js"></script>
+    <script src="./ExtractorDeBarriosXCalle_files/OpenLayers.js"></script>
+	<script src="./ExtractorDeBarriosXCalle_files/jquery.min.js" type="text/javascript" ></script>
+	<script src="./ExtractorDeBarriosXCalle_files/usig.MapaInteractivo.min.js" type="text/javascript"></script>     
+    <script src="./ExtractorDeBarriosXCalle_files/usig.Punto.min.js" type="text/javascript"></script>   
+    <script src="./ExtractorDeBarriosXCalle_files/usig.GeoCoder.min.js" type="text/javascript"></script>   
+
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		
+		$('#mapa').css('width', $('body').width()-40).css('height', 500);
+		
+		var clickHandler = function (e, popup) {
+			if (e && e.feature) {
+				mapa.api.zoomToExtent(e.feature.geometry.getBounds());
+			}
+		};
+		
+        txt_origen = $('#txt_origen');
+        txt_destino = $('#txt_destino');
+        boton_get_barrios = $('#boton_get_barrios');
+
+        geo = new usig.GeoCoder();
+		mapa = new usig.MapaInteractivo('mapa', {
+			includeToolbar: false,
+			includePanZoomBar: true,
+			onReady: function() {
+				layer = mapa.addVectorLayer('Barrios', {
+   	    			format: 'geojson',
+   	    			url: "http://epok.buenosaires.gob.ar/getGeoLayer/?categoria=barrios&formato=geojson",
+   	    			disableClick: false,
+   	    			minScale: 150000,
+   	    			symbolizer: {
+   	    				fill: false,
+   	    				fillColor: "ee9900",
+   	    				fillOpacity: 0.1,
+   	    				strokeColor: "#999",
+   	    				strokeWidth: 2,
+   	    				strokeDashstyle: 'dashdot',
+   	    			},
+   	    			selectStyle: {
+   	    				fillOpacity: 0.5,
+   	    				fontColor: "#fff",
+   	    				fontSize: "12px",
+   	    				strokeWidth: 2
+   	    			},
+					escalas: [
+						{
+							minScaleDenominator: 100000,
+							maxScaleDenominator: 150000,
+							symbolizer: {
+								fill: true
+							}
+						},
+						{
+							minScaleDenominator: 60000,
+							maxScaleDenominator: 100000,
+							symbolizer: {
+								fill: true,
+		   	    				label: "${Nombre}",
+		   	    				fontWeight: "bold",
+		   	    				fontSize: "24px",
+		   	    				fontColor: "#555"
+							}
+						},
+						{
+							maxScaleDenominator: 60000,
+							symbolizer: {
+								fill: false,
+		   	    				label: "${Nombre}",
+		   	    				fontSize: "20px",
+		   	    				fontColor: "#555"
+							}
+						}
+					],
+   	    			minPointRadius: 2,
+   	    			popup: false,
+   	    			onClick: clickHandler
+   	    		});
+			}
+		});
+		var estaEnElBarrio = function(barrio, posicion){
+            var esta_en_el_barrio = false;
+            if(barrio.geometry.id.indexOf("MultiPolygon") >= 0){
+                for(var i=0; i<barrio.geometry.components.length; i++){
+                    var sub_poligono = barrio.geometry.components[i];                    
+                    if(sub_poligono.containsPoint(posicion)){return true};
+                }            
+            } else{
+                if(barrio.geometry.containsPoint(posicion)){return true};
+            }
+            return false;
+        };
+
+        var getBarrioDePosicion = function(posicion){
+            for(var i=0; i<layer.features.length; i++){
+                var barrio = layer.features[i];
+                if(estaEnElBarrio(barrio, posicion)){
+                    return {
+                        id: barrio.data.Id.split('|')[1],
+                        nombre: barrio.data.Nombre
+                    };
+                }
+            }
+            return {
+                id: "-1",
+                nombre: "ERROR: Barrio Desconocido"
+            };
+        };
+
+        var onError = function(){
+            tramo_string += ";ERROR;ERROR;ERROR;ERROR;ERROR;ERROR;ERROR;ERROR"
+            txt_destino.val(txt_destino.val() + tramo_string + '\n');
+            tramo_actual += 1;
+            imprimirProximoTramo();
+        };
+
+        var imprimirProximoTramo = function(){
+            var tramo_string = tramos_string[tramo_actual];
+            var tramo_spliteado = tramo_string.split(';');
+            try{
+                geo.geoCodificarCodigoDeCalleAltura(
+                    tramo_spliteado[0], 
+                    tramo_spliteado[2], 
+                    function(pos){
+                        var posicion = new OpenLayers.Geometry.Point(pos.x, pos.y);
+                        var barrio = getBarrioDePosicion(posicion);
+                        tramo_string += ";" + barrio.id + ";" + barrio.nombre;
+                        geo.geoCodificarCodigoDeCalleAltura(
+                            tramo_spliteado[0], 
+                            tramo_spliteado[3], 
+                            function(pos){
+                                var posicion = new OpenLayers.Geometry.Point(pos.x, pos.y);
+                                var barrio = getBarrioDePosicion(posicion);
+                                tramo_string += ";" + barrio.id + ";" + barrio.nombre;
+                                geo.geoCodificarCodigoDeCalleAltura(
+                                    tramo_spliteado[0], 
+                                    tramo_spliteado[4], 
+                                    function(pos){
+                                        var posicion = new OpenLayers.Geometry.Point(pos.x, pos.y);
+                                        var barrio = getBarrioDePosicion(posicion);
+                                        tramo_string += ";" + barrio.id + ";" + barrio.nombre;
+                                        geo.geoCodificarCodigoDeCalleAltura(
+                                            tramo_spliteado[0], 
+                                            tramo_spliteado[5], 
+                                            function(pos){
+                                                var posicion = new OpenLayers.Geometry.Point(pos.x, pos.y);
+                                                var barrio = getBarrioDePosicion(posicion);
+                                                tramo_string += ";" + barrio.id + ";" + barrio.nombre;
+                                                txt_destino.val(txt_destino.val() + tramo_string + '\n');
+                                                tramo_actual += 1;
+                                                $('#avance').text(((tramo_actual/tramos_string.length)*100).toString() + "%");
+                                                imprimirProximoTramo();
+                                            }, 
+                                            function(valor_devuelto){
+                                                console.log("error:", valor_devuelto);
+                                            }
+                                        );
+                                    }, 
+                                    function(valor_devuelto){
+                                        console.log("error:", valor_devuelto);
+                                    }
+                                );
+                            }, 
+                            function(valor_devuelto){
+                                console.log("error:", valor_devuelto);
+                            }
+                        );
+                    }, 
+                    function(valor_devuelto){
+                        console.log("error:", valor_devuelto);
+                    }
+                );
+            } catch(e){
+                onError();
+            }
+        };
+
+
+        boton_get_barrios.click(function(){
+            tramos_string = txt_origen.val().split(/\r\n|\r|\n/g);
+            tramo_actual = 0;
+            imprimirProximoTramo();
+        });	
+        
+        		
+	});	
+
+</script>
+  <link rel="stylesheet" type="text/css" href="./ExtractorDeBarriosXCalle_files/style.css"></head>
+  <body>
+    <div id="page">
+        <div id="mapa" style="display:none"></div>
+        <input type="button" id="boton_get_barrios" value="Obtener Barrios"/>
+        <div id="avance" style="font-size:large"></div>
+        <textarea rows="30" cols="100" id="txt_origen"></textarea>
+        <textarea rows="30" cols="100" id="txt_destino"></textarea>
+    </div> 
+</body></html>
