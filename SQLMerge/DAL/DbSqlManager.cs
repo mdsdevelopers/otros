@@ -784,9 +784,10 @@ namespace DAL
                 conexion_nueva.Close();
 
                 Server server = new Server(nombre_servidor);
+                server.ConnectionContext.LoginSecure = false;
                 server.ConnectionContext.Login = usuario;
                 server.ConnectionContext.Password = password;
-                server.ConnectionContext.LoginSecure = false;
+                
 
                 Database database = new Database();
                 database = server.Databases[nombre_de_base];
