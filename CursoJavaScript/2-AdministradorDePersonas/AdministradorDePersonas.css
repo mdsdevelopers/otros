@@ -1,0 +1,19 @@
+.persona
+{
+    color:Red;
+}
+
+#plantillas
+{
+    display:none;
+}
+
+.vista_de_persona
+{
+    border: 1px solid black;
+}
+
+.vista_de_persona #nombre
+{
+    display: inline-block;
+}

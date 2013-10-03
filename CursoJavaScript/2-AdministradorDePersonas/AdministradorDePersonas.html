@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel=Stylesheet href=AdministradorDePersonas.css />
+    </head>
+    <body>
+        <input id="txt_nombre" type=text />
+        <input id="btn_crear_persona" type=button value="nueva"/>
+        <div id="lista_de_personas">
+            
+        </div>
+
+        <div id="plantillas">
+            <div class="vista_de_persona">
+                <div id="nombre"></div>
+                <input id="btn_eliminar" type=button value="X" />
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="AdministradorDePersonas.js"></script>
+    <script type="text/javascript" src="VistaDePersona.js"></script>
+    <script type="text/javascript">
+        //puede fallar
+        $(document).ready(function () {
+            var un_administrador = new AdministradorDePersonas();
+        });
+    </script>
+</html>
