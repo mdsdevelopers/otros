@@ -18,7 +18,7 @@ namespace TestStoredProcedures
 
         public void LogError(Exception e, SqlCommand comando)
         {
-            using (StreamWriter w = File.AppendText(file_path + "\\Log.txt"))
+            using (StreamWriter w = File.AppendText(file_path + "\\LogERROR.txt"))
             {
                 Log("ERROR al ejecutar " + comando.CommandText, w);
                 for (int i = 0; i < comando.Parameters.Count; i++)
