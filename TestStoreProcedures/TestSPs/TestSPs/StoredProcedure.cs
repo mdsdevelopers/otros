@@ -104,9 +104,10 @@ namespace TestStoredProcedures
         {
             switch (parametro.ParameterName)
             {
-                case "@Fam_Docum_Nrodoc_8":
-                    parametro.Value = 29753915;
+                case "@Usuario":
+                    parametro.Value = 1;
                     return true;
+                case "@Fam_Docum_Nrodoc_8":
                 case "@Doc_Titular_22":
                 case "@Dni":
                 case "@Documento":
@@ -115,7 +116,14 @@ namespace TestStoredProcedures
                 case "@Nro_Documento":
                 case "@nro_documento":
                 case "@Nro_doc_6":
-                    parametro.Value = 29753914;
+                case "@IdDocumento":
+                    parametro.Value = 29753915;
+                    return true;
+                case "@Desde":
+                    parametro.Value = 01/01/2010;
+                    return true;
+                case "@Hasta":
+                    parametro.Value = 01/01/2014;
                     return true;
                 case "@Id_Interna_21":
                 case "@Id_Interna_5":
@@ -138,6 +146,18 @@ namespace TestStoredProcedures
                     return true;
                 case "@Año":
                     parametro.Value = 1999;
+                    return true;
+                case "@CodigoMagnetico":
+                    parametro.Value = 7777;
+                    return true;
+                case "@CodigoImpreso":
+                    parametro.Value = 7777;
+                    return true;
+                case "@IdUsuario":
+                    parametro.Value = 9999;
+                    return true;
+                case "@Id_Contacto":
+                    parametro.Value = 9999;
                     return true;
                 default:
                     return false;
