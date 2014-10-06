@@ -39,7 +39,8 @@ namespace TestStores
             var lista_sps = GetListadoSps();
             var logger = GetLogger();
             
-            for (int j = 0; j < lista_sps.Rows.Count; j++)
+            //for (int j = 0; j < lista_sps.Rows.Count; j++)
+            for (int j = 0; j < 5; j++)
             {
                 var nombre_sp = lista_sps.Rows[j]["name"].ToString();
                 StoredProcedure sp = StoredProcedure.New(nombre_sp, conexion, GetLogger());

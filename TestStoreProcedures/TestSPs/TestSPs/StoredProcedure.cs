@@ -19,8 +19,24 @@ namespace TestStoredProcedures
             {
                 case "ASIS_ALTA_Autorizaciones_Licencia":
                     return new ASIS_ALTA_Autorizaciones_Licencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CRED_Ins_DatosPersonalesRelevados":
+                    return new CRED_Ins_DatosPersonalesRelevados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
+                case "CTR_ADD_Datos_Personales":
+                    return new CTR_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
+                case "MAU_CrearPersona":
+                    return new MAU_CrearPersona(nombre_sp_a_crear, conexion_del_sp, logger_sp);    
+
+                case "PLA_get_firmantes_fecha":
+                    return new PLA_get_firmantes_fecha(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "SACC_Ins_Asistencia":
+                    return new SACC_Ins_Asistencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+           
                 default:
-                    return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);        
+                    return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);
             }
         }
 
@@ -104,10 +120,53 @@ namespace TestStoredProcedures
         {
             switch (parametro.ParameterName)
             {
-                case "@Usuario":
-                    parametro.Value = 1;
-                    return true;
                 case "@Fam_Docum_Nrodoc_8":
+                    parametro.Value = 26200965;
+                    return true;
+
+//agregados por LEG_ADD_RECEPCION_Otros_Documentos_Contratos
+                case "@IdUsuario":                
+                case "@idusuario":
+                    parametro.Value = 233;
+                    return true;
+                case "@idContrato":
+                    parametro.Value = 01-26200965;
+                    return true;
+
+// agregado por dbo.LEG_Ejecutar_SP
+                case "@sql":
+                    parametro.Value = "WEB_GetAmbitoLaboral";
+                    return true;
+                case "@id_alumno":
+                    parametro.Value = 58142;
+                    return true;
+                
+                case "@id_espacioFisico":
+                    parametro.Value = 11;
+                    return true;
+
+//agregado por SAC_ins_Curso
+                case "@id_materia":
+                    parametro.Value = 95;
+                    return true;
+                case "@IdDocente":
+                    parametro.Value = 99999;
+                    return true;
+                case "@IdMateria":
+                    parametro.Value = 95;
+                    return true;
+
+                case "@idCurso":
+                case "@IdCurso":
+                case "@id_curso":
+                    parametro.Value = 109;
+                    return true;
+                case "@baja":
+                case "@idBaja":
+                case "@Baja":
+                    parametro.Value = 2284;
+                    return true;
+
                 case "@Doc_Titular_22":
                 case "@Dni":
                 case "@Documento":
@@ -115,16 +174,15 @@ namespace TestStoredProcedures
                 case "@documento":
                 case "@Nro_Documento":
                 case "@nro_documento":
+                case "@Nro_Documento_16":
                 case "@Nro_doc_6":
+                    parametro.Value = 26200965;
+                    return true;
                 case "@IdDocumento":
-                    parametro.Value = 29753915;
+                case "@id_documento":
+                    parametro.Value = 3;
                     return true;
-                case "@Desde":
-                    parametro.Value = 01/01/2010;
-                    return true;
-                case "@Hasta":
-                    parametro.Value = 01/01/2014;
-                    return true;
+
                 case "@Id_Interna_21":
                 case "@Id_Interna_5":
                     parametro.Value = 201530;
@@ -146,18 +204,6 @@ namespace TestStoredProcedures
                     return true;
                 case "@Año":
                     parametro.Value = 1999;
-                    return true;
-                case "@CodigoMagnetico":
-                    parametro.Value = 7777;
-                    return true;
-                case "@CodigoImpreso":
-                    parametro.Value = 7777;
-                    return true;
-                case "@IdUsuario":
-                    parametro.Value = 9999;
-                    return true;
-                case "@Id_Contacto":
-                    parametro.Value = 9999;
                     return true;
                 default:
                     return false;

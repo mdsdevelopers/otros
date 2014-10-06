@@ -48,10 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASIS_ALTA_Autorizaciones_Licencia.cs" />
+    <Compile Include="MAU_CrearPersona.cs" />
     <Compile Include="CRED_Ins_DatosPersonalesRelevados.cs" />
     <Compile Include="CTR_ADD_Datos_Personales.cs" />
     <Compile Include="LoggerEjecucionSps.cs" />
+    <Compile Include="PLA_get_firmantes_fecha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SACC_Ins_Asistencia.cs" />
     <Compile Include="StoredProcedure.cs" />
     <Compile Include="Treta.cs" />
   </ItemGroup>
