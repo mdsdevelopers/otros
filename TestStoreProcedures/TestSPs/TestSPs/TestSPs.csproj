@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASIS_ALTA_Autorizaciones_Licencia.cs" />
+    <Compile Include="MODI_Asignar_Imagen_A_Un_Documento.cs" />
+    <Compile Include="ESTR_Copiar_Usuarios_Area_Anterior.cs" />
+    <Compile Include="CV_Ins_DatosPersonalesNoEmpleados1ravez.cs" />
     <Compile Include="MAU_CrearPersona.cs" />
     <Compile Include="CRED_Ins_DatosPersonalesRelevados.cs" />
     <Compile Include="CTR_ADD_Datos_Personales.cs" />
