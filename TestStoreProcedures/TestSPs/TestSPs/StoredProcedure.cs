@@ -94,7 +94,7 @@ namespace TestStoredProcedures
             }
             catch (Exception exp)
             {
-                throw exp;
+                HandlearError(comando_ejecutar_un_sp, exp);
             }
             finally
             {
