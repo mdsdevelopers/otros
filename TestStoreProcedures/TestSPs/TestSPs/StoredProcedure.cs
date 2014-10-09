@@ -186,10 +186,14 @@ namespace TestStoredProcedures
                     parametro.Value = 109;
                     return true;
                 case "@baja":
-                case "@idBaja":
                 case "@Baja":
                     parametro.Value = 2284;
                     return true;
+
+                case "@idBaja":
+                    parametro.Value = 4207;
+                    return true;
+
                 case "@Doc_Titular_22":
                 case "@Dni":
                 case "@Documento":
