@@ -16,9 +16,9 @@ namespace TestStoredProcedures
             file_path = path;
         }
 
-        public void LogError(Exception e, SqlCommand comando)
+        public void LogError(Exception e, SqlCommand comando, string file)
         {
-            using (StreamWriter w = File.AppendText(file_path + "\\LogERROR.txt"))
+            using (StreamWriter w = File.AppendText(file_path + file))
             {
                 Log("ERROR al ejecutar " + comando.CommandText, w);
                 for (int i = 0; i < comando.Parameters.Count; i++)
@@ -31,6 +31,11 @@ namespace TestStoredProcedures
                 }
                 w.WriteLine(e.ToString());
             }
+        }
+
+        public void LogError(Exception e, SqlCommand comando)
+        {
+            this.LogError(e, comando, "\\LogERROR.txt");
         }
 
         public void LogEjecucionCorrecta(string nombre_sp)
@@ -50,7 +55,8 @@ namespace TestStoredProcedures
             w.WriteLine("  :{0}", logMessage);
             w.WriteLine("-------------------------------");
         }
-        
+
+
 
     }
 }

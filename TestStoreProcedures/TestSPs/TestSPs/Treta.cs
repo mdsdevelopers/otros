@@ -29,7 +29,8 @@ namespace TestStores
 
         public LoggerEjecucionSps GetLogger()
         {
-            return new LoggerEjecucionSps("C:\\Documents and Settings\\msaenz\\Escritorio\\Repositorio\\otros");
+            return new LoggerEjecucionSps("C:\\Repositorios\\Agustin\\otros");
+            
         }
 
         [TestMethod]

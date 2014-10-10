@@ -78,7 +78,11 @@ namespace TestStoredProcedures
             }
             catch (SqlException se)
             {
-                HandlearError(comando_ejecutar_un_sp, se);
+                if(se.Message.Contains("Valor de Timeout caducado.")) {
+                    HandlearTimeoutError(comando_ejecutar_un_sp, se);
+                } else {
+                    HandlearError(comando_ejecutar_un_sp, se);
+                }
             }
             catch (ArgumentException ae)
             {
@@ -296,5 +300,11 @@ namespace TestStoredProcedures
         {
             logger.LogError(e, comando);
         }
+
+        private void HandlearTimeoutError(SqlCommand comando, Exception e)
+        {
+            logger.LogError(e, comando, "\\Timeouts.txt");
+        }
+
     }
 }
