@@ -18,18 +18,25 @@ namespace TestStoredProcedures
 
         public void LogError(Exception e, SqlCommand comando, string file)
         {
-            using (StreamWriter w = File.AppendText(file_path + file))
+            try
             {
-                Log("ERROR al ejecutar " + comando.CommandText, w);
-                for (int i = 0; i < comando.Parameters.Count; i++)
+                using (StreamWriter w = File.AppendText(file_path + file))
                 {
-                    var parametro = comando.Parameters[i];
-                    var value = "NONE";
-                    if (parametro.Value != null)
-                        value = parametro.Value.ToString();
-                    w.WriteLine(parametro.ParameterName + ": " + value);
+                    Log("ERROR al ejecutar " + comando.CommandText, w);
+                    for (int i = 0; i < comando.Parameters.Count; i++)
+                    {
+                        var parametro = comando.Parameters[i];
+                        var value = "NONE";
+                        if (parametro.Value != null)
+                            value = parametro.Value.ToString();
+                        w.WriteLine(parametro.ParameterName + ": " + value);
+                    }
+                    w.WriteLine(e.ToString());
                 }
-                w.WriteLine(e.ToString());
+            }
+            catch (Exception err)
+            {
+                Console.Write("No se pudo loguear en el archivo " + file_path + file);
             }
         }
 
