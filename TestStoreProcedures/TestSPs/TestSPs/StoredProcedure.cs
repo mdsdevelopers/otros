@@ -209,9 +209,14 @@ namespace TestStoredProcedures
                     parametro.Value = 26200965;
                     return true;
 
-                case "@documento":
-                    parametro.Value = 99999990;
-                    return true;
+                //debido a que se modifico este parametro para que algún stored procedure en particular funcione
+                //otros tests que andaban, dejaron de hacerlo (aquellos que usaban este parametro)
+                //tener cuidado de poner acá solo los parametros que funcionen bien en "la mayoria" de los
+                //casos. Si algun caso en particular requiere trato especial, debería especificarse su parametro
+                //en la clase de ese stored procedure.
+                //case "@documento":
+                //    parametro.Value = 99999990;
+                //    return true;
 
                 case "@IdDocumento":
                 case "@id_documento":
