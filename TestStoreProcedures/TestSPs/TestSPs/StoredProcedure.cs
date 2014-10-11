@@ -206,6 +206,7 @@ namespace TestStoredProcedures
                 case "@nro_documento":
                 case "@Nro_Documento_16":
                 case "@Nro_doc_6":
+                case "@documento":
                     parametro.Value = 26200965;
                     return true;
 
