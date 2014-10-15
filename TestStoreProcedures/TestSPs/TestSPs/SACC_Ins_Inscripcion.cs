@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class PLA_get_firmantes_fecha:StoredProcedure
+    public class ASIS_ALTA_Autorizaciones_Licencia:StoredProcedure
     {
 
-        public PLA_get_firmantes_fecha(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public ASIS_ALTA_Autorizaciones_Licencia(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
@@ -20,8 +20,8 @@ namespace TestStoredProcedures
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
-                case "@periodo":
-                    parametro.Value = "01/2013";
+                case "@año":
+                    parametro.Value = 1999;
                     return true;
                 default:
                     return false;

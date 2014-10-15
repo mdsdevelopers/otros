@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASIS_ALTA_Autorizaciones_Licencia.cs" />
+    <Compile Include="CV_Upd_DatosPersonalesNoEmpleados.cs" />
+    <Compile Include="CV_Ins_EtapaPostulación.cs" />
+    <Compile Include="CRED_Upd_BajaCredencial.cs" />
+    <Compile Include="SACC_Upd_Del_Docente.cs" />
     <Compile Include="MODI_Asignar_Imagen_A_Un_Documento.cs" />
     <Compile Include="ESTR_Copiar_Usuarios_Area_Anterior.cs" />
     <Compile Include="CV_Ins_DatosPersonalesNoEmpleados1ravez.cs" />
