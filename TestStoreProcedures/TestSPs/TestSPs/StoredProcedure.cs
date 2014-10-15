@@ -17,6 +17,18 @@ namespace TestStoredProcedures
         {
             switch (nombre_sp_a_crear)
             {
+                case "SACC_Ins_Inscripcion":
+                    return new SACC_Ins_Inscripcion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CV_Upd_DatosPersonalesNoEmpleados":
+                    return new CV_Upd_DatosPersonalesNoEmpleados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CV_Ins_EtapaPostulación":
+                    return new CV_Ins_EtapaPostulación(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                    
+                case "CV_Ins_DatosPersonalesNoEmpleados1ravez":
+                    return new CV_Ins_DatosPersonalesNoEmpleados1ravez(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "ASIS_ALTA_Autorizaciones_Licencia":
                     return new ASIS_ALTA_Autorizaciones_Licencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
@@ -37,6 +49,12 @@ namespace TestStoredProcedures
            
                 case "ESTR_Copiar_Usuarios_Area_Anterior":
                     return new ESTR_Copiar_Usuarios_Area_Anterior(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
+                case "SACC_Upd_Del_Docente":
+                    return new SACC_Upd_Del_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CRED_Upd_BajaCredencial":
+                    return new CRED_Upd_BajaCredencial(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 default:
                     return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);
@@ -148,6 +166,9 @@ namespace TestStoredProcedures
                     parametro.Value = 14788;
                     return true;
 
+                case "@idAlumno":
+                    parametro.Value = 390;
+                    return true;
                 //agregados por LEG_ADD_RECEPCION_Otros_Documentos_Contratos
                 // agregado por CRED_USUARIOS
                 case "@IdUsuario":                
@@ -183,6 +204,10 @@ namespace TestStoredProcedures
                     return true;
                 case "@IdDocente":
                     parametro.Value = 99999;
+                    return true;
+
+                case "@id_docente":
+                    parametro.Value = 56509;
                     return true;
                 case "@idCurso":
                 case "@IdCurso":
@@ -225,6 +250,9 @@ namespace TestStoredProcedures
                     return true;
 
                 case "@Id_Interna_21":
+                    parametro.Value = 202171;
+                    return true;
+
                 case "@Id_Interna_5":
                     parametro.Value = 201530;
                     return true;
@@ -241,6 +269,9 @@ namespace TestStoredProcedures
                     parametro.Value = 2489;
                     return true;
 
+                case "@ID_Domicilio_40":
+                    parametro.Value = 11;
+                    return true;
                 case "@Id_Domicilio_2":
                     parametro.Value = 14672;
                     return true;
@@ -252,6 +283,10 @@ namespace TestStoredProcedures
                 case "@año":
                 case "@Año":
                     parametro.Value = 2010;
+                    return true;
+
+                case "@IdComisionDeServicio":
+                    parametro.Value = 19;
                     return true;
                 default:
                     return false;
