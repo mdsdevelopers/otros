@@ -22,6 +22,9 @@ namespace TestStoredProcedures
 
                 case "CRED_Ins_DatosPersonalesRelevados":
                     return new CRED_Ins_DatosPersonalesRelevados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CRED_Upd_BajaCredencial":
+                    return new CRED_Upd_BajaCredencial(nombre_sp_a_crear, conexion_del_sp, logger_sp);
                 
                 case "CTR_ADD_Datos_Personales":
                     return new CTR_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
@@ -169,9 +172,11 @@ namespace TestStoredProcedures
                 case "@sql":
                     parametro.Value = "WEB_GetAmbitoLaboral";
                     return true;
+
                 case "@id_alumno":
                     parametro.Value = 58142;
                     return true;         
+
                 case "@id_espacioFisico":
                     parametro.Value = 11;
                     return true;
@@ -181,14 +186,17 @@ namespace TestStoredProcedures
                 case "@id_materia":
                     parametro.Value = 95;
                     return true;
+
                 case "@IdDocente":
                     parametro.Value = 99999;
                     return true;
+
                 case "@idCurso":
                 case "@IdCurso":
                 case "@id_curso":
                     parametro.Value = 109;
                     return true;
+
                 case "@baja":
                 case "@Baja":
                     parametro.Value = 2284;
@@ -210,11 +218,6 @@ namespace TestStoredProcedures
                     parametro.Value = 26200965;
                     return true;
 
-                //debido a que se modifico este parametro para que algún stored procedure en particular funcione
-                //otros tests que andaban, dejaron de hacerlo (aquellos que usaban este parametro)
-                //tener cuidado de poner acá solo los parametros que funcionen bien en "la mayoria" de los
-                //casos. Si algun caso en particular requiere trato especial, debería especificarse su parametro
-                //en la clase de ese stored procedure.
                 //case "@documento":
                 //    parametro.Value = 99999990;
                 //    return true;
@@ -233,9 +236,6 @@ namespace TestStoredProcedures
                     parametro.Value = 187578;
                     return true;
 
-                case "@IdCredencial":
-                    parametro.Value = 10356;
-                    return true;
 
                 case "@IdAutorizante":
                     parametro.Value = 2489;
