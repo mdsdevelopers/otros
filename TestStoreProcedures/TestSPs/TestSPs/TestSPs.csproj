@@ -48,9 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASIS_ALTA_Autorizaciones_Licencia.cs" />
+    <Compile Include="ASIS_GET_Planillas_Firmas_Faltantes.cs" />
     <Compile Include="CV_Upd_DatosPersonalesNoEmpleados.cs" />
     <Compile Include="CV_Ins_EtapaPostulación.cs" />
     <Compile Include="CRED_Upd_BajaCredencial.cs" />
+    <Compile Include="SACC_Ins_Inscripcion.cs" />
     <Compile Include="SACC_Upd_Del_Docente.cs" />
     <Compile Include="MODI_Asignar_Imagen_A_Un_Documento.cs" />
     <Compile Include="ESTR_Copiar_Usuarios_Area_Anterior.cs" />
@@ -58,12 +60,15 @@
     <Compile Include="MAU_CrearPersona.cs" />
     <Compile Include="CRED_Ins_DatosPersonalesRelevados.cs" />
     <Compile Include="CTR_ADD_Datos_Personales.cs" />
-    <Compile Include="LoggerEjecucionSps.cs" />
+    <Compile Include="General\LoggerEjecucionSps.cs" />
     <Compile Include="PLA_get_firmantes_fecha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SACC_Ins_Asistencia.cs" />
-    <Compile Include="StoredProcedure.cs" />
-    <Compile Include="Treta.cs" />
+    <Compile Include="General\StoredProcedure.cs" />
+    <Compile Include="General\Treta.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SPs\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

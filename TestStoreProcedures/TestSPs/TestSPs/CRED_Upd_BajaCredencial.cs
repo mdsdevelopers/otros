@@ -20,7 +20,7 @@ namespace TestStoredProcedures
             switch (parametro.ParameterName)
             {
                 case "@IdBaja":
-                    parametro.Value = 4207;
+                    parametro.Value = 2455;
                     return true;
 
                 case "@IdCredencial":
