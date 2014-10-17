@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class ASIS_ALTA_Autorizaciones_Licencia:StoredProcedure
+    public class ESTR_Copiar_Usuarios_Area_Anterior:StoredProcedure
     {
 
-        public ASIS_ALTA_Autorizaciones_Licencia(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public ESTR_Copiar_Usuarios_Area_Anterior(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
@@ -20,8 +20,11 @@ namespace TestStoredProcedures
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
-                case "@año":
-                    parametro.Value = 1999;
+                case "@IdAreaAnterior":
+                    parametro.Value = 1316;
+                    return true;
+                case "@IdAreaNueva":
+                    parametro.Value = 1315;
                     return true;
                 default:
                     return false;

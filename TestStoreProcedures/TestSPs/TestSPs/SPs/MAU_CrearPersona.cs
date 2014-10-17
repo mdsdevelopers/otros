@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class ESTR_Copiar_Usuarios_Area_Anterior:StoredProcedure
+    public class MAU_CrearPersona:StoredProcedure
     {
 
-        public ESTR_Copiar_Usuarios_Area_Anterior(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public MAU_CrearPersona(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
@@ -20,12 +20,23 @@ namespace TestStoredProcedures
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
-                case "@IdAreaAnterior":
-                    parametro.Value = 1234;
+
+            case "@tipoDocumento":
+                    parametro.Value = 1;
                     return true;
-                case "@IdAreaNueva":
-                    parametro.Value = 4321;
+
+            case "@documento":
+                    parametro.Value = 99999999;
                     return true;
+
+            case "@nombre":
+                    parametro.Value = "Prueba TestSPs";
+                    return true;
+
+            case "@apellido":
+                    parametro.Value = "Prueba TestSPs";
+                    return true;
+
                 default:
                     return false;
             }

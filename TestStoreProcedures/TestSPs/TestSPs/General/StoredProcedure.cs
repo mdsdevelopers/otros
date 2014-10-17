@@ -17,6 +17,15 @@ namespace TestStoredProcedures
         {
             switch (nombre_sp_a_crear)
             {
+                case "SACC_Ins_Docente":
+                    return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+                    
+                case "RH_ADD_Usuarios_Modulos":
+                    return new RH_ADD_Usuarios_Modulos(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+
+                case "ESTR_GET_Actos_Administrativos":
+                    return new ESTR_GET_Actos_Administrativos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "ASIS_GET_Planillas_Firmas_Faltantes":
                     return new ASIS_GET_Planillas_Firmas_Faltantes(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
@@ -61,6 +70,7 @@ namespace TestStoredProcedures
 
                 default:
                     return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+            
             }
         }
 

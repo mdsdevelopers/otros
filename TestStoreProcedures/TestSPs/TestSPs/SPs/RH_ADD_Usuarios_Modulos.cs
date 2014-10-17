@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class MAU_CrearPersona:StoredProcedure
+    public class RH_ADD_Usuarios_Modulos:StoredProcedure
     {
 
-        public MAU_CrearPersona(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public RH_ADD_Usuarios_Modulos(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
@@ -20,11 +20,18 @@ namespace TestStoredProcedures
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
-                case "@año":
-                    parametro.Value = 1999;
+
+                case "@Id_Usuario_1":
+                    parametro.Value = 2;
                     return true;
+
+                case "@Id_Modulo_2":
+                    parametro.Value = 2;
+                    return true;
+            
                 default:
                     return false;
+
             }
         }
     }

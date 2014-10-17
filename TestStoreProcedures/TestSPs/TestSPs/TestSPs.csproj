@@ -47,29 +47,30 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ASIS_ALTA_Autorizaciones_Licencia.cs" />
-    <Compile Include="ASIS_GET_Planillas_Firmas_Faltantes.cs" />
-    <Compile Include="CV_Upd_DatosPersonalesNoEmpleados.cs" />
-    <Compile Include="CV_Ins_EtapaPostulación.cs" />
-    <Compile Include="CRED_Upd_BajaCredencial.cs" />
-    <Compile Include="SACC_Ins_Inscripcion.cs" />
-    <Compile Include="SACC_Upd_Del_Docente.cs" />
-    <Compile Include="MODI_Asignar_Imagen_A_Un_Documento.cs" />
-    <Compile Include="ESTR_Copiar_Usuarios_Area_Anterior.cs" />
-    <Compile Include="CV_Ins_DatosPersonalesNoEmpleados1ravez.cs" />
-    <Compile Include="MAU_CrearPersona.cs" />
-    <Compile Include="CRED_Ins_DatosPersonalesRelevados.cs" />
-    <Compile Include="CTR_ADD_Datos_Personales.cs" />
+    <Compile Include="SPs\ASIS_GET_Planillas_Firmas_Faltantes.cs" />
+    <Compile Include="SPs\SACC_Ins_Docente.cs" />
+    <Compile Include="SPs\RH_ADD_Usuarios_Modulos.cs" />
+    <Compile Include="SPs\ESTR_GET_Actos_Administrativos.cs" />
+    <Compile Include="SPs\CV_Upd_DatosPersonalesNoEmpleados.cs" />
+    <Compile Include="SPs\CV_Ins_EtapaPostulación.cs" />
+    <Compile Include="SPs\CRED_Upd_BajaCredencial.cs" />
+    <Compile Include="SPs\SACC_Ins_Inscripcion.cs" />
+    <Compile Include="SPs\SACC_Upd_Del_Docente.cs" />
+    <Compile Include="SPs\MODI_Asignar_Imagen_A_Un_Documento.cs" />
+    <Compile Include="SPs\ESTR_Copiar_Usuarios_Area_Anterior.cs" />
+    <Compile Include="SPs\CV_Ins_DatosPersonalesNoEmpleados1ravez.cs" />
+    <Compile Include="SPs\MAU_CrearPersona.cs" />
+    <Compile Include="SPs\CRED_Ins_DatosPersonalesRelevados.cs" />
+    <Compile Include="SPs\CTR_ADD_Datos_Personales.cs" />
     <Compile Include="General\LoggerEjecucionSps.cs" />
-    <Compile Include="PLA_get_firmantes_fecha.cs" />
+    <Compile Include="SPs\PLA_get_firmantes_fecha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SACC_Ins_Asistencia.cs" />
+    <Compile Include="SPs\SACC_Ins_Asistencia.cs" />
     <Compile Include="General\StoredProcedure.cs" />
     <Compile Include="General\Treta.cs" />
+    <Compile Include="SPs\ASIS_ALTA_Autorizaciones_Licencia.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SPs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

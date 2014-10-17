@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class SACC_Ins_Asistencia:StoredProcedure
+    public class SACC_Ins_Docente:StoredProcedure
     {
 
-        public SACC_Ins_Asistencia(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public SACC_Ins_Docente(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
@@ -20,27 +20,24 @@ namespace TestStoredProcedures
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
-                case "@id_alumno":
-                    parametro.Value = 58142;
+
+            case "@IdDocente":
+                    parametro.Value = 99998;
                     return true;
 
-                case "@id_curso":
-                    parametro.Value = 109;
+            case "@IdUsuario":
+                    parametro.Value = 18;
                     return true;
 
-                case "@fecha":
-                    parametro.Value = "2011-10-10 00:00:00.000";
+            case "@Fecha":
+                    parametro.Value = DateTime.Now;
                     return true;
 
-                case "@valor":
-                    parametro.Value = 15092014;
+            case "@idBaja":
+                    parametro.Value = 4207;
                     return true;
-
-                case "@id_usuario":
-                    parametro.Value = 233;
-                    return true;
-
-                default:
+                     
+            default:
                     return false;
             }
         }
