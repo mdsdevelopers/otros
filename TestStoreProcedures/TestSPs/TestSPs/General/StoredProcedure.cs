@@ -16,7 +16,10 @@ namespace TestStoredProcedures
         public static StoredProcedure New(string nombre_sp_a_crear, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
         {
             switch (nombre_sp_a_crear)
-            {
+            {                
+                case "SACC_Ins_Evaluacion":
+                    return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+
                 case "SACC_Ins_Docente":
                     return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
                     
@@ -70,7 +73,6 @@ namespace TestStoredProcedures
 
                 default:
                     return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-            
             }
         }
 
