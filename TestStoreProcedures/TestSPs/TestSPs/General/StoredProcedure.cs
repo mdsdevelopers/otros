@@ -64,8 +64,8 @@ namespace TestStoredProcedures
            
                 case "ESTR_Copiar_Usuarios_Area_Anterior":
                     return new ESTR_Copiar_Usuarios_Area_Anterior(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-                
-                case "SACC_Upd_Del_Docente":
+
+                case "SACC_Upd_Del_Evaluacion":
                     return new SACC_Upd_Del_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 case "CRED_Upd_BajaCredencial":
@@ -114,8 +114,16 @@ namespace TestStoredProcedures
                 if(se.Message.Contains("Valor de Timeout caducado.")) {
                     HandlearTimeoutError(comando_ejecutar_un_sp, se);
                 } else {
-                    HandlearError(comando_ejecutar_un_sp, se);
-                }
+
+                    if (se.Message.Contains("No se puede insertar el valor NULL"))
+                    {
+                        HandlearErrorDeParametros(comando_ejecutar_un_sp, se);        
+                    }
+                    else
+                    {
+                        HandlearError(comando_ejecutar_un_sp, se);
+                    }
+                    }
             }
             catch (ArgumentException ae)
             {
@@ -363,5 +371,10 @@ namespace TestStoredProcedures
             logger.LogError(e, comando, "\\Timeouts.txt");
         }
 
+        private void HandlearErrorDeParametros(SqlCommand comando, Exception e)
+        { 
+            logger.LogError(e, comando, "\\ErrorDeParametros.txt");
+        }
+         
     }
 }

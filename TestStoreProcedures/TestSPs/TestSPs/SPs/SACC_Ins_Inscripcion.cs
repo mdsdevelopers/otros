@@ -20,9 +20,27 @@ namespace TestStoredProcedures
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
-                case "@año":
-                    parametro.Value = 1999;
+ 
+                case "@idCurso":
+                    parametro.Value = 76;
                     return true;
+                    
+                case "@idAlumno":
+                    parametro.Value = 390;
+                    return true;
+            
+                case "@IdUsuario":
+                    parametro.Value = 18;
+                    return true;
+
+                case "@Fecha":
+                    parametro.Value = DateTime.Now;
+                    return true;
+
+                case "@IdBaja":
+                    parametro.Value = 1;
+                    return true;
+
                 default:
                     return false;
             }
