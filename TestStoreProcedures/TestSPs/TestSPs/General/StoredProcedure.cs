@@ -17,8 +17,8 @@ namespace TestStoredProcedures
         {
             switch (nombre_sp_a_crear)
             {                
-                case "SACC_Ins_Evaluacion":
-                    return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+                case "ESTR_ADD_Aadm_Areas_FE":
+                    return new ESTR_ADD_Aadm_Areas_FE(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
 
                 case "SACC_Ins_Docente":
                     return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 

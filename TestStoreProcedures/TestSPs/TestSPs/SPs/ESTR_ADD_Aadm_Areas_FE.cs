@@ -6,37 +6,45 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class SACC_Ins_Inscripcion:StoredProcedure
+    public class ESTR_ADD_Aadm_Areas_FE:StoredProcedure
     {
 
-        public SACC_Ins_Inscripcion(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public ESTR_ADD_Aadm_Areas_FE(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
         }
+
         protected override bool CompletarParametroEspecifico(SqlParameter parametro)
         {
             var result = base.CompletarParametroEspecifico(parametro);
             switch (parametro.ParameterName)
             {
- 
-                case "@idCurso":
-                    parametro.Value = 76;
-                    return true;
-                    
-                case "@idAlumno":
-                    parametro.Value = 390;
-                    return true;
-            
-                case "@IdUsuario":
-                    parametro.Value = 18;
+                case "@Id_Area":
+                    parametro.Value = 640;
                     return true;
 
-                case "@Fecha":
+                case "@Id_Accion":
+                    parametro.Value = 10;
+                    return true;
+
+                case "@Id_Nivel_FE":
+                    parametro.Value = 4;
+                    return true;
+
+                case "@Id_Acto":
+                    parametro.Value = 5;
+                    return true;
+
+                case "@Fecha_Desde":
                     parametro.Value = DateTime.Now;
                     return true;
 
-                case "@IdBaja":
+                case "@Usuario":
+                    parametro.Value = 8;
+                    return true;
+
+                case "@Id_Area_Anterior":
                     parametro.Value = 1;
                     return true;
 
