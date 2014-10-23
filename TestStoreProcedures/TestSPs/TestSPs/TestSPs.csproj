@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SPs\ASIS_GET_Planillas_Firmas_Faltantes.cs" />
+    <Compile Include="SPs\LEG_DEL_Legajo.cs" />
+    <Compile Include="SPs\SACC_Ins_Evaluacion.cs" />
+    <Compile Include="SPs\SACC_Ins_Horario.cs" />
+    <Compile Include="SPs\ESTR_ADD_Aadm_Areas_FE.cs" />
     <Compile Include="SPs\SACC_Ins_Docente.cs" />
     <Compile Include="SPs\RH_ADD_Usuarios_Modulos.cs" />
     <Compile Include="SPs\ESTR_GET_Actos_Administrativos.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="General\StoredProcedure.cs" />
     <Compile Include="General\Treta.cs" />
     <Compile Include="SPs\ASIS_ALTA_Autorizaciones_Licencia.cs" />
+    <Compile Include="SPs\SACC_Upd_Del_Evaluacion.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

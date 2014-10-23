@@ -58,34 +58,33 @@ namespace TestStoredProcedures
 
                 case "MODI_Asignar_Imagen_A_Un_Documento":
                     return new MODI_Asignar_Imagen_A_Un_Documento(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-                
-                case "SACC_Ins_Docente":
-                    return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
-                    
-                case "RH_ADD_Usuarios_Modulos":
-                    return new RH_ADD_Usuarios_Modulos(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
-                                 
-
-                
-
-                case "SACC_Ins_Inscripcion":
-                    return new SACC_Ins_Inscripcion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-
-                
-                
 
                 case "PLA_get_firmantes_fecha":
                     return new PLA_get_firmantes_fecha(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
+                case "RH_ADD_Usuarios_Modulos":
+                    return new RH_ADD_Usuarios_Modulos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "SACC_Ins_Asistencia":
                     return new SACC_Ins_Asistencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-           
-                
 
-                case "SACC_Upd_Del_Evaluacion":
+                case "SACC_Ins_Docente":
+                    return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "SACC_Ins_Evaluacion":
+                    return new SACC_Ins_Evaluacion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "SACC_Ins_Horario":
+                    return new SACC_Ins_Horario(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "SACC_Ins_Inscripcion":
+                    return new SACC_Ins_Inscripcion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "SACC_Upd_Del_Docente":
                     return new SACC_Upd_Del_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
-                
+                case "SACC_Upd_Del_Evaluacion":
+                    return new SACC_Upd_Del_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
 
                 default:
                     return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);

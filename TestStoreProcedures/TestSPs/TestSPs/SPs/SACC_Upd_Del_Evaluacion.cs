@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class ASIS_ALTA_Autorizaciones_Licencia:StoredProcedure
+    public class SACC_Upd_Del_Evaluacion:StoredProcedure
     {
 
-        public ASIS_ALTA_Autorizaciones_Licencia(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public SACC_Upd_Del_Evaluacion(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 

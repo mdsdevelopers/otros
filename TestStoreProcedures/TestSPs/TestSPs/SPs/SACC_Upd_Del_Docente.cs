@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace TestStoredProcedures
 {
-    public class SACC_Upd_Del_Evaluacion:StoredProcedure
+    public class SACC_Upd_Del_Docente:StoredProcedure
     {
 
-        public SACC_Upd_Del_Evaluacion(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
+        public SACC_Upd_Del_Docente(string nombre, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
             : base(nombre, conexion_del_sp, logger_sp)
         {
 
@@ -21,40 +21,20 @@ namespace TestStoredProcedures
             switch (parametro.ParameterName)
             {
 
-                case "@id":
-                    parametro.Value = 1330;
+                case "@IdDocente":
+                    parametro.Value = 57590;
                     return true;
 
-                case "@id_alumno":
-                    parametro.Value = 7342;
-                    return true;
-
-                case "@id_curso":
-                    parametro.Value = 84;
-                    return true;            
-
-                case "@id_instancia_evaluacion":
-                    parametro.Value = 3;
-                    return true;
-
-                case "@calificacion":
-                    parametro.Value = "A";
-                    return true;
-                
-                case "@fecha_evaluacion":
-                    parametro.Value = DateTime.Now;
-                    return true;
-
-                case "@fecha":
-                    parametro.Value = DateTime.Now;
-                    return true;
-
-                case "@id_usuario":
+                case "@IdUsuario":
                     parametro.Value = 294;
                     return true;
 
-                case "@id_baja":
-                    parametro.Value = 2250;
+                case "@Fecha":
+                    parametro.Value = DateTime.Now;
+                    return true;            
+
+                case "@idBaja":
+                    parametro.Value = "";
                     return true;
 
                 default:
