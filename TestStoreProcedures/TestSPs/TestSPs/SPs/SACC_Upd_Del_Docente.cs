@@ -34,7 +34,7 @@ namespace TestStoredProcedures
                     return true;            
 
                 case "@idBaja":
-                    parametro.Value = "";
+                    parametro.Value = null;
                     return true;
 
                 default:

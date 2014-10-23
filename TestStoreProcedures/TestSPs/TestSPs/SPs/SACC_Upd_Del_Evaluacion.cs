@@ -22,19 +22,19 @@ namespace TestStoredProcedures
             {
 
                 case "@id":
-                    parametro.Value = 1;
+                    parametro.Value = 1330;
                     return true;
                 
                 case "@id_alumno":
-                    parametro.Value = 58142;
+                    parametro.Value = 7342;
                     return true;
                 
                 case "@id_curso":
-                    parametro.Value = 84;
+                    parametro.Value = 44;
                     return true;
                 
                 case "@id_instancia_evaluacion":
-                    parametro.Value = 1;
+                    parametro.Value = 3;
                     return true;
 
                 case "@calificacion":
@@ -50,11 +50,11 @@ namespace TestStoredProcedures
                     return true;
 
                 case "@id_usuario":
-                    parametro.Value = 1;
+                    parametro.Value = 294;
                     return true;
 
                 case "@id_baja":
-                    parametro.Value = 1;
+                    parametro.Value = "";
                     return true;
 
                 default:

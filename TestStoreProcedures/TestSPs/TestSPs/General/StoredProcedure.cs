@@ -17,6 +17,7 @@ namespace TestStoredProcedures
         {
             switch (nombre_sp_a_crear)
             {
+
                 case "ASIS_ALTA_Autorizaciones_Licencia":
                     return new ASIS_ALTA_Autorizaciones_Licencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
