@@ -21,8 +21,8 @@ namespace TestStoredProcedures
             switch (parametro.ParameterName)
             {
 
-            case "@id_curso":
-                    parametro.Value = 84;
+            case "@id_alumno":
+                    parametro.Value = 41;
                     return true;
             
             case "@id_instancia_evaluacion":
@@ -38,7 +38,7 @@ namespace TestStoredProcedures
                     return true;
             
             case "@id_usuario":
-                    parametro.Value = 1;
+                    parametro.Value = 306;
                     return true;
 
             case "@fecha":
@@ -46,7 +46,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@baja":
-                    parametro.Value = 2284;
+                    parametro.Value = "";
                     return true;
 
                 default:

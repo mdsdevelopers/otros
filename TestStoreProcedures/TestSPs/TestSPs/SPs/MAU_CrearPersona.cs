@@ -26,7 +26,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@documento":
-                    parametro.Value = 99999999;
+                    parametro.Value = 99991111;
                     return true;
 
             case "@nombre":

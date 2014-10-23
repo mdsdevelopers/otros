@@ -16,45 +16,63 @@ namespace TestStoredProcedures
         public static StoredProcedure New(string nombre_sp_a_crear, SqlConnection conexion_del_sp, LoggerEjecucionSps logger_sp)
         {
             switch (nombre_sp_a_crear)
-            {                
-                case "ESTR_ADD_Aadm_Areas_FE":
-                    return new ESTR_ADD_Aadm_Areas_FE(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+            {
+                case "ASIS_ALTA_Autorizaciones_Licencia":
+                    return new ASIS_ALTA_Autorizaciones_Licencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
+                case "ASIS_GET_Planillas_Firmas_Faltantes":
+                    return new ASIS_GET_Planillas_Firmas_Faltantes(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CRED_Ins_DatosPersonalesRelevados":
+                    return new CRED_Ins_DatosPersonalesRelevados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CRED_Upd_BajaCredencial":
+                    return new CRED_Upd_BajaCredencial(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CTR_ADD_Datos_Personales":
+                    return new CTR_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CV_Ins_DatosPersonalesNoEmpleados1ravez":
+                    return new CV_Ins_DatosPersonalesNoEmpleados1ravez(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CV_Ins_EtapaPostulación":
+                    return new CV_Ins_EtapaPostulación(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CV_Upd_DatosPersonalesNoEmpleados":
+                    return new CV_Upd_DatosPersonalesNoEmpleados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "ESTR_ADD_Aadm_Areas_FE":
+                    return new ESTR_ADD_Aadm_Areas_FE(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "ESTR_Copiar_Usuarios_Area_Anterior":
+                    return new ESTR_Copiar_Usuarios_Area_Anterior(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "ESTR_GET_Actos_Administrativos":
+                    return new ESTR_GET_Actos_Administrativos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "LEG_DEL_Legajo":
+                    return new LEG_DEL_Legajo(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "MAU_CrearPersona":
+                    return new MAU_CrearPersona(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "MODI_Asignar_Imagen_A_Un_Documento":
+                    return new MODI_Asignar_Imagen_A_Un_Documento(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
                 case "SACC_Ins_Docente":
                     return new SACC_Ins_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
                     
                 case "RH_ADD_Usuarios_Modulos":
                     return new RH_ADD_Usuarios_Modulos(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+                                 
 
-                case "ESTR_GET_Actos_Administrativos":
-                    return new ESTR_GET_Actos_Administrativos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-
-                case "ASIS_GET_Planillas_Firmas_Faltantes":
-                    return new ASIS_GET_Planillas_Firmas_Faltantes(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
 
                 case "SACC_Ins_Inscripcion":
                     return new SACC_Ins_Inscripcion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
-                case "CV_Upd_DatosPersonalesNoEmpleados":
-                    return new CV_Upd_DatosPersonalesNoEmpleados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-
-                case "CV_Ins_EtapaPostulación":
-                    return new CV_Ins_EtapaPostulación(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-                    
-                case "CV_Ins_DatosPersonalesNoEmpleados1ravez":
-                    return new CV_Ins_DatosPersonalesNoEmpleados1ravez(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-
-                case "ASIS_ALTA_Autorizaciones_Licencia":
-                    return new ASIS_ALTA_Autorizaciones_Licencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
-
-                case "CRED_Ins_DatosPersonalesRelevados":
-                    return new CRED_Ins_DatosPersonalesRelevados(nombre_sp_a_crear, conexion_del_sp, logger_sp);
                 
-                case "CTR_ADD_Datos_Personales":
-                    return new CTR_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
                 
-                case "MAU_CrearPersona":
-                    return new MAU_CrearPersona(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 case "PLA_get_firmantes_fecha":
                     return new PLA_get_firmantes_fecha(nombre_sp_a_crear, conexion_del_sp, logger_sp);
@@ -62,14 +80,12 @@ namespace TestStoredProcedures
                 case "SACC_Ins_Asistencia":
                     return new SACC_Ins_Asistencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
            
-                case "ESTR_Copiar_Usuarios_Area_Anterior":
-                    return new ESTR_Copiar_Usuarios_Area_Anterior(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
 
                 case "SACC_Upd_Del_Evaluacion":
                     return new SACC_Upd_Del_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
-                case "CRED_Upd_BajaCredencial":
-                    return new CRED_Upd_BajaCredencial(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                
 
                 default:
                     return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);
