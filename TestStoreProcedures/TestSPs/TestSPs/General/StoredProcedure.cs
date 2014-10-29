@@ -86,6 +86,9 @@ namespace TestStoredProcedures
 
                 case "SACC_Upd_Del_Evaluacion":
                     return new SACC_Upd_Del_Evaluacion(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
+                
+                case "WEB_AltaSolicitudPase":
+                    return new WEB_AltaSolicitudPase(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 default:
                     return new StoredProcedure(nombre_sp_a_crear, conexion_del_sp, logger_sp);
