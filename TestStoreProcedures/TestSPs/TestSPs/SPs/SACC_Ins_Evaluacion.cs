@@ -25,6 +25,10 @@ namespace TestStoredProcedures
                     parametro.Value = 41;
                     return true;
             
+            case "@id_curso":
+                    parametro.Value = 84;
+                    return true;
+
             case "@id_instancia_evaluacion":
                     parametro.Value = 1;
                     return true;

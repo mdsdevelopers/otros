@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace TestStoredProcedures
 {
@@ -30,7 +31,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@Fecha_Baja":
-                    parametro.Value = DateTime.Now;
+                    parametro.Value = '20080701';
                     return true;
 
             case "@Motivo_Baja":
@@ -50,7 +51,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@fecha_acto":
-                    parametro.Value = DateTime.Now;
+                    parametro.Value = '20080827';
                     return true;
             
             case "@firmante":
