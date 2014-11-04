@@ -31,7 +31,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@Fecha_Baja":
-                    parametro.Value = '20080701';
+                    parametro.Value = "20080701";
                     return true;
 
             case "@Motivo_Baja":
@@ -51,7 +51,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@fecha_acto":
-                    parametro.Value = '20080827';
+                    parametro.Value = "20080827";
                     return true;
             
             case "@firmante":
