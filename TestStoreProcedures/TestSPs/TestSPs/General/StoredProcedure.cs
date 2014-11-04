@@ -85,8 +85,11 @@ namespace TestStoredProcedures
                     return new SACC_Upd_Del_Docente(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 case "SACC_Upd_Del_Evaluacion":
-                    return new SACC_Upd_Del_Evaluacion(nombre_sp_a_crear, conexion_del_sp, logger_sp); 
-                
+                    return new SACC_Upd_Del_Evaluacion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "Update_Domicilio_Personal":
+                    return new Update_Domicilio_Personal(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "WEB_AltaSolicitudPase":
                     return new WEB_AltaSolicitudPase(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
