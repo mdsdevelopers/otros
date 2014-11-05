@@ -269,6 +269,10 @@ namespace TestStoredProcedures
                     parametro.Value = 4207;
                     return true;
 
+                case "@Id_Interna_21":
+                    parametro.Value = 94238403;
+                    return true;
+
                 case "@Doc_Titular_22":
                 case "@Dni":
                 case "@Documento":
@@ -278,6 +282,7 @@ namespace TestStoredProcedures
                 case "@Nro_Documento_16":
                 case "@Nro_doc_6":
                 case "@documento":
+                case "@Nro_Documento_3":
                     parametro.Value = 26200965;
                     return true;
 
@@ -295,9 +300,9 @@ namespace TestStoredProcedures
                     parametro.Value = 3;
                     return true;
 
-                case "@Id_Interna_21":
-                    parametro.Value = 202171;
-                    return true;
+             //   case "@Id_Interna_21":
+             //      parametro.Value = 202171;
+             //       return true;
 
                 case "@Id_Interna_5":
                     parametro.Value = 201530;
@@ -334,6 +339,11 @@ namespace TestStoredProcedures
                 case "@IdComisionDeServicio":
                     parametro.Value = 19;
                     return true;
+
+                case "@Id_Contrato":
+                    parametro.Value = 2;
+                    return true;
+                    
                 default:
                     return false;
             }
