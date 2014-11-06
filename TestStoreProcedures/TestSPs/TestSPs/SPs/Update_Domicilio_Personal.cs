@@ -102,7 +102,7 @@ namespace TestStoredProcedures
                     return true;
 
                 case "@baja":
-                    parametro.Value = "";
+                    parametro.Value = 1;
                     return true;
 
                 case "@usuario":
