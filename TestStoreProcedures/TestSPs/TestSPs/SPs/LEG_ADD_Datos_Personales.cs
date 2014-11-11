@@ -22,7 +22,7 @@ namespace TestStoredProcedures
             {
 
                 case "@Id_Interna_1":
-                    parametro.Value = 58142;
+                    parametro.Value = 88777;
                     return true;
 
                 case "@Apellido_2":

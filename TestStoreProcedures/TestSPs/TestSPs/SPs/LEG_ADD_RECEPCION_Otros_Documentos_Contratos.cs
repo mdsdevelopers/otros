@@ -21,15 +21,15 @@ namespace TestStoredProcedures
             switch (parametro.ParameterName)
             {
                 case "@Tipo":
-                    parametro.Value = "Prueba de SPs";
+                    parametro.Value = "T";
                     return true;
 
                 case "@Foja":
-                    parametro.Value = "9999999999";
+                    parametro.Value = "T";
                     return true;
 
                 case "@idUsuario":
-                    parametro.Value = 369;
+                    parametro.Value = 1;
                     return true;
 
                 case "@idContrato":

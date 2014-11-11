@@ -48,6 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SPs\ASIS_GET_Planillas_Firmas_Faltantes.cs" />
+    <Compile Include="SPs\alta_Datos_Familiares.cs" />
+    <Compile Include="SPs\CTR_DEL_Contratos.cs" />
+    <Compile Include="SPs\CTR_ELIMINAR_Contrato.cs" />
+    <Compile Include="SPs\CTR_UPD_Datos_Personales.cs" />
+    <Compile Include="SPs\CTR_UPD_Fecha_impresion.cs" />
+    <Compile Include="SPs\ESTR_GET_AAdm_A_Texto.cs" />
+    <Compile Include="SPs\LEG_ADD_Datos_Personales.cs" />
     <Compile Include="SPs\LEG_ADD_RECEPCION_Otros_Documentos_Contratos.cs" />
     <Compile Include="SPs\LEG_DEL_Legajo.cs" />
     <Compile Include="SPs\SACC_Ins_Evaluacion.cs" />

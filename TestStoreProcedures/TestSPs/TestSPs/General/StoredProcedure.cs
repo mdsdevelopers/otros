@@ -17,6 +17,9 @@ namespace TestStoredProcedures
         {
             switch (nombre_sp_a_crear)
             {
+    
+                case "alta_Datos_Familiares":
+                    return new alta_Datos_Familiares(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 case "ASIS_ALTA_Autorizaciones_Licencia":
                     return new ASIS_ALTA_Autorizaciones_Licencia(nombre_sp_a_crear, conexion_del_sp, logger_sp);
@@ -33,6 +36,18 @@ namespace TestStoredProcedures
                 case "CTR_ADD_Datos_Personales":
                     return new CTR_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
+                case "CTR_DEL_Contratos":
+                    return new CTR_DEL_Contratos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+ 
+                case "CTR_ELIMINAR_Contrato":
+                    return new CTR_ELIMINAR_Contrato(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CTR_UPD_Datos_Personales":
+                    return new CTR_UPD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "CTR_UPD_Fecha_impresion":
+                    return new CTR_UPD_Fecha_impresion(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "CV_Ins_DatosPersonalesNoEmpleados1ravez":
                     return new CV_Ins_DatosPersonalesNoEmpleados1ravez(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
@@ -48,8 +63,17 @@ namespace TestStoredProcedures
                 case "ESTR_Copiar_Usuarios_Area_Anterior":
                     return new ESTR_Copiar_Usuarios_Area_Anterior(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
+                case "ESTR_GET_AAdm_A_Texto":
+                    return new ESTR_GET_AAdm_A_Texto(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "ESTR_GET_Actos_Administrativos":
                     return new ESTR_GET_Actos_Administrativos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "LEG_ADD_Datos_Personales":
+                    return new LEG_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "LEG_ADD_RECEPCION_Otros_Documentos_Contratos":
+                    return new LEG_ADD_RECEPCION_Otros_Documentos_Contratos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 case "LEG_DEL_Legajo":
                     return new LEG_DEL_Legajo(nombre_sp_a_crear, conexion_del_sp, logger_sp);

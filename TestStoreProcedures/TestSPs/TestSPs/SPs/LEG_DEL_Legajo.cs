@@ -31,7 +31,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@Fecha_Baja":
-                    parametro.Value = DateTime.Now();
+                    parametro.Value = DateTime.Now;
                     return true;
 
             case "@Motivo_Baja":
@@ -51,7 +51,7 @@ namespace TestStoredProcedures
                     return true;
 
             case "@fecha_acto":
-                    parametro.Value = DateTime.Now();
+                    parametro.Value = DateTime.Now;
                     return true;
             
             case "@firmante":
