@@ -36,6 +36,9 @@ namespace TestStoredProcedures
                 case "CTR_ADD_Datos_Personales":
                     return new CTR_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
+                case "CTR_ADD_Contrato_Certificado_Automatico_PASO3":
+                    return new CTR_ADD_Contrato_Certificado_Automatico_PASO3(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
                 case "CTR_DEL_Contratos":
                     return new CTR_DEL_Contratos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
  
@@ -71,6 +74,9 @@ namespace TestStoredProcedures
 
                 case "LEG_ADD_Datos_Personales":
                     return new LEG_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+
+                case "LEG_ADD_Recepcion_DDJJ_Domicilio":
+                    return new LEG_ADD_Recepcion_DDJJ_Domicilio(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
                 case "LEG_ADD_RECEPCION_Otros_Documentos_Contratos":
                     return new LEG_ADD_RECEPCION_Otros_Documentos_Contratos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
@@ -139,7 +145,7 @@ namespace TestStoredProcedures
             comando_ejecutar_un_sp.CommandText = nombre_sp;
             comando_ejecutar_un_sp.Connection = conexion;
             comando_ejecutar_un_sp.CommandType = System.Data.CommandType.StoredProcedure;
-            comando_ejecutar_un_sp.CommandTimeout = 2;
+            comando_ejecutar_un_sp.CommandTimeout = 30;
 
             SqlCommandBuilder.DeriveParameters(comando_ejecutar_un_sp);
 

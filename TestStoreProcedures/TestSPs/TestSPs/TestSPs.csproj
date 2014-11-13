@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="SPs\ASIS_GET_Planillas_Firmas_Faltantes.cs" />
     <Compile Include="SPs\alta_Datos_Familiares.cs" />
+    <Compile Include="SPs\CTR_ADD_Contrato_Certificado_Automatico_PASO3.cs" />
+    <Compile Include="SPs\LEG_ADD_Recepcion_DDJJ_Domicilio.cs" />
     <Compile Include="SPs\CTR_DEL_Contratos.cs" />
     <Compile Include="SPs\CTR_ELIMINAR_Contrato.cs" />
     <Compile Include="SPs\CTR_UPD_Datos_Personales.cs" />
