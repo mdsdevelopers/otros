@@ -72,6 +72,9 @@ namespace TestStoredProcedures
                 case "ESTR_GET_Actos_Administrativos":
                     return new ESTR_GET_Actos_Administrativos(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
+                case "GEST_Recibos_Detalle":
+                    return new GEST_Recibos_Detalle(nombre_sp_a_crear, conexion_del_sp, logger_sp);
+                    
                 case "LEG_ADD_Datos_Personales":
                     return new LEG_ADD_Datos_Personales(nombre_sp_a_crear, conexion_del_sp, logger_sp);
 
