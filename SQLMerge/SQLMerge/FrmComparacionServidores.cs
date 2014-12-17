@@ -1205,14 +1205,19 @@ namespace SQLMerge
             IEnumerable<Trigger> except2 = trigger1.Except(trigger2, new Trigger());
 
 
-            GridView_triggers_faltantes1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
-            GridView_triggers_faltantes2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
+            GridView_triggers_faltantes1.AutoResizeColumns();
+            GridView_triggers_faltantes2.AutoResizeColumns();
+
 
             GridView_triggers_faltantes1.DataSource = except.ToList();
             GridView_triggers_faltantes2.DataSource = except2.ToList();
 
-          
 
+
+            //GridView_triggers_faltantes1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
+            //GridView_triggers_faltantes2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
+            GridView_triggers_faltantes1.AutoResizeColumns();
+            GridView_triggers_faltantes2.AutoResizeColumns();
 
             lbl_triggers_faltantes1.Text = except.Count().ToString();
             lbl_triggers_faltantes2.Text = except2.Count().ToString();

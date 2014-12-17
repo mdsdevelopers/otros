@@ -274,6 +274,7 @@
             // 
             this.gridview_proc_faltantes2.AllowUserToAddRows = false;
             this.gridview_proc_faltantes2.AllowUserToDeleteRows = false;
+            this.gridview_proc_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_proc_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_proc_faltantes2.Location = new System.Drawing.Point(6, 39);
             this.gridview_proc_faltantes2.Name = "gridview_proc_faltantes2";
@@ -347,6 +348,7 @@
             // gridview_proc_faltantes1
             // 
             this.gridview_proc_faltantes1.AllowUserToAddRows = false;
+            this.gridview_proc_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_proc_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_proc_faltantes1.Location = new System.Drawing.Point(10, 39);
             this.gridview_proc_faltantes1.Name = "gridview_proc_faltantes1";
@@ -559,6 +561,7 @@
             // 
             this.GridView_proc_diferentes.AllowUserToAddRows = false;
             this.GridView_proc_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_proc_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_proc_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_proc_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_proc_diferentes.Name = "GridView_proc_diferentes";
@@ -672,6 +675,7 @@
             // 
             this.GridView_triggers_faltantes2.AllowUserToAddRows = false;
             this.GridView_triggers_faltantes2.AllowUserToDeleteRows = false;
+            this.GridView_triggers_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_triggers_faltantes2.Location = new System.Drawing.Point(6, 39);
             this.GridView_triggers_faltantes2.Name = "GridView_triggers_faltantes2";
@@ -709,6 +713,7 @@
             // 
             this.GridView_triggers_diferentes.AllowUserToAddRows = false;
             this.GridView_triggers_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_triggers_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_triggers_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_triggers_diferentes.Name = "GridView_triggers_diferentes";
@@ -782,6 +787,7 @@
             this.GridView_triggers_faltantes1.AllowUserToAddRows = false;
             this.GridView_triggers_faltantes1.AllowUserToDeleteRows = false;
             this.GridView_triggers_faltantes1.AllowUserToOrderColumns = true;
+            this.GridView_triggers_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_triggers_faltantes1.Location = new System.Drawing.Point(10, 39);
             this.GridView_triggers_faltantes1.Name = "GridView_triggers_faltantes1";
@@ -849,6 +855,7 @@
             // 
             this.gridview_tablas_faltantes2.AllowUserToAddRows = false;
             this.gridview_tablas_faltantes2.AllowUserToDeleteRows = false;
+            this.gridview_tablas_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_tablas_faltantes2.Location = new System.Drawing.Point(6, 39);
             this.gridview_tablas_faltantes2.Name = "gridview_tablas_faltantes2";
@@ -886,6 +893,7 @@
             // 
             this.gridview_tablas_diferentes.AllowUserToAddRows = false;
             this.gridview_tablas_diferentes.AllowUserToDeleteRows = false;
+            this.gridview_tablas_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_tablas_diferentes.Location = new System.Drawing.Point(9, 38);
             this.gridview_tablas_diferentes.Name = "gridview_tablas_diferentes";
@@ -959,6 +967,7 @@
             this.gridview_tablas_faltantes1.AllowUserToAddRows = false;
             this.gridview_tablas_faltantes1.AllowUserToDeleteRows = false;
             this.gridview_tablas_faltantes1.AllowUserToOrderColumns = true;
+            this.gridview_tablas_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_tablas_faltantes1.Location = new System.Drawing.Point(10, 39);
             this.gridview_tablas_faltantes1.Name = "gridview_tablas_faltantes1";
@@ -1025,6 +1034,7 @@
             // 
             this.GridView_vistas_faltantes2.AllowUserToAddRows = false;
             this.GridView_vistas_faltantes2.AllowUserToDeleteRows = false;
+            this.GridView_vistas_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_vistas_faltantes2.Location = new System.Drawing.Point(6, 39);
             this.GridView_vistas_faltantes2.Name = "GridView_vistas_faltantes2";
@@ -1062,6 +1072,7 @@
             // 
             this.GridView_vistas_diferentes.AllowUserToAddRows = false;
             this.GridView_vistas_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_vistas_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_vistas_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_vistas_diferentes.Name = "GridView_vistas_diferentes";
@@ -1135,6 +1146,7 @@
             this.GridView_vistas_faltantes1.AllowUserToAddRows = false;
             this.GridView_vistas_faltantes1.AllowUserToDeleteRows = false;
             this.GridView_vistas_faltantes1.AllowUserToOrderColumns = true;
+            this.GridView_vistas_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_vistas_faltantes1.Location = new System.Drawing.Point(10, 39);
             this.GridView_vistas_faltantes1.Name = "GridView_vistas_faltantes1";
@@ -1201,6 +1213,7 @@
             // 
             this.GridView_funciones_faltantes2.AllowUserToAddRows = false;
             this.GridView_funciones_faltantes2.AllowUserToDeleteRows = false;
+            this.GridView_funciones_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_funciones_faltantes2.Location = new System.Drawing.Point(6, 39);
             this.GridView_funciones_faltantes2.Name = "GridView_funciones_faltantes2";
@@ -1238,6 +1251,7 @@
             // 
             this.GridView_funciones_diferentes.AllowUserToAddRows = false;
             this.GridView_funciones_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_funciones_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_funciones_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_funciones_diferentes.Name = "GridView_funciones_diferentes";
@@ -1311,6 +1325,7 @@
             this.GridView_funciones_faltantes1.AllowUserToAddRows = false;
             this.GridView_funciones_faltantes1.AllowUserToDeleteRows = false;
             this.GridView_funciones_faltantes1.AllowUserToOrderColumns = true;
+            this.GridView_funciones_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_funciones_faltantes1.Location = new System.Drawing.Point(10, 39);
             this.GridView_funciones_faltantes1.Name = "GridView_funciones_faltantes1";

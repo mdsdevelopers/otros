@@ -490,6 +490,7 @@
             // 
             this.GridView_triggers_faltantes2.AllowUserToAddRows = false;
             this.GridView_triggers_faltantes2.AllowUserToDeleteRows = false;
+            this.GridView_triggers_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_triggers_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.GridView_triggers_faltantes2.Name = "GridView_triggers_faltantes2";
@@ -528,6 +529,7 @@
             // 
             this.GridView_triggers_diferentes.AllowUserToAddRows = false;
             this.GridView_triggers_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_triggers_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_triggers_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_triggers_diferentes.Name = "GridView_triggers_diferentes";
@@ -601,6 +603,8 @@
             this.GridView_triggers_faltantes1.AllowUserToAddRows = false;
             this.GridView_triggers_faltantes1.AllowUserToDeleteRows = false;
             this.GridView_triggers_faltantes1.AllowUserToOrderColumns = true;
+            this.GridView_triggers_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridView_triggers_faltantes1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridView_triggers_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_triggers_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.GridView_triggers_faltantes1.Name = "GridView_triggers_faltantes1";
@@ -669,6 +673,7 @@
             // 
             this.gridview_tablas_faltantes2.AllowUserToAddRows = false;
             this.gridview_tablas_faltantes2.AllowUserToDeleteRows = false;
+            this.gridview_tablas_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_tablas_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.gridview_tablas_faltantes2.Name = "gridview_tablas_faltantes2";
@@ -708,6 +713,7 @@
             this.gridview_tablas_diferentes.AllowUserToAddRows = false;
             this.gridview_tablas_diferentes.AllowUserToDeleteRows = false;
             this.gridview_tablas_diferentes.AllowUserToOrderColumns = true;
+            this.gridview_tablas_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_tablas_diferentes.Location = new System.Drawing.Point(9, 38);
             this.gridview_tablas_diferentes.Name = "gridview_tablas_diferentes";
@@ -782,6 +788,7 @@
             this.gridview_tablas_faltantes1.AllowUserToAddRows = false;
             this.gridview_tablas_faltantes1.AllowUserToDeleteRows = false;
             this.gridview_tablas_faltantes1.AllowUserToOrderColumns = true;
+            this.gridview_tablas_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridview_tablas_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.gridview_tablas_faltantes1.Name = "gridview_tablas_faltantes1";
@@ -849,6 +856,7 @@
             // 
             this.GridView_vistas_faltantes2.AllowUserToAddRows = false;
             this.GridView_vistas_faltantes2.AllowUserToDeleteRows = false;
+            this.GridView_vistas_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_vistas_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.GridView_vistas_faltantes2.Name = "GridView_vistas_faltantes2";
@@ -887,6 +895,7 @@
             // 
             this.GridView_vistas_diferentes.AllowUserToAddRows = false;
             this.GridView_vistas_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_vistas_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_vistas_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_vistas_diferentes.Name = "GridView_vistas_diferentes";
@@ -960,6 +969,7 @@
             this.GridView_vistas_faltantes1.AllowUserToAddRows = false;
             this.GridView_vistas_faltantes1.AllowUserToDeleteRows = false;
             this.GridView_vistas_faltantes1.AllowUserToOrderColumns = true;
+            this.GridView_vistas_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_vistas_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.GridView_vistas_faltantes1.Name = "GridView_vistas_faltantes1";
@@ -1027,6 +1037,7 @@
             // 
             this.GridView_funciones_faltantes2.AllowUserToAddRows = false;
             this.GridView_funciones_faltantes2.AllowUserToDeleteRows = false;
+            this.GridView_funciones_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_funciones_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.GridView_funciones_faltantes2.Name = "GridView_funciones_faltantes2";
@@ -1065,6 +1076,7 @@
             // 
             this.GridView_funciones_diferentes.AllowUserToAddRows = false;
             this.GridView_funciones_diferentes.AllowUserToDeleteRows = false;
+            this.GridView_funciones_diferentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_diferentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_funciones_diferentes.Location = new System.Drawing.Point(9, 38);
             this.GridView_funciones_diferentes.Name = "GridView_funciones_diferentes";
@@ -1138,6 +1150,7 @@
             this.GridView_funciones_faltantes1.AllowUserToAddRows = false;
             this.GridView_funciones_faltantes1.AllowUserToDeleteRows = false;
             this.GridView_funciones_faltantes1.AllowUserToOrderColumns = true;
+            this.GridView_funciones_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridView_funciones_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.GridView_funciones_faltantes1.Name = "GridView_funciones_faltantes1";
@@ -1577,7 +1590,7 @@
             this.groupBox_Resumen.ForeColor = System.Drawing.Color.Blue;
             this.groupBox_Resumen.Location = new System.Drawing.Point(664, 61);
             this.groupBox_Resumen.Name = "groupBox_Resumen";
-            this.groupBox_Resumen.Size = new System.Drawing.Size(173, 199);
+            this.groupBox_Resumen.Size = new System.Drawing.Size(173, 159);
             this.groupBox_Resumen.TabIndex = 127;
             this.groupBox_Resumen.TabStop = false;
             this.groupBox_Resumen.Text = "Resumen";
@@ -1590,7 +1603,7 @@
             this.txt_resumen.MaxLength = 50;
             this.txt_resumen.Multiline = true;
             this.txt_resumen.Name = "txt_resumen";
-            this.txt_resumen.Size = new System.Drawing.Size(143, 147);
+            this.txt_resumen.Size = new System.Drawing.Size(143, 124);
             this.txt_resumen.TabIndex = 3;
             // 
             // FrmComparacionServidores
