@@ -1,0 +1,48 @@
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Services\bin\Debug\Services.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Services\obj\Debug\Services.dll
+C:\Users\acalcagno\Desktop\SQLMerge\SQLMerge\Services\obj\Debug\Services.pdb
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\Services\bin\Debug\Services.dll
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\Services\bin\Debug\Services.pdb
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\Services.dll
+E:\Escritorio\SQLMerge\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\Services\bin\Debug\Services.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\Services\obj\Debug\Services.dll
+C:\Users\acalcagno\Desktop\sqlcom\sqlcom\sqlcom\SQLMerge\Services\obj\Debug\Services.pdb
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\Services\bin\Debug\Services.dll
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\Services\obj\Debug\Services.dll
+C:\Documents and Settings\azambrano\Escritorio\SQLMerge\SQLMerge\Services\obj\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\Services\bin\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\Services.pdb
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\Services\bin\Debug\Services.dll
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\Services.dll
+C:\Users\Fenix\Desktop\SQLMerge1.09\SQLMerge\SQLMerge\SQLMerge\Services\obj\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMerge\Services\bin\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMerge\Services\obj\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMerge\Services\obj\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\bin\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\bin\Debug\Services.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\obj\Debug\Services.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\obj\Debug\Services.pdb
+G:\Proyectos\SqlMerge\SQLMerge\Services\bin\Debug\Services.dll
+G:\Proyectos\SqlMerge\SQLMerge\Services\bin\Debug\Services.pdb
+G:\Proyectos\SqlMerge\SQLMerge\Services\obj\Debug\Services.dll
+G:\Proyectos\SqlMerge\SQLMerge\Services\obj\Debug\Services.pdb
+E:\Escritorio\SQLMerge2.03bbb\SQLMerge2.03bbb\SQLMerge\Services\bin\Debug\Services.dll
+E:\Escritorio\SQLMerge2.03bbb\SQLMerge2.03bbb\SQLMerge\Services\bin\Debug\Services.pdb
+E:\Escritorio\SQLMerge2.03bbb\SQLMerge2.03bbb\SQLMerge\Services\obj\Debug\ResolveAssemblyReference.cache
+E:\Escritorio\SQLMerge2.03bbb\SQLMerge2.03bbb\SQLMerge\Services\obj\Debug\Services.dll
+E:\Escritorio\SQLMerge2.03bbb\SQLMerge2.03bbb\SQLMerge\Services\obj\Debug\Services.pdb

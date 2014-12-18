@@ -1,0 +1,5 @@
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\bin\Release\Services.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\bin\Release\Services.pdb
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\obj\Release\ResolveAssemblyReference.cache
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\obj\Release\Services.dll
+C:\Users\azambrano\Desktop\SQLMergea\SQLMerge\Services\obj\Release\Services.pdb

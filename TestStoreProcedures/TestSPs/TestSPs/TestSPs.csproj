@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A38669B-6654-44C8-84DA-C8F0AA1C53D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestSPs</RootNamespace>
+    <AssemblyName>TestSPs</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SPs\ASIS_GET_Planillas_Firmas_Faltantes.cs" />
+    <Compile Include="SPs\alta_Datos_Familiares.cs" />
+    <Compile Include="SPs\GEST_Recibos_Detalle.cs" />
+    <Compile Include="SPs\CTR_ADD_Contrato_Certificado_Automatico_PASO3.cs" />
+    <Compile Include="SPs\LEG_ADD_Recepcion_DDJJ_Domicilio.cs" />
+    <Compile Include="SPs\CTR_DEL_Contratos.cs" />
+    <Compile Include="SPs\CTR_ELIMINAR_Contrato.cs" />
+    <Compile Include="SPs\CTR_UPD_Datos_Personales.cs" />
+    <Compile Include="SPs\CTR_UPD_Fecha_impresion.cs" />
+    <Compile Include="SPs\ESTR_GET_AAdm_A_Texto.cs" />
+    <Compile Include="SPs\LEG_ADD_Datos_Personales.cs" />
+    <Compile Include="SPs\LEG_ADD_RECEPCION_Otros_Documentos_Contratos.cs" />
+    <Compile Include="SPs\LEG_DEL_Legajo.cs" />
+    <Compile Include="SPs\SACC_Ins_Evaluacion.cs" />
+    <Compile Include="SPs\SACC_Ins_Horario.cs" />
+    <Compile Include="SPs\ESTR_ADD_Aadm_Areas_FE.cs" />
+    <Compile Include="SPs\SACC_Ins_Docente.cs" />
+    <Compile Include="SPs\RH_ADD_Usuarios_Modulos.cs" />
+    <Compile Include="SPs\ESTR_GET_Actos_Administrativos.cs" />
+    <Compile Include="SPs\CV_Upd_DatosPersonalesNoEmpleados.cs" />
+    <Compile Include="SPs\CV_Ins_EtapaPostulación.cs" />
+    <Compile Include="SPs\CRED_Upd_BajaCredencial.cs" />
+    <Compile Include="SPs\SACC_Ins_Inscripcion.cs" />
+    <Compile Include="SPs\SACC_Upd_Del_Docente.cs" />
+    <Compile Include="SPs\MODI_Asignar_Imagen_A_Un_Documento.cs" />
+    <Compile Include="SPs\ESTR_Copiar_Usuarios_Area_Anterior.cs" />
+    <Compile Include="SPs\CV_Ins_DatosPersonalesNoEmpleados1ravez.cs" />
+    <Compile Include="SPs\MAU_CrearPersona.cs" />
+    <Compile Include="SPs\CRED_Ins_DatosPersonalesRelevados.cs" />
+    <Compile Include="SPs\CTR_ADD_Datos_Personales.cs" />
+    <Compile Include="General\LoggerEjecucionSps.cs" />
+    <Compile Include="SPs\PLA_get_firmantes_fecha.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPs\SACC_Ins_Asistencia.cs" />
+    <Compile Include="General\StoredProcedure.cs" />
+    <Compile Include="General\Treta.cs" />
+    <Compile Include="SPs\ASIS_ALTA_Autorizaciones_Licencia.cs" />
+    <Compile Include="SPs\SACC_Upd_Del_Evaluacion.cs" />
+    <Compile Include="SPs\Update_Domicilio_Personal.cs" />
+    <Compile Include="SPs\WEB_AltaSolicitudPase.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
