@@ -18,3 +18,13 @@ C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\AsistenteDeEscaneoDeLegajos\ob
 C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\AsistenteDeEscaneoDeLegajos\obj\x86\Debug\AsistenteDeEscaneoDeLegajos.Properties.Resources.resources
 C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\AsistenteDeEscaneoDeLegajos\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Repositorio\Javier\AsistenteDeEscaneoDeLegajos\AsistenteDeEscaneoDeLegajos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\AsistenteDeEscaneoDeLegajos.exe
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\AsistenteDeEscaneoDeLegajos.pdb
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\bin\Debug\AsistenteDeEscaneoDeLegajos.exe
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\bin\Debug\AsistenteDeEscaneoDeLegajos.pdb
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\bin\Debug\General.dll
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\AsistenteDeEscaneoDeLegajos.Principal.resources
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\AsistenteDeEscaneoDeLegajos.Properties.Resources.resources
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Debug\GenerateResource.write.1.tlog
