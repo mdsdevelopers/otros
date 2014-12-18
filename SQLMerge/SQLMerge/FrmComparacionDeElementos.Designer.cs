@@ -29,38 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComparacionDeElementos));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_longitud_elemento_1 = new System.Windows.Forms.Label();
             this.lbl_longitud_elemento_2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.RichTextBox();
+            this.textBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(12, 32);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(474, 463);
-            this.textBox1.TabIndex = 0;
-           
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(495, 32);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(474, 463);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // label6
             // 
@@ -102,17 +77,33 @@
             this.lbl_longitud_elemento_2.TabIndex = 126;
             this.lbl_longitud_elemento_2.Text = "0";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 32);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(474, 463);
+            this.textBox1.TabIndex = 127;
+            this.textBox1.Text = "";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(495, 32);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(474, 463);
+            this.textBox2.TabIndex = 128;
+            this.textBox2.Text = "";
+            // 
             // FrmComparacionDeElementos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 537);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_longitud_elemento_2);
             this.Controls.Add(this.lbl_longitud_elemento_1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -120,17 +111,16 @@
             this.Text = "Comparación de elementos";
             this.Load += new System.EventHandler(this.FrmComparacionDeElementos_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_longitud_elemento_1;
         private System.Windows.Forms.Label lbl_longitud_elemento_2;
+        private System.Windows.Forms.RichTextBox textBox1;
+        private System.Windows.Forms.RichTextBox textBox2;
     }
 }
