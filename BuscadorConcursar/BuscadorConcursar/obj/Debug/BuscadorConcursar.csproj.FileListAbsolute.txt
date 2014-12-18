@@ -1,0 +1,6 @@
+C:\Repositorio\Javier\OtrosProyectosRRHH\BuscadorConcursar\BuscadorConcursar\bin\BuscadorConcursar.dll
+C:\Repositorio\Javier\OtrosProyectosRRHH\BuscadorConcursar\BuscadorConcursar\bin\BuscadorConcursar.pdb
+C:\Repositorio\Javier\OtrosProyectosRRHH\BuscadorConcursar\BuscadorConcursar\obj\Debug\ResolveAssemblyReference.cache
+C:\Repositorio\Javier\OtrosProyectosRRHH\BuscadorConcursar\BuscadorConcursar\obj\Debug\BuscadorConcursar.dll
+C:\Repositorio\Javier\OtrosProyectosRRHH\BuscadorConcursar\BuscadorConcursar\obj\Debug\BuscadorConcursar.pdb
+C:\Repositorio\Javier\OtrosProyectosRRHH\BuscadorConcursar\BuscadorConcursar\bin\Newtonsoft.Json.dll
