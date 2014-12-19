@@ -1,0 +1,10 @@
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\bin\Release\AsistenteDeEscaneoDeLegajos.exe
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\bin\Release\AsistenteDeEscaneoDeLegajos.pdb
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\bin\Release\General.dll
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\AsistenteDeEscaneoDeLegajos.Principal.resources
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\AsistenteDeEscaneoDeLegajos.Properties.Resources.resources
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\AsistenteDeEscaneoDeLegajos.exe
+C:\Repositorio\Javier\OtrosProyectosRRHH\AsistenteDeEscaneoDeLegajos\Proyecto\obj\x86\Release\AsistenteDeEscaneoDeLegajos.pdb

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Services;
-using System.Web.Script.Services;
 using Newtonsoft.Json;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Script.Services;
 
 namespace BuscadorConcursar
 {
@@ -24,31 +23,46 @@ namespace BuscadorConcursar
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string BuscarPostulacionesPorDocumento(int documento)
         {
-            var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConection"].ConnectionString);
-            conn.Open();
-            var un_comando = conn.CreateCommand();
-            un_comando.CommandText = "BUCO_BuscarPostulacionesPorDocumento";
-            un_comando.CommandType = System.Data.CommandType.StoredProcedure;
-            un_comando.Parameters.Add(new SqlParameter("documento", documento));
-
-            var resultado_consulta = un_comando.ExecuteReader();
-            var postulaciones = new List<Postulacion>();
-            
-            while (resultado_consulta.Read())
+            try
             {
-                postulaciones.Add(new Postulacion(
-                (int)resultado_consulta["Nro Doc"],
-                (string)resultado_consulta["Tipo Doc"],
-                (string)resultado_consulta["Apellido"],
-                (string)resultado_consulta["Nombre"],
-                (string)resultado_consulta["Puesto"],
-                (string)resultado_consulta["Estado"],
-                (resultado_consulta["Observacion"] is DBNull) ? "" : (string)resultado_consulta["Observacion"],
-                (string)resultado_consulta["NombrePDF"]));
-            }
 
-            conn.Close();
-            return JsonConvert.SerializeObject(postulaciones);
+                var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConection"].ConnectionString);
+                conn.Open();
+                var un_comando = conn.CreateCommand();
+                un_comando.CommandText = "BUCO_BuscarPostulacionesPorDocumento";
+                un_comando.CommandType = System.Data.CommandType.StoredProcedure;
+                un_comando.Parameters.Add(new SqlParameter("documento", documento));
+
+                var resultado_consulta = un_comando.ExecuteReader();
+                var postulaciones = new List<Postulacion>();
+
+                while (resultado_consulta.Read())
+                {
+                    postulaciones.Add(new Postulacion(
+                    (int)resultado_consulta["Nro_Doc"],
+                    (string)resultado_consulta["Tipo_Doc"],
+                    (string)resultado_consulta["Apellido"],
+                    (string)resultado_consulta["Nombre"],
+                    (string)resultado_consulta["Puesto"],
+                    (string)resultado_consulta["Estado"],
+                    (resultado_consulta["Observacion"] is DBNull) ? "" : (string)resultado_consulta["Observacion"],
+                    (string)resultado_consulta["NombrePDF"]));
+                }
+
+                conn.Close();
+                return JsonConvert.SerializeObject(postulaciones);
+            }
+            catch (Exception e)
+            {
+                return e.InnerException.Message;
+            }
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string Prueba(int numero)
+        {
+            return "FUNCIONA FUNCIONA!!!!! mandaste:" + numero;
         }
     }
 }
