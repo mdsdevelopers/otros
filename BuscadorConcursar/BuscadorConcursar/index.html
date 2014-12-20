@@ -85,7 +85,7 @@
                         }
                         panel_encontrados.show();
 
-                        panel_encontrados.find("#lbl_apellido").text(postulaciones[0].Apellido );
+                        panel_encontrados.find("#lbl_apellido").text(postulaciones[0].Apellido);
                         panel_encontrados.find("#lbl_nombre").text(postulaciones[0].Nombres);
                         panel_encontrados.find("#lbl_tipo_doc").text(postulaciones[0].TipoDocumento);
                         panel_encontrados.find("#lbl_nro_doc").text(postulaciones[0].NroDocumento);
@@ -94,7 +94,11 @@
                         panel_puestos.empty();
                         var descripcion_ultimo_puesto = "";
                         var vista_ultimo_puesto;
-                        postulaciones.forEach(function (postulacion) {
+
+//                        for (var i = 0, len = postulaciones.length; i < len; ++i) //{
+//                            var postulacion = postulaciones[i];
+                         postulaciones.forEach(function (postulacion)
+                        {
                             if (postulacion.DescripcionPuesto != descripcion_ultimo_puesto) {
                                 vista_ultimo_puesto = $("#plantillas .vista_puesto").clone();
                                 vista_ultimo_puesto.find("#lbl_nombre_puesto").text(postulacion.DescripcionPuesto);
@@ -106,7 +110,7 @@
                             vista_acta.find("#lbl_observacion").text(postulacion.Observaciones);
                             vista_acta.find("#lnk_acta").attr("href", "Actas/" + postulacion.Acta);
                             vista_ultimo_puesto.find("#cont_actas").append(vista_acta);
-                        });
+                        } );
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         console.log("error")
