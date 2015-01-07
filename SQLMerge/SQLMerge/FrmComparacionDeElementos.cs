@@ -35,43 +35,61 @@ namespace SQLMerge
 
 
 
+
+
+        public string ReplaceFirst(string text, string search, string replace)
+        {
+            int pos = text.ToUpper().IndexOf(search.ToUpper());
+            if (pos < 0)
+            {
+                return text;
+            }
+            return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+        }
+
+
+
+
+
         public void MostrarElementos(string elemento1, string elemento2)
         {
             textBox1.ShortcutsEnabled = true;
             textBox2.ShortcutsEnabled = true;
-            textBox1.Text = elemento1;
-            lbl_longitud_elemento_1.Text = elemento1.Length.ToString();  
-            textBox2.Text = elemento2;
+
+            string first1 = new string(elemento1.TakeWhile(c => c != '\n').ToArray());
+
+
+            if (elemento1.ToUpper().Contains("CREATE TABLE"))
+            {
+                textBox1.Text = elemento1;
+            }
+            else
+            {
+                string texto1 = ReplaceFirst(elemento1, "CREATE", "ALTER");
+                textBox1.Text = texto1;
+             
+            }
+
+            if (elemento2.ToUpper().Contains("CREATE TABLE"))
+            {
+                textBox2.Text = elemento2;
+            }
+            else
+            {
+                string texto2 = ReplaceFirst(elemento2, "CREATE", "ALTER");
+                textBox2.Text = texto2;
+
+            }
+
+         
+            //string texto2 = ReplaceFirst(elemento2, "CREATE", "ALTER");
+            //textBox2.Text = texto2;
+          
+            lbl_longitud_elemento_1.Text = elemento1.Length.ToString();
+          
             lbl_longitud_elemento_2.Text = elemento2.Length.ToString();
 
-            //foreach (var linea_texto1 in textBox1.Lines)
-            //{
-
-            //    foreach (var linea_texto2 in textBox2.Lines)
-            //    {
-
-
-            //        if (linea_texto1 != linea_texto2)
-            //        {
-
-            //            int blockStart = 0;
-            //            int blockLength =linea_texto1.Length;
-                      
-            //            textBox1.SelectionStart = blockStart;
-            //            textBox1.SelectionLength = blockLength;
-            //            textBox1.SelectionBackColor = Color.Yellow;
-            //        }
-                    
-            //    }
-                
-            //}
-
-            
-            //int blockStart = 1; //arbitrary numbers to test
-            //int blockLength = 15;
-            //textBox1.SelectionStart = blockStart;
-            //textBox1.SelectionLength = blockLength;
-            //textBox1.SelectionBackColor = Color.Yellow;
+           
 
         }
 

@@ -330,7 +330,12 @@ namespace AppLogic
                 throw ex;
             }
        }
-              
+
+
+      
+
+
+
         public string ObtenerTextoDeProcedimiento(string nombre_procedimiento, string nombre_servidor)
         {
             try

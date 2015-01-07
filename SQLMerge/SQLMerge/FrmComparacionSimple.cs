@@ -1860,6 +1860,16 @@ namespace SQLMerge
         }
 
 
+        private string ReplaceFirst(string text, string search, string replace)
+        {
+            int pos = text.ToUpper().IndexOf(search.ToUpper());
+            if (pos < 0)
+            {
+                return text;
+            }
+            return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+        }
+
 
         private void GenerarScriptProcedimientosDiferentesMerge(List<StoredProcedure> lista_de_procedimientos)
         {
@@ -1876,14 +1886,14 @@ namespace SQLMerge
                 {
                     if (UsarAutenticacionDeWindows())
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
                                       
                     }
                     else
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor(), Usuario(), Password()), "Create", "Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeProcedimiento(procedimiento.Nombre, Servidor(), Usuario(), Password()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
                     }
                 }
 
@@ -1920,14 +1930,14 @@ namespace SQLMerge
                 {
                     if (UsarAutenticacionDeWindows())
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeTrigger(trigger.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeTrigger(trigger.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeTrigger(trigger.Nombre, Servidor()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeTrigger(trigger.Nombre, Servidor()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
 
                     }
                     else
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeTrigger(trigger.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeTrigger(trigger.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeTrigger(trigger.Nombre, Servidor(), Usuario(), Password()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeTrigger(trigger.Nombre, Servidor(), Usuario(), Password()), "Create", "Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
                     }
                 }
 
@@ -2008,14 +2018,14 @@ namespace SQLMerge
                 {
                     if (UsarAutenticacionDeWindows())
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeVista(vista.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeVista(vista.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeVista(vista.Nombre, Servidor()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeVista(vista.Nombre, Servidor()), "Create", "Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
 
                     }
                     else
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeVista(vista.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeVista(vista.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeVista(vista.Nombre, Servidor(), Usuario(), Password()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeVista(vista.Nombre, Servidor(), Usuario(), Password()), "Create", "Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
                     }
                 }
 
@@ -2050,14 +2060,14 @@ namespace SQLMerge
                 {
                     if (UsarAutenticacionDeWindows())
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeFuncion(funcion.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeFuncion(funcion.Nombre, Servidor()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeFuncion(funcion.Nombre, Servidor()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeFuncion(funcion.Nombre, Servidor()),"Create", "Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
 
                     }
                     else
                     {
-                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + base_1.ObtenerTextoDeFuncion(funcion.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
-                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + base_2.ObtenerTextoDeFuncion(funcion.Nombre, Servidor(), Usuario(), Password()) + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado1 = script_generado1 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_1.ObtenerTextoDeFuncion(funcion.Nombre, Servidor(), Usuario(), Password()),"Create","Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
+                        script_generado2 = script_generado2 + "GO" + "\r\n" + "\r\n" + ReplaceFirst(base_2.ObtenerTextoDeFuncion(funcion.Nombre, Servidor(), Usuario(), Password()), "Create", "Alter") + "\r\n" + "\r\n" + "GO" + "\r\n";
                     }
                 }
 
