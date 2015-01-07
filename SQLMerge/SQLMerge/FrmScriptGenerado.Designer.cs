@@ -69,6 +69,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmScriptGenerado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scripts";
             this.Load += new System.EventHandler(this.FrmScriptGenerado_Load);
             this.ResumeLayout(false);
