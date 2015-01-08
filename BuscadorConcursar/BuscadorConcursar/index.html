@@ -3,6 +3,8 @@
         <title>
             Buscador de admisión Concursar
         </title>
+       
+
         <link rel="Stylesheet" href="buscador.css" type="text/css"/>
     </head>
     <body>
@@ -11,24 +13,39 @@
                <!-- <div id="titulo">Listado de Admitidos y No Admitidos</div>
                 <div id="copete">A través de este buscador vas a poder acceder a la informacón necesaria para conocer el estado de tu postulación al Concurso de Planta Permanente</div>-->
                 <input type="text" id="txt_buscar" placeholder="Buscar por DNI" />    
-		        <input type="button" id="btn_buscar" value="Buscar">
+		        <input type="button" id="btn_buscar" value="Buscar"/>
             </div>
             <div id="panel_sin_resultados">
                 No se encontraron postulantes con ese documento
             </div>
+             <br>	
             <div id="panel_encontrados">
                 <div id="lbl_apellido"></div>
+                 
+                <div id="lbl_nombre" > </div>
+                <div id="lbl_tipo_doc"></div>
+                  
+                <div id="lbl_nro_doc"></div> 
+
+                   <br>	
+                <div id="panel_puestos">
+
+<!--
                 ,
                 <div id="lbl_nombre"></div>
                 <div id="lbl_tipo_doc"></div>
                 :
                 <div id="lbl_nro_doc"></div>
                 <div id="panel_puestos">
+			        -->
+
 			        
 		        </div>		
+                
+                             
             </div>		    		
 	    </div>
-    </body>
+       
     <div id="plantillas">
         <div class="vista_puesto">    
             <div id="lbl_nombre_puesto"></div>        
@@ -43,7 +60,11 @@
         </div>
     </div>
 
+    </body>
+    
+
     <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type ="text/javascript" src="json3.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var btn_buscar = $("#btn_buscar");
@@ -85,9 +106,9 @@
                         }
                         panel_encontrados.show();
 
-                        panel_encontrados.find("#lbl_apellido").text(postulaciones[0].Apellido);
+                        panel_encontrados.find("#lbl_apellido").text(postulaciones[0].Apellido + ",  ");
                         panel_encontrados.find("#lbl_nombre").text(postulaciones[0].Nombres);
-                        panel_encontrados.find("#lbl_tipo_doc").text(postulaciones[0].TipoDocumento);
+                        panel_encontrados.find("#lbl_tipo_doc").text(postulaciones[0].TipoDocumento + ":  ");
                         panel_encontrados.find("#lbl_nro_doc").text(postulaciones[0].NroDocumento);
 
                         var panel_puestos = panel_encontrados.find("#panel_puestos");
@@ -95,12 +116,14 @@
                         var descripcion_ultimo_puesto = "";
                         var vista_ultimo_puesto;
 
-//                        for (var i = 0, len = postulaciones.length; i < len; ++i) //{
-//                            var postulacion = postulaciones[i];
-                         postulaciones.forEach(function (postulacion)
+                        for (var i = 0, len = postulaciones.length; i < len; ++i) 
                         {
-                            if (postulacion.DescripcionPuesto != descripcion_ultimo_puesto) {
-                                vista_ultimo_puesto = $("#plantillas .vista_puesto").clone();
+                           var postulacion = postulaciones[i];
+                        // postulaciones.forEach(function (postulacion)
+                        //{
+                           if (postulacion.DescripcionPuesto != descripcion_ultimo_puesto) 
+                        {
+                                    vista_ultimo_puesto = $("#plantillas .vista_puesto").clone();
                                 vista_ultimo_puesto.find("#lbl_nombre_puesto").text(postulacion.DescripcionPuesto);
                                 descripcion_ultimo_puesto = postulacion.DescripcionPuesto;
                                 panel_puestos.append(vista_ultimo_puesto);
@@ -110,7 +133,7 @@
                             vista_acta.find("#lbl_observacion").text(postulacion.Observaciones);
                             vista_acta.find("#lnk_acta").attr("href", "Actas/" + postulacion.Acta);
                             vista_ultimo_puesto.find("#cont_actas").append(vista_acta);
-                        } );
+                        }//);
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         console.log("error")
