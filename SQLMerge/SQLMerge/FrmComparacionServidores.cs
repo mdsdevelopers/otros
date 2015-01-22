@@ -4028,6 +4028,323 @@ namespace SQLMerge
 
         }
 
+        private void GridView_triggers_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_triggers_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_triggers_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Trigger trigger_en_fila = new Trigger(GridView_triggers_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string trigger2 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        trigger2 = base_1.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        trigger2 = base_1.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+                    AbrirFormularioDeScript(trigger2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+        }
+
+        private void gridview_tablas_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (gridview_tablas_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (gridview_tablas_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Tabla tabla_en_fila = new Tabla(gridview_tablas_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string tabla2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        tabla2 = base_2.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        tabla2 = base_2.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+                    AbrirFormularioDeScript(tabla2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+        }
+
+        private void gridview_tablas_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (gridview_tablas_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (gridview_tablas_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Tabla tabla_en_fila = new Tabla(gridview_tablas_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string tabla1 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        tabla1 = base_1.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        tabla1 = base_1.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+                    AbrirFormularioDeScript(tabla1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+        }
+
+        private void GridView_vistas_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_vistas_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_vistas_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Vista vista_en_fila = new Vista(GridView_vistas_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string vista2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        vista2 = base_2.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        vista2 = base_2.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+                    AbrirFormularioDeScript(vista2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+        }
+
+        private void GridView_vistas_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (GridView_vistas_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_vistas_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Vista vista_en_fila = new Vista(GridView_vistas_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string vista1 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        vista1 = base_1.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        vista1 = base_1.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+                    AbrirFormularioDeScript(vista1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+        }
+
+        private void GridView_funciones_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_funciones_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_funciones_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Funcion funcion_en_fila = new Funcion(GridView_funciones_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string funcion1 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        funcion1 = base_1.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        funcion1 = base_1.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+                    AbrirFormularioDeScript(funcion1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+
+        }
+
+        private void GridView_funciones_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_funciones_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_funciones_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Funcion funcion_en_fila = new Funcion(GridView_funciones_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string funcion2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        funcion2 = base_2.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        funcion2 = base_2.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+                    AbrirFormularioDeScript(funcion2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+        }
+
 
            
     }

@@ -531,6 +531,7 @@
             this.GridView_triggers_faltantes2.ReadOnly = true;
             this.GridView_triggers_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.GridView_triggers_faltantes2.TabIndex = 114;
+            this.GridView_triggers_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_triggers_faltantes2_CellContentDoubleClick);
             this.GridView_triggers_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_triggers_faltantes2_CellPainting);
             this.GridView_triggers_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_triggers_faltantes2_KeyDown);
             // 
@@ -733,6 +734,7 @@
             this.gridview_tablas_faltantes2.ReadOnly = true;
             this.gridview_tablas_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.gridview_tablas_faltantes2.TabIndex = 114;
+            this.gridview_tablas_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_tablas_faltantes2_CellContentDoubleClick);
             this.gridview_tablas_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridview_tablas_faltantes2_CellPainting);
             this.gridview_tablas_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridview_tablas_faltantes2_KeyDown);
             // 
@@ -857,6 +859,7 @@
             this.gridview_tablas_faltantes1.ReadOnly = true;
             this.gridview_tablas_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.gridview_tablas_faltantes1.TabIndex = 114;
+            this.gridview_tablas_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_tablas_faltantes1_CellContentDoubleClick);
             this.gridview_tablas_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridview_tablas_faltantes1_CellPainting);
             this.gridview_tablas_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridview_tablas_faltantes1_KeyDown);
             // 
@@ -934,6 +937,7 @@
             this.GridView_vistas_faltantes2.ReadOnly = true;
             this.GridView_vistas_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.GridView_vistas_faltantes2.TabIndex = 114;
+            this.GridView_vistas_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_vistas_faltantes2_CellContentDoubleClick);
             this.GridView_vistas_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_vistas_faltantes2_CellPainting);
             this.GridView_vistas_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_vistas_faltantes2_KeyDown);
             // 
@@ -1056,6 +1060,7 @@
             this.GridView_vistas_faltantes1.ReadOnly = true;
             this.GridView_vistas_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.GridView_vistas_faltantes1.TabIndex = 114;
+            this.GridView_vistas_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_vistas_faltantes1_CellContentDoubleClick);
             this.GridView_vistas_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_vistas_faltantes1_CellPainting);
             this.GridView_vistas_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_vistas_faltantes1_KeyDown);
             // 
@@ -1133,6 +1138,7 @@
             this.GridView_funciones_faltantes2.ReadOnly = true;
             this.GridView_funciones_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.GridView_funciones_faltantes2.TabIndex = 114;
+            this.GridView_funciones_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_funciones_faltantes2_CellContentDoubleClick);
             this.GridView_funciones_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_funciones_faltantes2_CellPainting);
             this.GridView_funciones_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_funciones_faltantes2_KeyDown);
             // 
@@ -1255,6 +1261,7 @@
             this.GridView_funciones_faltantes1.ReadOnly = true;
             this.GridView_funciones_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.GridView_funciones_faltantes1.TabIndex = 114;
+            this.GridView_funciones_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_funciones_faltantes1_CellContentDoubleClick);
             this.GridView_funciones_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_funciones_faltantes1_CellPainting);
             this.GridView_funciones_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_funciones_faltantes1_KeyDown);
             // 
