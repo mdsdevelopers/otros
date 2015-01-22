@@ -20,9 +20,11 @@ namespace SQLMerge
 
         string mensaje_resumen = "";
             IEnumerable<StoredProcedure> proc_faltantes_grilla1; 
-            IEnumerable<StoredProcedure> proc_faltantes_grilla2; 
+            IEnumerable<StoredProcedure> proc_faltantes_grilla2;
 
-        private void DeshabilitarControlesPorConexion1()
+
+        #region Deshabilitar Controles por conexión
+            private void DeshabilitarControlesPorConexion1()
         {
 
             txt_password.Enabled = false;
@@ -41,6 +43,9 @@ namespace SQLMerge
 
 
         }
+
+        #endregion
+
 
         private bool FaltaIndicarDatosDeConexion()
         {
@@ -166,6 +171,7 @@ namespace SQLMerge
         }
 
 
+        #region Valores Devueltos de campos
 
         private bool UsarAutenticacionDeWindowsServer1()
         {
@@ -250,6 +256,9 @@ namespace SQLMerge
         }
 
 
+        #endregion 
+
+
 
         private bool EstaVacio(string elemento)
         {
@@ -262,7 +271,7 @@ namespace SQLMerge
 
 
 
-    
+        #region Mensajes
 
         private string MensajeDeConexionCorrecta()
         {
@@ -296,9 +305,11 @@ namespace SQLMerge
         {
             return "Debe indicar la base de datos.";
         }
+        
+        #endregion 
 
 
-
+        #region Habilitador de controles según conexión
         private void check_autenticacion_CheckedChanged(object sender, EventArgs e)
         {
             if (check_autenticacion.AutoCheck == true)
@@ -342,6 +353,11 @@ namespace SQLMerge
 
 
         }
+
+        #endregion
+
+
+
 
         private bool CompararVistas()
         {
@@ -395,22 +411,37 @@ namespace SQLMerge
             gridview_proc_faltantes1.DataSource = null;
             gridview_proc_faltantes2.DataSource = null;
 
+
+            gridview_proc_faltantes2.Columns["Correr2"].DisplayIndex = 2;
+
             GridView_triggers_diferentes.DataSource = null;
             GridView_triggers_faltantes1.DataSource = null;
             GridView_triggers_faltantes2.DataSource = null;
+
+            GridView_funciones_faltantes2.Columns["CorrerTr2"].DisplayIndex = 2;
 
             gridview_tablas_faltantes1.DataSource = null;
             gridview_tablas_faltantes2.DataSource = null;
             gridview_tablas_diferentes.DataSource = null;
 
+            gridview_tablas_faltantes2.Columns["CorrerTb2"].DisplayIndex = 2;
+
             GridView_vistas_diferentes.DataSource = null;
             GridView_vistas_faltantes1.DataSource = null;
             GridView_vistas_faltantes2.DataSource = null;
+
+
+            GridView_vistas_faltantes2.Columns["CorrerVw2"].DisplayIndex = 2;
+           
+            GridView_funciones_faltantes2.ColumnCount = 2;
+       
+
 
             GridView_funciones_diferentes.DataSource = null;
             GridView_funciones_faltantes1.DataSource = null;
             GridView_funciones_faltantes2.DataSource = null;
 
+            GridView_funciones_faltantes2.Columns["Correr2"].DisplayIndex = 2;
 
             lbl_proc_faltantes_de_base_1.Text = "0";
             lbl_proc_faltantes_de_base_2.Text = "0";
@@ -424,6 +455,9 @@ namespace SQLMerge
             lbl_triggers_faltantes2.Text = "0";
             lbl_triggers_diferentes.Text = "0";
 
+          
+
+
             lbl_vistas_diferentes.Text = "0";
             lbl_vistas_faltantes1.Text = "0";
             lbl_vistas_faltantes2.Text = "0";
@@ -436,6 +470,13 @@ namespace SQLMerge
 
           
         }
+
+
+
+
+
+
+
         private void btn_conectar2_Click(object sender, EventArgs e)
         {
 
@@ -873,9 +914,12 @@ namespace SQLMerge
             var result2 = funcion2.Except(funcion1).ToList();
             var result3 = funcion1.Except(funcion2).ToList();
 
-            GridView_funciones_faltantes1.AutoResizeColumns();
-            GridView_funciones_faltantes2.AutoResizeColumns();
 
+
+           GridView_funciones_faltantes1.AutoResizeColumns();
+           GridView_funciones_faltantes2.AutoResizeColumns();
+
+           // GridView_funciones_faltantes1.Columns.Add(btn);
 
             IEnumerable<Funcion> except = funcion2.Except(funcion1, new Funcion());
             IEnumerable<Funcion> except2 = funcion1.Except(funcion2, new Funcion());
@@ -883,6 +927,7 @@ namespace SQLMerge
             GridView_funciones_faltantes1.DataSource = except.ToList();
             GridView_funciones_faltantes2.DataSource = except2.ToList();
 
+            GridView_funciones_faltantes2.Columns["Correr2"].DisplayIndex = 1;
           
             lbl_funciones_faltantes1.Text = except.Count().ToString();
             lbl_funciones_faltantes2.Text = except2.Count().ToString();
@@ -1041,7 +1086,7 @@ namespace SQLMerge
             lbl_vistas_faltantes1.Text = except.Count().ToString();
             lbl_vistas_faltantes2.Text = except2.Count().ToString();
 
-
+            GridView_vistas_faltantes2.Columns["CorrerVw2"].DisplayIndex = 1;
         }
 
        
@@ -1212,7 +1257,7 @@ namespace SQLMerge
             GridView_triggers_faltantes1.DataSource = except.ToList();
             GridView_triggers_faltantes2.DataSource = except2.ToList();
 
-
+            GridView_triggers_faltantes2.Columns["CorrerTr2"].DisplayIndex = 1;
 
             //GridView_triggers_faltantes1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
             //GridView_triggers_faltantes2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.Fill);
@@ -1383,6 +1428,9 @@ namespace SQLMerge
 
             gridview_tablas_faltantes1.DataSource = except.ToList();
             gridview_tablas_faltantes2.DataSource = except2.ToList();
+
+
+            gridview_tablas_faltantes2.Columns["CorrerTb2"].DisplayIndex = 1;
 
             gridview_tablas_faltantes1.AutoResizeColumns();
             gridview_tablas_faltantes2.AutoResizeColumns();
@@ -1572,7 +1620,9 @@ namespace SQLMerge
 
             gridview_proc_faltantes1.DataSource = except.ToList();
             gridview_proc_faltantes2.DataSource = except2.ToList();
-            
+
+            gridview_proc_faltantes2.Columns["CorrerSp2"].DisplayIndex = 1;
+
             gridview_proc_faltantes1.AutoResizeColumns();
             gridview_proc_faltantes2.AutoResizeColumns();
 
@@ -2187,7 +2237,7 @@ namespace SQLMerge
                 foreach (DataGridViewRow Fila in gridview_proc_faltantes1.Rows)
                 {      
 
-                StoredProcedure procedimiento_en_fila = new StoredProcedure(Fila.Cells[0].Value.ToString());
+                StoredProcedure procedimiento_en_fila = new StoredProcedure(Fila.Cells[1].Value.ToString());
                 lista_de_procedimientos.Add(procedimiento_en_fila);
                 
                 }
@@ -2223,7 +2273,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in gridview_proc_faltantes2.Rows)
             {
 
-                StoredProcedure procedimiento_en_fila = new StoredProcedure(Fila.Cells[0].Value.ToString());
+                StoredProcedure procedimiento_en_fila = new StoredProcedure(Fila.Cells[1].Value.ToString());
                 lista_de_procedimientos.Add(procedimiento_en_fila);
 
             }
@@ -2248,7 +2298,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in GridView_triggers_faltantes1.Rows)
             {
 
-                Trigger trigger_en_fila = new Trigger(Fila.Cells[0].Value.ToString());
+                Trigger trigger_en_fila = new Trigger(Fila.Cells[1].Value.ToString());
                 lista_de_triggers.Add(trigger_en_fila);
 
             }
@@ -2429,7 +2479,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in GridView_triggers_faltantes2.Rows)
             {
 
-                Trigger trigger_en_fila = new Trigger(Fila.Cells[0].Value.ToString());
+                Trigger trigger_en_fila = new Trigger(Fila.Cells[1].Value.ToString());
                 lista_de_triggers.Add(trigger_en_fila);
 
             }
@@ -2454,7 +2504,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in gridview_tablas_faltantes1.Rows)
             {
 
-                Tabla tabla_en_fila = new Tabla(Fila.Cells[0].Value.ToString());
+                Tabla tabla_en_fila = new Tabla(Fila.Cells[1].Value.ToString());
                 lista_de_tablas.Add(tabla_en_fila);
 
             }
@@ -2481,7 +2531,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in GridView_vistas_faltantes1.Rows)
             {
 
-                Vista vista_en_fila = new Vista(Fila.Cells[0].Value.ToString());
+                Vista vista_en_fila = new Vista(Fila.Cells[1].Value.ToString());
                 lista_de_vistas.Add(vista_en_fila);
 
             }
@@ -2507,7 +2557,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in GridView_vistas_faltantes2.Rows)
             {
 
-                Vista vista_en_fila = new Vista(Fila.Cells[0].Value.ToString());
+                Vista vista_en_fila = new Vista(Fila.Cells[1].Value.ToString());
                 lista_de_vistas.Add(vista_en_fila);
 
             }
@@ -2534,7 +2584,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in GridView_funciones_faltantes1.Rows)
             {
 
-                Funcion funcion_en_fila = new Funcion(Fila.Cells[0].Value.ToString());
+                Funcion funcion_en_fila = new Funcion(Fila.Cells[1].Value.ToString());
                 lista_de_funciones.Add(funcion_en_fila);
 
             }
@@ -2559,7 +2609,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in GridView_funciones_faltantes2.Rows)
             {
 
-                Funcion funcion_en_fila = new Funcion(Fila.Cells[0].Value.ToString());
+                Funcion funcion_en_fila = new Funcion(Fila.Cells[1].Value.ToString());
                 lista_de_funciones.Add(funcion_en_fila);
 
             }
@@ -2739,7 +2789,7 @@ namespace SQLMerge
             foreach (DataGridViewRow Fila in gridview_tablas_faltantes2.Rows)
             {
 
-                Tabla tabla_en_fila = new Tabla(Fila.Cells[0].Value.ToString());
+                Tabla tabla_en_fila = new Tabla(Fila.Cells[1].Value.ToString());
                 lista_de_tablas.Add(tabla_en_fila);
 
             }
@@ -2747,33 +2797,7 @@ namespace SQLMerge
             GenerarScriptTablasFaltantesServidor2(lista_de_tablas);
         }
 
-        private void gridview_proc_faltantes1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (gridview_proc_faltantes1.Rows.Count==0)
-            {
-                return;
-            }
-
-            int li_index = 0;
-            if (e.KeyCode == Keys.Delete) {
-            e.Handled = true;
-            li_index = ((DataGridView)sender).CurrentRow.Index;
-
-            List<StoredProcedure> lista_proc = new List<StoredProcedure>();
-
-            foreach (DataGridViewRow ROW in gridview_proc_faltantes1.Rows)
-            {
-                StoredProcedure stored = new StoredProcedure(ROW.Cells[0].Value.ToString());
-                lista_proc.Add(stored);               
-            }
-                lista_proc.RemoveAll(p=>p.Nombre == gridview_proc_faltantes1.Rows[li_index].Cells[0].Value.ToString());
-
-                gridview_proc_faltantes1.DataSource = null;
-                gridview_proc_faltantes1.DataSource = lista_proc;
-                gridview_proc_faltantes1.AutoResizeColumns();
-                lbl_proc_faltantes_de_base_1.Text = gridview_proc_faltantes1.Rows.Count.ToString();
-            }
-        }
+    
 
 
        private string DesestimarCaracteresDespreciables(string original)
@@ -2786,8 +2810,40 @@ namespace SQLMerge
        }
 
 
+       #region Borrar fila con tecla SUPR
 
-        private void gridview_proc_faltantes2_KeyDown(object sender, KeyEventArgs e)
+
+       private void gridview_proc_faltantes1_KeyDown(object sender, KeyEventArgs e)
+       {
+           if (gridview_proc_faltantes1.Rows.Count == 0)
+           {
+               return;
+           }
+
+           int li_index = 0;
+           if (e.KeyCode == Keys.Delete)
+           {
+               e.Handled = true;
+               li_index = ((DataGridView)sender).CurrentRow.Index;
+
+               List<StoredProcedure> lista_proc = new List<StoredProcedure>();
+
+               foreach (DataGridViewRow ROW in gridview_proc_faltantes1.Rows)
+               {
+                   StoredProcedure stored = new StoredProcedure(ROW.Cells[0].Value.ToString());
+                   lista_proc.Add(stored);
+               }
+               lista_proc.RemoveAll(p => p.Nombre == gridview_proc_faltantes1.Rows[li_index].Cells[0].Value.ToString());
+
+               gridview_proc_faltantes1.DataSource = null;
+               gridview_proc_faltantes1.DataSource = lista_proc;
+               gridview_proc_faltantes1.AutoResizeColumns();
+               lbl_proc_faltantes_de_base_1.Text = gridview_proc_faltantes1.Rows.Count.ToString();
+           }
+       }
+
+
+       private void gridview_proc_faltantes2_KeyDown(object sender, KeyEventArgs e)
         {
           
                 if (gridview_proc_faltantes2.Rows.Count == 0)
@@ -3063,11 +3119,15 @@ namespace SQLMerge
 
         }
 
+
+        #endregion
+
         private void gridview_tablas_diferentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+        #region Script Procedimientos diferentes
 
         private void GenerarScriptProcedimientosDiferentesMerge(List<StoredProcedure> lista_de_procedimientos)
         {
@@ -3398,8 +3458,573 @@ namespace SQLMerge
 
         }
 
+
+#endregion
+
+
         private void GridView_proc_diferentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+
+        #region Celda con botón
+
+        private void gridview_tablas_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+
+            if (e.ColumnIndex >= 0 && this.gridview_tablas_faltantes1.Columns[e.ColumnIndex].Name == "CorrerTb1" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_tablas_faltantes1.Rows[e.RowIndex].Cells["CorrerTb1"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_tablas_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_tablas_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void gridview_tablas_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+
+            if (e.ColumnIndex >= 0 && this.gridview_tablas_faltantes2.Columns[e.ColumnIndex].Name == "CorrerTb2" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_tablas_faltantes2.Rows[e.RowIndex].Cells["CorrerTb2"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\fleder.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_tablas_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_tablas_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+        }
+
+
+        private void GridView_funciones_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.GridView_funciones_faltantes1.Columns[e.ColumnIndex].Name == "Correr" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_funciones_faltantes1.Rows[e.RowIndex].Cells["Correr"] as DataGridViewButtonCell;
+               
+                
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_funciones_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_funciones_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void GridView_funciones_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+
+            if (e.ColumnIndex >= 0 && this.GridView_funciones_faltantes2.Columns[e.ColumnIndex].Name == "Correr2" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_funciones_faltantes2.Rows[e.RowIndex].Cells["Correr2"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\fleder.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_funciones_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_funciones_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+
+
+
+
+        }
+
+        private void gridview_proc_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.gridview_proc_faltantes1.Columns[e.ColumnIndex].Name == "CorrerSp1" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_proc_faltantes1.Rows[e.RowIndex].Cells["CorrerSp1"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_proc_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_proc_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void gridview_proc_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex >= 0 && this.gridview_proc_faltantes2.Columns[e.ColumnIndex].Name == "CorrerSp2" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_proc_faltantes2.Rows[e.RowIndex].Cells["CorrerSp2"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\fleder.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_proc_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_proc_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void GridView_triggers_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex >= 0 && this.GridView_triggers_faltantes1.Columns[e.ColumnIndex].Name == "CorrerTr1" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_triggers_faltantes1.Rows[e.RowIndex].Cells["CorrerTr1"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_triggers_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_triggers_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+
+
+
+        }
+
+        private void GridView_triggers_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex >= 0 && this.GridView_triggers_faltantes2.Columns[e.ColumnIndex].Name == "CorrerTr2" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_triggers_faltantes2.Rows[e.RowIndex].Cells["CorrerTr2"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\fleder.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_triggers_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_triggers_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void GridView_vistas_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex >= 0 && this.GridView_vistas_faltantes1.Columns[e.ColumnIndex].Name == "CorrerVw1" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_vistas_faltantes1.Rows[e.RowIndex].Cells["CorrerVw1"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_vistas_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_vistas_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void GridView_vistas_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex >= 0 && this.GridView_vistas_faltantes2.Columns[e.ColumnIndex].Name == "CorrerVw2" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_vistas_faltantes2.Rows[e.RowIndex].Cells["CorrerVw2"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\fleder.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_vistas_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_vistas_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+        }
+
+
+        #endregion
+
+        #region Obtener texto de elemento seleccionado en grilla
+
+        private void gridview_proc_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            if (gridview_proc_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (gridview_proc_faltantes1.CurrentCell.Value==null)
+                    {
+                        return;
+                    }
+
+                StoredProcedure stored_en_fila = new StoredProcedure(gridview_proc_faltantes1.CurrentCell.Value.ToString());
+                
+                BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                string proced2 = "";
+                if (UsarAutenticacionDeWindowsServer2())
+                {
+                    proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
+                }
+                else
+                {
+                    proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                }
+                    
+                AbrirFormularioDeScript(proced2);
+                }
+                  catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            
+        }
+
+        
+        private void gridview_proc_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (gridview_proc_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (gridview_proc_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    StoredProcedure stored_en_fila = new StoredProcedure(gridview_proc_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string proced1 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        proced1 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        proced1 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor(), Usuario2(), Password2());
+                    }
+
+                    AbrirFormularioDeScript(proced1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+        }
+
+
+
+
+
+
+
+        #endregion
+
+        private void gridview_proc_faltantes1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gridview_proc_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          try 
+	      {	        
+           if (gridview_proc_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+           {
+               if (gridview_proc_faltantes1.CurrentCell.Style.BackColor== System.Drawing.Color.Transparent)
+               {
+                   return;
+               }
+
+               int rowindex = gridview_proc_faltantes1.CurrentCell.RowIndex;
+               int columnindex= gridview_proc_faltantes1.CurrentCell.ColumnIndex;
+               columnindex += 1;
+               string sp_en_fila= gridview_proc_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+               switch (MessageBox.Show("¿Desea crear el procedimiento " + sp_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper()+" ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+               {
+               case DialogResult.Yes:
+               StoredProcedure stored_en_fila = new StoredProcedure(sp_en_fila);
+
+               BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+               string proced2 = "";
+               if (UsarAutenticacionDeWindowsServer2())
+               {
+                   proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
+                                }
+               else
+               {
+                   proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+               }
+
+               gridview_proc_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+               //Correr el script en Server 1
+
+               BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+               
+               if (UsarAutenticacionDeWindowsServer1())
+               {
+                   base_1.CrearElemento(Servidor(), proced2);
+               }
+               else
+               {
+                   base_1.CrearElemento(Servidor(),Usuario(),Password(), proced2);
+               }
+              
+               gridview_proc_faltantes1.Rows[1].ReadOnly = true;
+
+               MessageBox.Show("Operación realizada correctamente","Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Information);
+             
+               break;
+
+               case DialogResult.No:
+
+                    //return;
+               break;
+
+               case DialogResult.Cancel:
+                   //return;
+               break;
+
+               }
+           }
+
+	    }
+	    catch (Exception ex)
+	    {
+		    MessageBox.Show("Ocurrió una excepcion: "+ ex.Message,"Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            return;
+		   
+	    }
+
+     }
+
+        private void gridview_proc_faltantes2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            {
+                try
+                {
+                    if (gridview_proc_faltantes2.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+                    {
+                        if (gridview_proc_faltantes2.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+                        {
+                            return;
+                        }
+              
+                        int rowindex = gridview_proc_faltantes2.CurrentCell.RowIndex;
+                        int columnindex = gridview_proc_faltantes2.CurrentCell.ColumnIndex;
+                        columnindex += 1;
+                        string sp_en_fila = gridview_proc_faltantes2.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+                        switch (MessageBox.Show("¿Desea crear el procedimiento " + sp_en_fila.ToUpper() + " en la base de datos " + NombreBase2().ToUpper() + ", servidor " + Servidor2().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                        {
+                            case DialogResult.Yes:
+                                StoredProcedure stored_en_fila = new StoredProcedure(sp_en_fila);
+
+               BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                                string proced1 = "";
+               if (UsarAutenticacionDeWindowsServer1())
+               {
+                                    proced1 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor());
+                                }
+                                else
+                                {
+                                    proced1 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor(), Usuario2(), Password2());
+                                }
+
+                                gridview_proc_faltantes2.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                                //Correr el script en Server 2
+
+                                BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+
+                                if (UsarAutenticacionDeWindowsServer2())
+                                {
+                                    base_1.CrearElemento(Servidor2(), proced1);
+               }
+               else
+               {
+                                    base_1.CrearElemento(Servidor2(), Usuario2(), Password2(), proced1);
+               }
+
+                                //gridview_proc_faltantes2.Rows[1].ReadOnly = true;
+
+               MessageBox.Show("Operación realizada correctamente","Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            
+                                break;
+
+                            case DialogResult.No:
+
+                                //return;
+                                break;
+
+                            case DialogResult.Cancel:
+                                //return;
+                                break;
+
+           }
+                    }
+
+	    }
+	    catch (Exception ex)
+	    {
+		    MessageBox.Show("Ocurrió una excepcion: "+ ex.Message,"Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            return;
+		    
+	    }
+
+            }
+
+
+
+        }
+
+        private void GridView_triggers_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (GridView_triggers_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_triggers_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Trigger trigger_en_fila = new Trigger(GridView_triggers_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string trigger2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+                    AbrirFormularioDeScript(trigger2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+
+
 
         }
 

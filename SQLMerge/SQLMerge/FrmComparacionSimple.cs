@@ -358,6 +358,8 @@ namespace SQLMerge
             lbl_funciones_faltantes1.Text = except.Count().ToString();
             lbl_funciones_faltantes2.Text = except2.Count().ToString();
 
+            GridView_funciones_faltantes2.Columns["CorrerVw2s"].DisplayIndex = 1;
+
 
         }
 
@@ -504,6 +506,7 @@ namespace SQLMerge
             lbl_vistas_faltantes1.Text = except.Count().ToString();
             lbl_vistas_faltantes2.Text = except2.Count().ToString();
 
+            GridView_vistas_faltantes2.Columns["CorrerVw2s"].DisplayIndex = 1;
 
         }
 
@@ -543,6 +546,8 @@ namespace SQLMerge
 
             GridView_triggers_faltantes1.DataSource = except.ToList();
             GridView_triggers_faltantes2.DataSource = except2.ToList();
+
+            GridView_triggers_faltantes2.Columns["CorrerTr2s"].DisplayIndex = 1;
 
           
             lbl_triggers_faltantes1.Text = except.Count().ToString();
@@ -814,6 +819,8 @@ namespace SQLMerge
             gridview_tablas_faltantes1.DataSource = except.ToList();
             gridview_tablas_faltantes2.DataSource = except2.ToList();
 
+            gridview_tablas_faltantes2.Columns["CorrerTb2s"].DisplayIndex = 1;
+
             lbl_tablas_faltantes1.Text = except.Count().ToString();
             lbl_tablas_faltantes2.Text = except2.Count().ToString();
 
@@ -1063,6 +1070,8 @@ namespace SQLMerge
             
             gridview_proc_faltantes1.DataSource = except.ToList();
             gridview_proc_faltantes2.DataSource = except2.ToList();
+
+            gridview_proc_faltantes2.Columns["CorrerSp2s"].DisplayIndex = 1;
 
             lbl_proc_faltantes1.Text = except.Count().ToString();
             lbl_proc_faltantes2.Text = except2.Count().ToString();
@@ -2763,6 +2772,250 @@ namespace SQLMerge
         }
 
 
+        #region CellPainting de celdas
+
+        private void gridview_proc_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.gridview_proc_faltantes1.Columns[e.ColumnIndex].Name == "CorrerSp1s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_proc_faltantes1.Rows[e.RowIndex].Cells["CorrerSp1s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_proc_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_proc_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void gridview_proc_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.gridview_proc_faltantes2.Columns[e.ColumnIndex].Name == "CorrerSp2s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_proc_faltantes2.Rows[e.RowIndex].Cells["CorrerSp2s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_proc_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_proc_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void GridView_triggers_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            
+
+            if (e.ColumnIndex >= 0 && this.GridView_triggers_faltantes1.Columns[e.ColumnIndex].Name == "CorrerTr1s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_triggers_faltantes1.Rows[e.RowIndex].Cells["CorrerTr1s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_triggers_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_triggers_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+
+
+        }
+
+        private void GridView_triggers_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+
+            if (e.ColumnIndex >= 0 && this.GridView_triggers_faltantes2.Columns[e.ColumnIndex].Name == "CorrerTr2s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_triggers_faltantes2.Rows[e.RowIndex].Cells["CorrerTr2s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_triggers_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_triggers_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+
+
+        }
+
+        private void gridview_tablas_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.gridview_tablas_faltantes1.Columns[e.ColumnIndex].Name == "CorrerTb1s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_tablas_faltantes1.Rows[e.RowIndex].Cells["CorrerTb1s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_tablas_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_tablas_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+
+
+        }
+
+        private void gridview_tablas_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.gridview_tablas_faltantes2.Columns[e.ColumnIndex].Name == "CorrerTb2s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.gridview_tablas_faltantes2.Rows[e.RowIndex].Cells["CorrerTb2s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.gridview_tablas_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.gridview_tablas_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+        }
+
+        private void GridView_vistas_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.GridView_vistas_faltantes1.Columns[e.ColumnIndex].Name == "CorrerVw1s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_vistas_faltantes1.Rows[e.RowIndex].Cells["CorrerVw1s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_vistas_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_vistas_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+        }
+
+        private void GridView_vistas_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.GridView_vistas_faltantes1.Columns[e.ColumnIndex].Name == "CorrerVw2s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_vistas_faltantes2.Rows[e.RowIndex].Cells["CorrerVw2s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_vistas_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_vistas_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+        }
+
+        private void GridView_funciones_faltantes1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.ColumnIndex >= 0 && this.GridView_funciones_faltantes1.Columns[e.ColumnIndex].Name == "CorrerFn1s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_funciones_faltantes1.Rows[e.RowIndex].Cells["CorrerFn1s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_funciones_faltantes1.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_funciones_faltantes1.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+
+
+        }
+
+        private void GridView_funciones_faltantes2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex >= 0 && this.GridView_funciones_faltantes2.Columns[e.ColumnIndex].Name == "CorrerFn2s" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.GridView_funciones_faltantes2.Rows[e.RowIndex].Cells["CorrerFn2s"] as DataGridViewButtonCell;
+
+
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\favicon.ico");
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.GridView_funciones_faltantes2.Rows[e.RowIndex].Height = icoAtomico.Height + 10;
+                this.GridView_funciones_faltantes2.Columns[e.ColumnIndex].Width = icoAtomico.Width + 10;
+
+                e.Handled = true;
+            }
+
+        }
+
+
+
+
+#endregion
 
     }
 }

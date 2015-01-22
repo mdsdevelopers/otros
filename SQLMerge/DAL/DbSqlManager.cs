@@ -1119,7 +1119,96 @@ namespace DAL
 
 
         }
-         
+
+
+        #region Correr Script de creación de elemento
+
+
+        public static void EjecutarScriptCreacionElemento(string direccion_servidor, string nombre_de_base,/* string usuario, string password,*/ string script)
+        {
+
+            SqlConnectionStringBuilder string_de_conexion_nuevo =
+            new System.Data.SqlClient.SqlConnectionStringBuilder();
+            string_de_conexion_nuevo["Data Source"] = direccion_servidor;
+            string_de_conexion_nuevo["integrated Security"] = true;
+            string_de_conexion_nuevo["Initial Catalog"] = nombre_de_base;
+            
+            SqlConnection conexion_nueva = new SqlConnection();
+            conexion_nueva.ConnectionString = string_de_conexion_nuevo.ConnectionString;
+
+            try
+            {
+                conexion_nueva.Open();
+
+                //string sentencia_creacion_elemento = QueryManager.SentenciaExisteElemento(nombre_objeto);
+
+                SqlCommand comando_validacion = new SqlCommand(script);
+                comando_validacion.Connection = (conexion_nueva);
+                comando_validacion.CommandType = CommandType.Text;
+                comando_validacion.ExecuteNonQuery();
+                conexion_nueva.Close();
+
+            }
+
+            catch (Exception ex)
+            {               
+                 throw ex;
+            }
+                
+
+        }
+
+        /*
+        public static void EjecutarScriptCreacionElemento(string direccion_servidor, string nombre_de_base, string usuario, string password)
+        {
+
+
+            SqlConnectionStringBuilder string_de_conexion_nuevo =
+            new System.Data.SqlClient.SqlConnectionStringBuilder();
+            string_de_conexion_nuevo["Data Source"] = nombre_servidor;
+            string_de_conexion_nuevo["integrated Security"] = true;
+            string_de_conexion_nuevo["Initial Catalog"] = nombre_de_base;
+            
+            SqlConnection conexion_nueva = new SqlConnection();
+            conexion_nueva.ConnectionString = string_de_conexion_nuevo.ConnectionString;
+
+            try
+            {
+                conexion_nueva.Open();
+
+                string sentencia_creacion_elemento = QueryManager.SentenciaExisteElemento(nombre_objeto);
+
+                SqlCommand comando_validacion = new SqlCommand(sentencia_existe_elemento);
+                comando_validacion.Connection = (conexion_nueva);
+                comando_validacion.CommandType = CommandType.Text;
+                SqlDataReader reader_validacion = comando_validacion.ExecuteReader();
+
+                while (reader_validacion.Read())
+                {
+                    if (reader_validacion[0] is DBNull)
+	                {
+                        reader_validacion.Close();
+                        conexion_nueva.Close();
+                        return " ";
+	                }                                       
+                }
+                reader_validacion.Close();
+                
+                string sentencia = QueryManager.SentenciaTexto() + nombre_objeto;
+                SqlCommand comando = new SqlCommand(sentencia);
+                comando.Connection = (conexion_nueva);
+                comando.CommandType = CommandType.Text;
+                SqlDataReader reader = comando.ExecuteReader(CommandBehavior.CloseConnection);
+            }   
+            catch (Exception ex)
+            {               
+                 throw ex;
+            }
+        }
+        */
+
+
+        #endregion
 
 
 
