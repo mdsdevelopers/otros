@@ -133,3 +133,12 @@ G:\Proyectos\SQLMerge23c\SQLMerge\AppLogic\bin\Debug\Services.pdb
 G:\Proyectos\SQLMerge23c\SQLMerge\AppLogic\obj\Debug\AppLogic.csprojResolveAssemblyReference.cache
 G:\Proyectos\SQLMerge23c\SQLMerge\AppLogic\obj\Debug\AppLogic.dll
 G:\Proyectos\SQLMerge23c\SQLMerge\AppLogic\obj\Debug\AppLogic.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\bin\Debug\AppLogic.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\bin\Debug\AppLogic.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\bin\Debug\DAL.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\bin\Debug\Services.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\bin\Debug\DAL.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\bin\Debug\Services.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\obj\Debug\ResolveAssemblyReference.cache
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\obj\Debug\AppLogic.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\AppLogic\obj\Debug\AppLogic.pdb

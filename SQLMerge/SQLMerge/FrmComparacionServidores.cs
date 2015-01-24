@@ -406,34 +406,44 @@ namespace SQLMerge
             cbo_base1.Items.Clear();
             cbo_base2.Items.Clear();
           
-
             GridView_proc_diferentes.DataSource = null;
             gridview_proc_faltantes1.DataSource = null;
             gridview_proc_faltantes2.DataSource = null;
 
+          
 
-            gridview_proc_faltantes2.Columns["Correr2"].DisplayIndex = 2;
+     //   gridview_proc_faltantes2.Columns["CorrerSp2"].DisplayIndex = 2;
+
+
+            gridview_proc_faltantes2.Rows.Clear();
+          
 
             GridView_triggers_diferentes.DataSource = null;
             GridView_triggers_faltantes1.DataSource = null;
             GridView_triggers_faltantes2.DataSource = null;
 
-            GridView_funciones_faltantes2.Columns["CorrerTr2"].DisplayIndex = 2;
+         //   GridView_funciones_faltantes2.Columns["CorrerTr2"].DisplayIndex = 2;
+
+            GridView_funciones_faltantes2.Rows.Clear();
 
             gridview_tablas_faltantes1.DataSource = null;
             gridview_tablas_faltantes2.DataSource = null;
             gridview_tablas_diferentes.DataSource = null;
 
-            gridview_tablas_faltantes2.Columns["CorrerTb2"].DisplayIndex = 2;
+          //  gridview_tablas_faltantes2.Columns["CorrerTb2"].DisplayIndex = 2;
+
+            gridview_tablas_faltantes2.Rows.Clear();
 
             GridView_vistas_diferentes.DataSource = null;
             GridView_vistas_faltantes1.DataSource = null;
             GridView_vistas_faltantes2.DataSource = null;
 
 
-            GridView_vistas_faltantes2.Columns["CorrerVw2"].DisplayIndex = 2;
-           
-            GridView_funciones_faltantes2.ColumnCount = 2;
+          //  GridView_vistas_faltantes2.Columns["CorrerVw2"].DisplayIndex = 2;
+
+            GridView_vistas_faltantes2.Rows.Clear();
+
+         //   GridView_funciones_faltantes2.ColumnCount = 2;
        
 
 
@@ -441,7 +451,10 @@ namespace SQLMerge
             GridView_funciones_faltantes1.DataSource = null;
             GridView_funciones_faltantes2.DataSource = null;
 
-            GridView_funciones_faltantes2.Columns["Correr2"].DisplayIndex = 2;
+         //   GridView_funciones_faltantes2.Columns["Correr2"].DisplayIndex = 2;
+
+            GridView_funciones_faltantes2.Rows.Clear();
+
 
             lbl_proc_faltantes_de_base_1.Text = "0";
             lbl_proc_faltantes_de_base_2.Text = "0";
@@ -1810,14 +1823,14 @@ namespace SQLMerge
 
             FrmScriptGenerado form = new FrmScriptGenerado();
 
+           
             form.MostrarElementos(script_generado);
             form.ShowDialog();
            
 
 
         }
-
-
+        
         private void GenerarScriptProcedimientosFaltantesServidor1(List<StoredProcedure> lista_de_procedimientos)
         {
             try
@@ -1854,12 +1867,7 @@ namespace SQLMerge
 
 
         }
-
-
-
-
-
-
+                
         private void GenerarScriptProcedimientosFaltantesServidor2(List<StoredProcedure> lista_de_procedimientos)
         {
             try
@@ -1896,13 +1904,7 @@ namespace SQLMerge
 
 
         }
-
-
-
-
-
-
-
+        
         private void DeterminarTriggersDiferentes(string nombre_trigger)
         {
             try
@@ -1948,9 +1950,7 @@ namespace SQLMerge
 
 
         }
-
-
-
+        
         private void DeterminarTablasDiferentesManeraVieja(string nombre_tabla)
         {
             try
@@ -1996,9 +1996,6 @@ namespace SQLMerge
 
 
         }
-
-
-
 
         private void DeterminarTablasDiferentes(string nombre_tabla)
         {
@@ -2046,9 +2043,6 @@ namespace SQLMerge
 
         }
 
-
-
-
         private void DeterminarVistasDiferentes(string nombre_vista)
         {
             try
@@ -2094,7 +2088,6 @@ namespace SQLMerge
 
 
         }
-
 
         private void DeterminarFuncionesDiferentes(string nombre_funcion)
         {
@@ -2142,7 +2135,6 @@ namespace SQLMerge
 
 
         }
-
 
         private void GridView_proc_diferentes_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2219,6 +2211,8 @@ namespace SQLMerge
 
         }
 
+
+
         private void FrmComparacionServidores_Load(object sender, EventArgs e)
         {
 
@@ -2246,6 +2240,7 @@ namespace SQLMerge
 
 
         }
+
 
 
 
@@ -3723,47 +3718,55 @@ namespace SQLMerge
         #region Obtener texto de elemento seleccionado en grilla
 
         private void gridview_proc_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {            
+        {
             if (gridview_proc_faltantes1.RowCount == 0)
             {
                 return;
             }
             else
             {
-
                 try
                 {
-
-                    if (gridview_proc_faltantes1.CurrentCell.Value==null)
+                    if (gridview_proc_faltantes1.CurrentCell.Value == null)
                     {
                         return;
                     }
 
-                StoredProcedure stored_en_fila = new StoredProcedure(gridview_proc_faltantes1.CurrentCell.Value.ToString());
-                
-                BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
-                string proced2 = "";
-                if (UsarAutenticacionDeWindowsServer2())
-                {
-                    proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
+                    StoredProcedure stored_en_fila = new StoredProcedure(gridview_proc_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string proced1 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        proced1 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        proced1 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+
+                    if (proced1.Length < 5)
+                    {
+                        proced1 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
+                    AbrirFormularioDeScript(proced1);
                 }
-                else
+                catch (Exception ex)
                 {
-                    proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
-                }
-                    
-                AbrirFormularioDeScript(proced2);
-                }
-                  catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
-            
-        }
 
-        
+
+
+
+
+
+        }
+                
         private void gridview_proc_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -3796,6 +3799,12 @@ namespace SQLMerge
                         proced1 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor(), Usuario2(), Password2());
                     }
 
+
+                    if (proced1.Length < 5)
+                    {
+                        proced1 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
                     AbrirFormularioDeScript(proced1);
                 }
                 catch (Exception ex)
@@ -3810,95 +3819,423 @@ namespace SQLMerge
 
         }
 
-
-
-
-
-
-
-        #endregion
-
-        private void gridview_proc_faltantes1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void GridView_triggers_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            if (GridView_triggers_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_triggers_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Trigger trigger_en_fila = new Trigger(GridView_triggers_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string trigger2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+
+                    if (trigger2.Length < 5)
+                    {
+                        trigger2 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
+                    AbrirFormularioDeScript(trigger2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
 
         }
 
-        private void gridview_proc_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void GridView_triggers_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-          try 
-	      {	        
-           if (gridview_proc_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
-           {
-               if (gridview_proc_faltantes1.CurrentCell.Style.BackColor== System.Drawing.Color.Transparent)
-               {
-                   return;
-               }
-
-               int rowindex = gridview_proc_faltantes1.CurrentCell.RowIndex;
-               int columnindex= gridview_proc_faltantes1.CurrentCell.ColumnIndex;
-               columnindex += 1;
-               string sp_en_fila= gridview_proc_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
 
-               switch (MessageBox.Show("¿Desea crear el procedimiento " + sp_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper()+" ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
-               {
-               case DialogResult.Yes:
-               StoredProcedure stored_en_fila = new StoredProcedure(sp_en_fila);
+            if (GridView_triggers_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
 
-               BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
-               string proced2 = "";
-               if (UsarAutenticacionDeWindowsServer2())
-               {
-                   proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
-                                }
-               else
-               {
-                   proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
-               }
+                try
+                {
 
-               gridview_proc_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+                    if (GridView_triggers_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
 
-               //Correr el script en Server 1
+                    Trigger trigger_en_fila = new Trigger(GridView_triggers_faltantes2.CurrentCell.Value.ToString());
 
-               BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
-               
-               if (UsarAutenticacionDeWindowsServer1())
-               {
-                   base_1.CrearElemento(Servidor(), proced2);
-               }
-               else
-               {
-                   base_1.CrearElemento(Servidor(),Usuario(),Password(), proced2);
-               }
-              
-               gridview_proc_faltantes1.Rows[1].ReadOnly = true;
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string trigger2 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        trigger2 = base_1.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        trigger2 = base_1.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
 
-               MessageBox.Show("Operación realizada correctamente","Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Information);
-             
-               break;
 
-               case DialogResult.No:
+                    if (trigger2.Length < 5)
+                    {
+                        trigger2 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
 
-                    //return;
-               break;
+                    AbrirFormularioDeScript(trigger2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
-               case DialogResult.Cancel:
-                   //return;
-               break;
 
-               }
-           }
 
-	    }
-	    catch (Exception ex)
-	    {
-		    MessageBox.Show("Ocurrió una excepcion: "+ ex.Message,"Validación de operación", MessageBoxButtons.OK,MessageBoxIcon.Error);
-            return;
-		   
-	    }
+        }
 
-     }
+        private void gridview_tablas_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+
+            if (gridview_tablas_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (gridview_tablas_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Tabla tabla_en_fila = new Tabla(gridview_tablas_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string tabla2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        tabla2 = base_2.ObtenerTextoDeTablaManeraLenta(tabla_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        tabla2 = base_2.ObtenerTextoDeTablaManeraLenta(tabla_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+
+                    if (tabla2.Length <5)
+                    {
+                        MessageBox.Show("No es posible obtener el texto de la tabla, verifique el esquema de la misma.", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+
+
+
+                    AbrirFormularioDeScript(tabla2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+        }
+
+        private void gridview_tablas_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (gridview_tablas_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (gridview_tablas_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Tabla tabla_en_fila = new Tabla(gridview_tablas_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string tabla1 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        tabla1 = base_1.ObtenerTextoDeTablaManeraLenta(tabla_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        tabla1 = base_1.ObtenerTextoDeTablaManeraLenta(tabla_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+
+                    if (tabla1.Length < 5)
+                    {
+                        MessageBox.Show("No es posible obtener el texto de la tabla, verifique el esquema de la misma.", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    AbrirFormularioDeScript(tabla1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+        }
+
+        private void GridView_vistas_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_vistas_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_vistas_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Vista vista_en_fila = new Vista(GridView_vistas_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string vista2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        vista2 = base_2.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        vista2 = base_2.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+
+                    if (vista2.Length < 5)
+                    {
+                        vista2 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
+                    AbrirFormularioDeScript(vista2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+        }
+
+        private void GridView_vistas_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (GridView_vistas_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_vistas_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Vista vista_en_fila = new Vista(GridView_vistas_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string vista1 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        vista1 = base_1.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        vista1 = base_1.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+
+                    if (vista1.Length < 5)
+                    {
+                        vista1 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
+                    AbrirFormularioDeScript(vista1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+        }
+
+        private void GridView_funciones_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_funciones_faltantes2.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_funciones_faltantes2.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Funcion funcion_en_fila = new Funcion(GridView_funciones_faltantes2.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                    string funcion1 = "";
+                    if (UsarAutenticacionDeWindowsServer1())
+                    {
+                        funcion1 = base_1.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor());
+                    }
+                    else
+                    {
+                        funcion1 = base_1.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor(), Usuario(), Password());
+                    }
+
+
+
+                    if (funcion1.Length < 5)
+                    {
+                        funcion1 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
+                    AbrirFormularioDeScript(funcion1);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+
+
+        }
+
+        private void GridView_funciones_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+            if (GridView_funciones_faltantes1.RowCount == 0)
+            {
+                return;
+            }
+            else
+            {
+
+                try
+                {
+
+                    if (GridView_funciones_faltantes1.CurrentCell.Value == null)
+                    {
+                        return;
+                    }
+
+                    Funcion funcion_en_fila = new Funcion(GridView_funciones_faltantes1.CurrentCell.Value.ToString());
+
+                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                    string funcion2 = "";
+                    if (UsarAutenticacionDeWindowsServer2())
+                    {
+                        funcion2 = base_2.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor2());
+                    }
+                    else
+                    {
+                        funcion2 = base_2.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                    }
+
+                    if (funcion2.Length < 5)
+                    {
+                        funcion2 = "No es posible obtener el texto del elemento. Verifique el esquema del mismo";
+                    }
+
+                    AbrirFormularioDeScript(funcion2);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
+
+        }
+
+        #endregion
+
+       
+    
         private void gridview_proc_faltantes2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             {
@@ -3980,45 +4317,9 @@ namespace SQLMerge
 
         }
 
-        private void GridView_triggers_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void GridView_triggers_faltantes1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (GridView_triggers_faltantes1.RowCount == 0)
-            {
-                return;
-            }
-            else
-            {
-
-                try
-                {
-
-                    if (GridView_triggers_faltantes1.CurrentCell.Value == null)
-                    {
-                        return;
-                    }
-
-                    Trigger trigger_en_fila = new Trigger(GridView_triggers_faltantes1.CurrentCell.Value.ToString());
-
-                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
-                    string trigger2 = "";
-                    if (UsarAutenticacionDeWindowsServer2())
-                    {
-                        trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2());
-                    }
-                    else
-                    {
-                        trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
-                    }
-
-                    AbrirFormularioDeScript(trigger2);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
 
 
 
@@ -4028,270 +4329,709 @@ namespace SQLMerge
 
         }
 
-        private void GridView_triggers_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void GridView_vistas_faltantes1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
-            if (GridView_triggers_faltantes2.RowCount == 0)
-            {
-                return;
-            }
-            else
-            {
-
-                try
-                {
-
-                    if (GridView_triggers_faltantes2.CurrentCell.Value == null)
-                    {
-                        return;
-                    }
-
-                    Trigger trigger_en_fila = new Trigger(GridView_triggers_faltantes2.CurrentCell.Value.ToString());
-
-                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
-                    string trigger2 = "";
-                    if (UsarAutenticacionDeWindowsServer1())
-                    {
-                        trigger2 = base_1.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor());
-                    }
-                    else
-                    {
-                        trigger2 = base_1.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor(), Usuario(), Password());
-                    }
-
-                    AbrirFormularioDeScript(trigger2);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
+        
 
 
 
         }
 
-        private void gridview_tablas_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+
+
+        #region Click en botón de grilla para crear elemento
+
+
+
+        //private void gridview_proc_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (gridview_proc_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+        //        {
+        //            if (gridview_proc_faltantes1.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+        //            {
+        //                return;
+        //            }
+
+        //            int rowindex = gridview_proc_faltantes1.CurrentCell.RowIndex;
+        //            int columnindex = gridview_proc_faltantes1.CurrentCell.ColumnIndex;
+        //            columnindex += 1;
+        //            string sp_en_fila = gridview_proc_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+        //            switch (MessageBox.Show("¿Desea crear el procedimiento " + sp_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+        //            {
+        //                case DialogResult.Yes:
+        //                    StoredProcedure stored_en_fila = new StoredProcedure(sp_en_fila);
+
+        //                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+        //                    string proced2 = "";
+        //                    if (UsarAutenticacionDeWindowsServer2())
+        //                    {
+        //                        proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
+        //                    }
+        //                    else
+        //                    {
+        //                        proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+        //                    }
+
+        //                    gridview_proc_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+        //                    //Correr el script en Server 1
+
+        //                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+
+        //                    if (UsarAutenticacionDeWindowsServer1())
+        //                    {
+        //                        base_1.CrearElemento(Servidor(), proced2);
+        //                    }
+        //                    else
+        //                    {
+        //                        base_1.CrearElemento(Servidor(), Usuario(), Password(), proced2);
+        //                    }
+
+        //                    gridview_proc_faltantes1.Rows[1].ReadOnly = true;
+
+        //                    MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //                    break;
+
+        //                case DialogResult.No:
+
+        //                    //return;
+        //                    break;
+
+        //                case DialogResult.Cancel:
+        //                    //return;
+        //                    break;
+
+        //            }
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+
+        //    }
+
+        //}
+
+        private void gridview_proc_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-            if (gridview_tablas_faltantes1.RowCount == 0)
+            try
             {
-                return;
-            }
-            else
-            {
-
-                try
+                if (gridview_proc_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
                 {
-
-                    if (gridview_tablas_faltantes1.CurrentCell.Value == null)
+                    if (gridview_proc_faltantes1.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
                     {
                         return;
                     }
 
-                    Tabla tabla_en_fila = new Tabla(gridview_tablas_faltantes1.CurrentCell.Value.ToString());
+                    int rowindex = gridview_proc_faltantes1.CurrentCell.RowIndex;
+                    int columnindex = gridview_proc_faltantes1.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string sp_en_fila = gridview_proc_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
-                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
-                    string tabla2 = "";
-                    if (UsarAutenticacionDeWindowsServer2())
-                    {
-                        tabla2 = base_2.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor2());
-                    }
-                    else
-                    {
-                        tabla2 = base_2.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
-                    }
 
-                    AbrirFormularioDeScript(tabla2);
+                    switch (MessageBox.Show("¿Desea crear el procedimiento " + sp_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            StoredProcedure stored_en_fila = new StoredProcedure(sp_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                            string proced2 = "";
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2());
+                            }
+                            else
+                            {
+                                proced2 = base_2.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                            }
+
+
+
+                            if (proced2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto del procedimiento. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            gridview_proc_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                base_1.CrearElemento(Servidor(), proced2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor(), Usuario(), Password(), proced2);
+                            }
+
+                            gridview_proc_faltantes1.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+        }
+
+        private void gridview_proc_faltantes2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+            try
+            {
+                if (gridview_proc_faltantes2.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+                {
+                    if (gridview_proc_faltantes2.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+                    {
+                        return;
+                    }
+
+                    int rowindex = gridview_proc_faltantes2.CurrentCell.RowIndex;
+                    int columnindex = gridview_proc_faltantes2.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string sp_en_fila = gridview_proc_faltantes2.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+                    switch (MessageBox.Show("¿Desea crear el procedimiento " + sp_en_fila.ToUpper() + " en la base de datos " + NombreBase2().ToUpper() + ", servidor " + Servidor2().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            StoredProcedure stored_en_fila = new StoredProcedure(sp_en_fila);
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                            string proced2 = "";
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                proced2 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor());
+                            }
+                            else
+                            {
+                                proced2 = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor(), Usuario(), Password());
+                            }
+
+
+
+                            if (proced2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto del procedimiento. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                            gridview_proc_faltantes2.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                base_2.CrearElemento(Servidor2(), proced2);
+                            }
+                            else
+                            {
+                                base_2.CrearElemento(Servidor2(), Usuario2(), Password2(), proced2);
+                            }
+
+                           // gridview_proc_faltantes2.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+
+
+        }
+        
+        private void GridView_triggers_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                if (GridView_triggers_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+                {
+                    if (GridView_triggers_faltantes1.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+                    {
+                        return;
+                    }
+
+                    int rowindex = GridView_triggers_faltantes1.CurrentCell.RowIndex;
+                    int columnindex = GridView_triggers_faltantes1.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string tr_en_fila = GridView_triggers_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+                    switch (MessageBox.Show("¿Desea crear el trigger " + tr_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Trigger trigger_en_fila = new Trigger(tr_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                            string trigger2 = "";
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2());
+                            }
+                            else
+                            {
+                                trigger2 = base_2.ObtenerTextoDeProcedimiento(trigger_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
+                            }
+
+                            if (trigger2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto del trigger. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+
+                            GridView_triggers_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                base_1.CrearElemento(Servidor(), trigger2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor(), Usuario(), Password(), trigger2);
+                            }
+
+                            //GridView_triggers_faltantes1.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
 
 
 
         }
 
-        private void gridview_tablas_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void GridView_triggers_faltantes2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
-            if (gridview_tablas_faltantes2.RowCount == 0)
-            {
-                return;
-            }
-            else
-            {
 
-                try
+            try
+            {
+                if (GridView_triggers_faltantes2.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
                 {
-
-                    if (gridview_tablas_faltantes2.CurrentCell.Value == null)
+                    if (GridView_triggers_faltantes2.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
                     {
                         return;
                     }
 
-                    Tabla tabla_en_fila = new Tabla(gridview_tablas_faltantes2.CurrentCell.Value.ToString());
+                    int rowindex = GridView_triggers_faltantes2.CurrentCell.RowIndex;
+                    int columnindex = GridView_triggers_faltantes2.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string tr_en_fila = GridView_triggers_faltantes2.Rows[rowindex].Cells[columnindex].Value.ToString();
 
-                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
-                    string tabla1 = "";
-                    if (UsarAutenticacionDeWindowsServer1())
-                    {
-                        tabla1 = base_1.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor());
-                    }
-                    else
-                    {
-                        tabla1 = base_1.ObtenerTextoDeProcedimiento(tabla_en_fila.Nombre, Servidor(), Usuario(), Password());
-                    }
 
-                    AbrirFormularioDeScript(tabla1);
+                    switch (MessageBox.Show("¿Desea crear el trigger " + tr_en_fila.ToUpper() + " en la base de datos " + NombreBase2().ToUpper() + ", servidor " + Servidor2().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Trigger stored_en_fila = new Trigger(tr_en_fila);
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                            string trigger = "";
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                trigger = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor());
+                            }
+                            else
+                            {
+                                trigger = base_1.ObtenerTextoDeProcedimiento(stored_en_fila.Nombre, Servidor(), Usuario(), Password());
+                            }
+
+
+                            if (trigger.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto del trigger. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                            GridView_triggers_faltantes2.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                base_2.CrearElemento(Servidor2(), trigger);
+                            }
+                            else
+                            {
+                                base_2.CrearElemento(Servidor2(), Usuario2(), Password2(), trigger);
+                            }
+
+                          //  GridView_triggers_faltantes2.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+
             }
-
-
-        }
-
-        private void GridView_vistas_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-            if (GridView_vistas_faltantes1.RowCount == 0)
+            catch (Exception ex)
             {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+
             }
-            else
-            {
 
-                try
-                {
-
-                    if (GridView_vistas_faltantes1.CurrentCell.Value == null)
-                    {
-                        return;
-                    }
-
-                    Vista vista_en_fila = new Vista(GridView_vistas_faltantes1.CurrentCell.Value.ToString());
-
-                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
-                    string vista2 = "";
-                    if (UsarAutenticacionDeWindowsServer2())
-                    {
-                        vista2 = base_2.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor2());
-                    }
-                    else
-                    {
-                        vista2 = base_2.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
-                    }
-
-                    AbrirFormularioDeScript(vista2);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
 
 
 
 
         }
-
-        private void GridView_vistas_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void GridView_vistas_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            if (GridView_vistas_faltantes2.RowCount == 0)
+            try
             {
-                return;
-            }
-            else
-            {
-
-                try
+                if (GridView_vistas_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
                 {
-
-                    if (GridView_vistas_faltantes2.CurrentCell.Value == null)
+                    if (GridView_vistas_faltantes1.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
                     {
                         return;
                     }
 
-                    Vista vista_en_fila = new Vista(GridView_vistas_faltantes2.CurrentCell.Value.ToString());
+                    int rowindex = GridView_vistas_faltantes1.CurrentCell.RowIndex;
+                    int columnindex = GridView_vistas_faltantes1.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string vista_en_fila = GridView_vistas_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
 
-                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
-                    string vista1 = "";
-                    if (UsarAutenticacionDeWindowsServer1())
-                    {
-                        vista1 = base_1.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor());
-                    }
-                    else
-                    {
-                        vista1 = base_1.ObtenerTextoDeProcedimiento(vista_en_fila.Nombre, Servidor(), Usuario(), Password());
-                    }
 
-                    AbrirFormularioDeScript(vista1);
+                    switch (MessageBox.Show("¿Desea crear la vista " + vista_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Vista vista = new Vista(vista_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                            string proced2 = "";
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                proced2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor2());
+                            }
+                            else
+                            {
+                                proced2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor2(), Usuario2(), Password2());
+                            }
+
+
+                            if (proced2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto de la vista. Verifique el esquema de la misma (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                            GridView_vistas_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                base_1.CrearElemento(Servidor(), proced2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor(), Usuario(), Password(), proced2);
+                            }
+
+                            GridView_vistas_faltantes1.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
+            }
 
 
 
         }
 
-        private void GridView_funciones_faltantes2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void GridView_vistas_faltantes2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
-            if (GridView_funciones_faltantes2.RowCount == 0)
+            try
             {
-                return;
-            }
-            else
-            {
-
-                try
+                if (GridView_vistas_faltantes2.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
                 {
-
-                    if (GridView_funciones_faltantes2.CurrentCell.Value == null)
+                    if (GridView_vistas_faltantes2.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
                     {
                         return;
                     }
 
-                    Funcion funcion_en_fila = new Funcion(GridView_funciones_faltantes2.CurrentCell.Value.ToString());
+                    int rowindex = GridView_vistas_faltantes2.CurrentCell.RowIndex;
+                    int columnindex = GridView_vistas_faltantes2.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string vista_en_fila = GridView_vistas_faltantes2.Rows[rowindex].Cells[columnindex].Value.ToString();
 
-                    BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
-                    string funcion1 = "";
-                    if (UsarAutenticacionDeWindowsServer1())
-                    {
-                        funcion1 = base_1.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor());
-                    }
-                    else
-                    {
-                        funcion1 = base_1.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor(), Usuario(), Password());
-                    }
 
-                    AbrirFormularioDeScript(funcion1);
+                    switch (MessageBox.Show("¿Desea crear la vista " + vista_en_fila.ToUpper() + " en la base de datos " + NombreBase2().ToUpper() + ", servidor " + Servidor2().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Vista vista = new Vista(vista_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase1());
+                            string vista2 = "";
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                vista2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor());
+                            }
+                            else
+                            {
+                                vista2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor(), Usuario(), Password());
+                            }
+
+
+                            if (vista2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto de la vista. Verifique el esquema de la misma (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                            GridView_vistas_faltantes2.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase2());
+
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                base_1.CrearElemento(Servidor2(), vista2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor2(), Usuario2(), Password2(), vista2);
+                            }
+
+                            GridView_vistas_faltantes2.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
                 }
-                catch (Exception ex)
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+
+
+        }
+        
+        private void GridView_funciones_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                if (GridView_funciones_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
                 {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (GridView_funciones_faltantes1.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+                    {
+                        return;
+                    }
+
+                    int rowindex = GridView_funciones_faltantes1.CurrentCell.RowIndex;
+                    int columnindex = GridView_funciones_faltantes1.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string funcion_en_fila = GridView_funciones_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+                    switch (MessageBox.Show("¿Desea crear la función " + funcion_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Funcion vista = new Funcion(funcion_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                            string funcion2 = "";
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                funcion2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor2());
+                            }
+                            else
+                            {
+                                funcion2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor2(), Usuario2(), Password2());
+                            }
+
+                            if (funcion2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto de la función. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                            GridView_funciones_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                base_1.CrearElemento(Servidor(), funcion2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor(), Usuario(), Password(), funcion2);
+                            }
+
+                            GridView_funciones_faltantes1.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
 
 
@@ -4299,53 +5039,269 @@ namespace SQLMerge
 
 
         }
+        
+        private void GridView_funciones_faltantes2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (GridView_funciones_faltantes2.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+                {
+                    if (GridView_funciones_faltantes2.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+                    {
+                        return;
+                    }
 
-        private void GridView_funciones_faltantes1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+                    int rowindex = GridView_funciones_faltantes2.CurrentCell.RowIndex;
+                    int columnindex = GridView_funciones_faltantes2.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string funcion_en_fila = GridView_funciones_faltantes2.Rows[rowindex].Cells[columnindex].Value.ToString();
+
+
+                    switch (MessageBox.Show("¿Desea crear la función " + funcion_en_fila.ToUpper() + " en la base de datos " + NombreBase2().ToUpper() + ", servidor " + Servidor2().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Funcion vista = new Funcion(funcion_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase1());
+                            string funcion2 = "";
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                funcion2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor());
+                            }
+                            else
+                            {
+                                funcion2 = base_2.ObtenerTextoDeProcedimiento(vista.Nombre, Servidor(), Usuario(), Password());
+                            }
+
+
+                            if (funcion2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto de la función. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+
+                            GridView_funciones_faltantes2.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase2());
+
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                base_1.CrearElemento(Servidor2(), funcion2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor2(), Usuario2(), Password2(), funcion2);
+                            }
+
+                            GridView_funciones_faltantes2.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+
+
+        }
+
+        private void gridview_tablas_faltantes1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (gridview_tablas_faltantes1.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
+                {
+                    if (gridview_tablas_faltantes1.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
+                    {
+                        return;
+                    }
+
+                    int rowindex = gridview_tablas_faltantes1.CurrentCell.RowIndex;
+                    int columnindex = gridview_tablas_faltantes1.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string tabla_en_fila = gridview_tablas_faltantes1.Rows[rowindex].Cells[columnindex].Value.ToString();
+                    
+                    switch (MessageBox.Show("¿Desea crear la tabla " + tabla_en_fila.ToUpper() + " en la base de datos " + NombreBase1().ToUpper() + ", servidor " + Servidor().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
+                    {
+                        case DialogResult.Yes:
+                            Tabla tabla = new Tabla(tabla_en_fila);
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+                            string tabla2 = "";
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                tabla2 = base_2.ObtenerTextoDeTablaManeraLenta(tabla.Nombre, Servidor2());
+                            }
+                            else
+                            {
+                                tabla2 = base_2.ObtenerTextoDeTablaManeraLenta(tabla.Nombre, Servidor2(), Usuario2(), Password2());
+                            }
+
+
+                            if (tabla2.ToString().Length==1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto de la tabla. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+                            gridview_tablas_faltantes1.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                base_1.CrearElemento(Servidor(), tabla2);
+                            }
+                            else
+                            {
+                                base_1.CrearElemento(Servidor(), Usuario(), Password(), tabla2);
+                            }
+
+                            gridview_tablas_faltantes1.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+
+        }
+
+        private void gridview_tablas_faltantes2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
 
-            if (GridView_funciones_faltantes1.RowCount == 0)
+            try
             {
-                return;
-            }
-            else
-            {
-
-                try
+                if (gridview_tablas_faltantes2.CurrentCell.ColumnIndex.Equals(0) && e.RowIndex != -1)
                 {
-
-                    if (GridView_funciones_faltantes1.CurrentCell.Value == null)
+                    if (gridview_tablas_faltantes2.CurrentCell.Style.BackColor == System.Drawing.Color.Transparent)
                     {
                         return;
                     }
 
-                    Funcion funcion_en_fila = new Funcion(GridView_funciones_faltantes1.CurrentCell.Value.ToString());
+                    int rowindex = gridview_tablas_faltantes2.CurrentCell.RowIndex;
+                    int columnindex = gridview_tablas_faltantes2.CurrentCell.ColumnIndex;
+                    columnindex += 1;
+                    string tabla_en_fila = gridview_tablas_faltantes2.Rows[rowindex].Cells[columnindex].Value.ToString();
 
-                    BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
-                    string funcion2 = "";
-                    if (UsarAutenticacionDeWindowsServer2())
+                    switch (MessageBox.Show("¿Desea crear la tabla " + tabla_en_fila.ToUpper() + " en la base de datos " + NombreBase2().ToUpper() + ", servidor " + Servidor2().ToUpper() + " ?", "Confirmación de operación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question))
                     {
-                        funcion2 = base_2.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor2());
-                    }
-                    else
-                    {
-                        funcion2 = base_2.ObtenerTextoDeProcedimiento(funcion_en_fila.Nombre, Servidor2(), Usuario2(), Password2());
-                    }
+                        case DialogResult.Yes:
+                            Tabla tabla = new Tabla(tabla_en_fila);
 
-                    AbrirFormularioDeScript(funcion2);
+                            BaseDeDatos base_1 = new BaseDeDatos(NombreBase1());
+                            string tabla2 = "";
+                            if (UsarAutenticacionDeWindowsServer1())
+                            {
+                                tabla2 = base_1.ObtenerTextoDeTablaManeraLenta(tabla.Nombre, Servidor2());
+                            }
+                            else
+                            {
+                                tabla2 = base_1.ObtenerTextoDeTablaManeraLenta(tabla.Nombre, Servidor2(), Usuario2(), Password2());
+                            }
+
+
+                            if (tabla2.ToString().Length == 1)
+                            {
+                                MessageBox.Show("No es posible obtener el texto de la tabla. Verifique el esquema del mismo (dbo.)", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+
+
+                            gridview_tablas_faltantes2.CurrentCell.Style.BackColor = System.Drawing.Color.Transparent;
+
+                            //Correr el script en Server 1
+
+                            BaseDeDatos base_2 = new BaseDeDatos(NombreBase2());
+
+                            if (UsarAutenticacionDeWindowsServer2())
+                            {
+                                base_2.CrearElemento(Servidor2(), tabla2);
+                            }
+                            else
+                            {
+                                base_2.CrearElemento(Servidor2(), Usuario2(), Password2(), tabla2);
+                            }
+
+                            //gridview_tablas_faltantes2.Rows[1].ReadOnly = true;
+
+                            MessageBox.Show("Operación realizada correctamente", "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            break;
+
+                        case DialogResult.No:
+
+                            //return;
+                            break;
+
+                        case DialogResult.Cancel:
+                            //return;
+                            break;
+
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ocurrió una excepción: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió una excepcion: " + ex.Message, "Validación de operación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
             }
 
 
 
         }
 
-
-           
     }
-}
+ }
+
+
+        #endregion

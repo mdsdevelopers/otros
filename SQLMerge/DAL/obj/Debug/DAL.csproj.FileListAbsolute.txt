@@ -103,3 +103,10 @@ G:\Proyectos\SQLMerge23c\SQLMerge\DAL\bin\Debug\Services.pdb
 G:\Proyectos\SQLMerge23c\SQLMerge\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 G:\Proyectos\SQLMerge23c\SQLMerge\DAL\obj\Debug\DAL.dll
 G:\Proyectos\SQLMerge23c\SQLMerge\DAL\obj\Debug\DAL.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\bin\Debug\DAL.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\bin\Debug\DAL.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\bin\Debug\Services.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\bin\Debug\Services.pdb
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\obj\Debug\DAL.dll
+C:\Repositorios\Ariel\Otros\otros\SQLMerge\DAL\obj\Debug\DAL.pdb
