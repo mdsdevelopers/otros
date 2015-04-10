@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>
+            Listado de Actas
+        </title>
+        <link rel="Stylesheet" href="listadodeactas.css" type="text/css"/>
+    </head>
+    <body>
+        <div id="ContenedorListado">
+            <div id="encabezado">
+                <div class="columna comite">COMITÉ</div>
+                <div class="columna perfil">PERFIL</div>
+                <div class="columna acta">ACTA</div>
+                <div class="columna descripcion">DESCRIPCIÓN</div>
+                <div class="columna fecha">FECHA</div>
+                <div class="columna link"></div>
+            </div>	
+            <div id="renglones">
+<!--                <div class="renglon">
+                    <div class="columna comite">1</div>
+                    <div class="columna perfil">4894</div>
+                    <div class="columna acta">1</div>
+                    <div class="columna descripcion">Nómina de Inscriptos</div>
+                    <div class="columna fecha">14/11/2014</div>
+                    <div class="columna link"><img class="img_pdf_acta" src="pdf.png"/></div>
+                </div>		
+                <div class="renglon">
+                    <div class="columna comite">1</div>
+                    <div class="columna perfil">4894</div>
+                    <div class="columna acta">1</div>
+                    <div class="columna descripcion">Rectificacion Listado de No Admitidos Ponderación de Antecedentes Curriculares y Laborales</div>
+                    <div class="columna fecha">14/11/2014</div>
+                    <div class="columna link"><img class="img_pdf_acta" src="pdf.png"/></div>
+                </div>		
+                <div class="renglon">
+                    <div class="columna comite">1</div>
+                    <div class="columna perfil">4894</div>
+                    <div class="columna acta">1</div>
+                    <div class="columna descripcion">Nómina de Inscriptos</div>
+                    <div class="columna fecha">14/11/2014</div>
+                    <div class="columna link"><img class="img_pdf_acta" src="pdf.png"/></div>
+                </div>		
+                <div class="renglon">
+                    <div class="columna comite">1</div>
+                    <div class="columna perfil">4894</div>
+                    <div class="columna acta">1</div>
+                    <div class="columna descripcion">Nómina de Inscriptos</div>
+                    <div class="columna fecha">14/11/2014</div>
+                    <div class="columna link"><img class="img_pdf_acta" src="pdf.png"/></div>
+                </div>		
+                <div class="renglon">
+                    <div class="columna comite">1</div>
+                    <div class="columna perfil">4894</div>
+                    <div class="columna acta">1</div>
+                    <div class="columna descripcion">Nómina de Inscriptos</div>
+                    <div class="columna fecha">14/11/2014</div>
+                    <div class="columna link"><img class="img_pdf_acta" src="pdf.png"/></div>
+                </div>	-->
+            </div>	
+	    </div>
+    </body>
+
+    <div id="plantillas">
+        <div class="renglon">
+            <div class="columna comite"></div>
+            <div class="columna perfil"></div>
+            <div class="columna acta"></div>
+            <div class="columna descripcion"></div>
+            <div class="columna fecha"></div>
+            <div class="columna link"><img class="img_pdf_acta" src="pdf.png"/></div>
+        </div>	
+    </div>
+
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: "BuscadorSrv.asmx/ActasPublicadas",
+                type: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (respuesta) {
+                    var actas = JSON.parse(respuesta.d);
+                    for (var i = 0; i < actas.length; i++) {
+                        var acta = actas[i];
+                        var ui_acta = $("#plantillas .renglon").clone();
+                        ui_acta.find(".comite").text(acta.comite);
+                        ui_acta.find(".perfil").text(acta.perfil);
+                        ui_acta.find(".acta").text(acta.acta);
+                        ui_acta.find(".descripcion").text(acta.descripcion);
+                        var fecha = new Date(acta.fecha);
+                        ui_acta.find(".fecha").text(fecha.getDate() + "/" + fecha.getMonth() + "/" + fecha.getFullYear());
+                        $("#renglones").append(ui_acta);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("error")
+                }
+            });
+        });		
+    </script>
+</html>

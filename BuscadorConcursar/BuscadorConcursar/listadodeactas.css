@@ -1,0 +1,82 @@
+﻿body {
+	color: #5a5b65;
+	font-size: 14px;
+	line-height: 18px;
+	font-family: arial,helvetica,sans-serif;
+	width:570px;
+}
+#plantillas
+{
+    display:none;
+}
+#ContenedorListado
+{
+    background-color: rgb(219, 219, 219);
+    padding: 5px;
+    border-radius: 5px;
+}
+#ContenedorListado div
+{
+    text-align: center;
+}
+#encabezado
+{
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: -22px;
+}
+#encabezado .columna
+{
+
+}
+#renglones
+{
+    background-color: White;
+    border-radius:5px;
+    font-size: 12px;
+}
+#renglones div
+{
+    vertical-align: middle;
+}
+.renglon
+{
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.columna
+{
+    display: inline-block;
+}
+.comite
+{
+    width: 48px;
+}
+.perfil
+{
+    width: 43px;
+}
+.acta
+{
+    width: 34px;
+}
+.descripcion
+{
+    width: 289px;
+}
+.fecha
+{
+    width: 94px;
+}
+.link
+{
+    margin-top: -7px;
+}
+
+.img_pdf_acta{
+    display: inline-block;
+    height: 20px;
+    margin-bottom: -5px;
+    cursor: pointer;
+}
+

@@ -60,6 +60,42 @@ namespace BuscadorConcursar
 
         [WebMethod(EnableSession = true)]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public string ActasPublicadas()
+        {
+            try
+            {
+
+                var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConection"].ConnectionString);
+                conn.Open();
+                var un_comando = conn.CreateCommand();
+                un_comando.CommandText = "BUCO_BuscarActasPublicadas";
+                un_comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+                var resultado_consulta = un_comando.ExecuteReader();
+                var actas = new List<ActaPublicada>();
+
+                while (resultado_consulta.Read())
+                {
+                    actas.Add(new ActaPublicada(
+                    (int)resultado_consulta["Comite"],
+                    (int)resultado_consulta["Perfil"],
+                    (int)resultado_consulta["Acta"],
+                    (string)resultado_consulta["Descripcion"],
+                    (DateTime)resultado_consulta["Fecha"],
+                    (string)resultado_consulta["Link"]));
+                }
+
+                conn.Close();
+                return JsonConvert.SerializeObject(actas);
+            }
+            catch (Exception e)
+            {
+                return e.InnerException.Message;
+            }
+        }
+
+        [WebMethod(EnableSession = true)]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string Prueba(int numero)
         {
             return "FUNCIONA FUNCIONA!!!!! mandaste:" + numero;

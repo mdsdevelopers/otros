@@ -52,6 +52,8 @@
   <ItemGroup>
     <Content Include="buscador.css" />
     <Content Include="BuscadorSrv.asmx" />
+    <Content Include="listadodeactas.css" />
+    <Content Include="listadodeactas.html" />
     <Content Include="index_fer.html" />
     <Content Include="index.html" />
     <Content Include="jquery-1.11.1.min.js" />
@@ -68,6 +70,7 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActaPublicada.cs" />
     <Compile Include="BuscadorSrv.asmx.cs">
       <DependentUpon>BuscadorSrv.asmx</DependentUpon>
       <SubType>Component</SubType>
