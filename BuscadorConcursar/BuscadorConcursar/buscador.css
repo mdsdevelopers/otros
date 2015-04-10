@@ -70,33 +70,39 @@ input::-ms-clear{
 }
 #panel_encontrados
 {
+  
     /*border-radius: 5px;
     background-color: rgb(150, 218, 255);
     margin-top: 10px;*/
-    padding: 10px;
+    /*padding: 10px;*/
     /*border-top: dotted white 2px;*/
+   
 }
 #panel_encontrados #lbl_apellido
 {
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 15px;
     font-weight: bold;
+    float: left;
 }
 #panel_encontrados #lbl_nombre
 {
     display: inline-block;
     font-size: 15px;
+    float: left;
 }
 #panel_encontrados #lbl_tipo_doc
 {
     display: inline-block;
     margin-left: 10px;  
     font-size: 15px;
+      float: left;
 }
 #panel_encontrados #lbl_nro_doc
 {
     display: inline-block;
     font-size: 15px;
+     float: left;
 }
 #panel_encontrados #panel_puestos
 {

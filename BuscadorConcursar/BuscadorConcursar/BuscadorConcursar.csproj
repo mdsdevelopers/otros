@@ -57,6 +57,7 @@
     <Content Include="index_fer.html" />
     <Content Include="index.html" />
     <Content Include="jquery-1.11.1.min.js" />
+    <Content Include="json3.min.js" />
     <Content Include="list.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

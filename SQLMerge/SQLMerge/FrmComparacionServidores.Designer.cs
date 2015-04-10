@@ -39,6 +39,7 @@
             this.lbl_proc_faltantes_de_base_2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.gridview_proc_faltantes2 = new System.Windows.Forms.DataGridView();
+            this.CorrerSp2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_script_proc_diferentes = new System.Windows.Forms.Button();
             this.GridView_proc_diferentes = new System.Windows.Forms.DataGridView();
@@ -49,12 +50,14 @@
             this.lbl_proc_faltantes_de_base_1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gridview_proc_faltantes1 = new System.Windows.Forms.DataGridView();
+            this.CorrerSp1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_triggers_faltantes2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.GridView_triggers_faltantes2 = new System.Windows.Forms.DataGridView();
+            this.CorrerTr2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn_script_triggers_diferentes = new System.Windows.Forms.Button();
             this.GridView_triggers_diferentes = new System.Windows.Forms.DataGridView();
@@ -65,12 +68,14 @@
             this.lbl_triggers_faltantes1 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.GridView_triggers_faltantes1 = new System.Windows.Forms.DataGridView();
+            this.CorrerTr1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.btn_script_tablas_faltantes_2 = new System.Windows.Forms.Button();
             this.lbl_tablas_faltantes2 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.gridview_tablas_faltantes2 = new System.Windows.Forms.DataGridView();
+            this.CorrerTb2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btn_script_tablas_diferentes = new System.Windows.Forms.Button();
             this.gridview_tablas_diferentes = new System.Windows.Forms.DataGridView();
@@ -81,12 +86,14 @@
             this.lbl_tablas_faltantes1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.gridview_tablas_faltantes1 = new System.Windows.Forms.DataGridView();
+            this.CorrerTb1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.btn_script_vistas_faltantes_2 = new System.Windows.Forms.Button();
             this.lbl_vistas_faltantes2 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.GridView_vistas_faltantes2 = new System.Windows.Forms.DataGridView();
+            this.CorrerVw2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.btn_script_vistas_diferentes = new System.Windows.Forms.Button();
             this.GridView_vistas_diferentes = new System.Windows.Forms.DataGridView();
@@ -97,12 +104,14 @@
             this.lbl_vistas_faltantes1 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.GridView_vistas_faltantes1 = new System.Windows.Forms.DataGridView();
+            this.CorrerVw1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.btn_script_func_faltantes_2 = new System.Windows.Forms.Button();
             this.lbl_funciones_faltantes2 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.GridView_funciones_faltantes2 = new System.Windows.Forms.DataGridView();
+            this.Correr2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.btn_script_funciones_diferentes = new System.Windows.Forms.Button();
             this.GridView_funciones_diferentes = new System.Windows.Forms.DataGridView();
@@ -113,6 +122,7 @@
             this.lbl_funciones_faltantes1 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.GridView_funciones_faltantes1 = new System.Windows.Forms.DataGridView();
+            this.Correr = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.check_autenticacion = new System.Windows.Forms.CheckBox();
             this.txt_password = new System.Windows.Forms.TextBox();
@@ -311,12 +321,23 @@
             this.gridview_proc_faltantes2.AllowUserToAddRows = false;
             this.gridview_proc_faltantes2.AllowUserToDeleteRows = false;
             this.gridview_proc_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview_proc_faltantes2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerSp2});
             this.gridview_proc_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.gridview_proc_faltantes2.Name = "gridview_proc_faltantes2";
             this.gridview_proc_faltantes2.ReadOnly = true;
             this.gridview_proc_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.gridview_proc_faltantes2.TabIndex = 114;
+            this.gridview_proc_faltantes2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_proc_faltantes2_CellClick);
+            this.gridview_proc_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_proc_faltantes2_CellContentDoubleClick);
+            this.gridview_proc_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridview_proc_faltantes2_CellPainting);
             this.gridview_proc_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridview_proc_faltantes2_KeyDown);
+            // 
+            // CorrerSp2
+            // 
+            this.CorrerSp2.HeaderText = "";
+            this.CorrerSp2.Name = "CorrerSp2";
+            this.CorrerSp2.ReadOnly = true;
             // 
             // groupBox4
             // 
@@ -423,12 +444,23 @@
             this.gridview_proc_faltantes1.AllowUserToDeleteRows = false;
             this.gridview_proc_faltantes1.AllowUserToOrderColumns = true;
             this.gridview_proc_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview_proc_faltantes1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerSp1});
             this.gridview_proc_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.gridview_proc_faltantes1.Name = "gridview_proc_faltantes1";
             this.gridview_proc_faltantes1.ReadOnly = true;
             this.gridview_proc_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.gridview_proc_faltantes1.TabIndex = 114;
+            this.gridview_proc_faltantes1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_proc_faltantes1_CellClick);
+            this.gridview_proc_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_proc_faltantes1_CellContentDoubleClick);
+            this.gridview_proc_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridview_proc_faltantes1_CellPainting);
             this.gridview_proc_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridview_proc_faltantes1_KeyDown);
+            // 
+            // CorrerSp1
+            // 
+            this.CorrerSp1.HeaderText = "";
+            this.CorrerSp1.Name = "CorrerSp1";
+            this.CorrerSp1.ReadOnly = true;
             // 
             // tabPage4
             // 
@@ -492,12 +524,23 @@
             this.GridView_triggers_faltantes2.AllowUserToDeleteRows = false;
             this.GridView_triggers_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_triggers_faltantes2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerTr2});
             this.GridView_triggers_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.GridView_triggers_faltantes2.Name = "GridView_triggers_faltantes2";
             this.GridView_triggers_faltantes2.ReadOnly = true;
             this.GridView_triggers_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.GridView_triggers_faltantes2.TabIndex = 114;
+            this.GridView_triggers_faltantes2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_triggers_faltantes2_CellClick);
+            this.GridView_triggers_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_triggers_faltantes2_CellContentDoubleClick);
+            this.GridView_triggers_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_triggers_faltantes2_CellPainting);
             this.GridView_triggers_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_triggers_faltantes2_KeyDown);
+            // 
+            // CorrerTr2
+            // 
+            this.CorrerTr2.HeaderText = "";
+            this.CorrerTr2.Name = "CorrerTr2";
+            this.CorrerTr2.ReadOnly = true;
             // 
             // groupBox6
             // 
@@ -606,12 +649,23 @@
             this.GridView_triggers_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_triggers_faltantes1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.GridView_triggers_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_triggers_faltantes1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerTr1});
             this.GridView_triggers_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.GridView_triggers_faltantes1.Name = "GridView_triggers_faltantes1";
             this.GridView_triggers_faltantes1.ReadOnly = true;
             this.GridView_triggers_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.GridView_triggers_faltantes1.TabIndex = 114;
+            this.GridView_triggers_faltantes1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_triggers_faltantes1_CellClick);
+            this.GridView_triggers_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_triggers_faltantes1_CellContentDoubleClick);
+            this.GridView_triggers_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_triggers_faltantes1_CellPainting);
             this.GridView_triggers_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_triggers_faltantes1_KeyDown);
+            // 
+            // CorrerTr1
+            // 
+            this.CorrerTr1.HeaderText = "";
+            this.CorrerTr1.Name = "CorrerTr1";
+            this.CorrerTr1.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -675,12 +729,23 @@
             this.gridview_tablas_faltantes2.AllowUserToDeleteRows = false;
             this.gridview_tablas_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview_tablas_faltantes2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerTb2});
             this.gridview_tablas_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.gridview_tablas_faltantes2.Name = "gridview_tablas_faltantes2";
             this.gridview_tablas_faltantes2.ReadOnly = true;
             this.gridview_tablas_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.gridview_tablas_faltantes2.TabIndex = 114;
+            this.gridview_tablas_faltantes2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_tablas_faltantes2_CellClick);
+            this.gridview_tablas_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_tablas_faltantes2_CellContentDoubleClick);
+            this.gridview_tablas_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridview_tablas_faltantes2_CellPainting);
             this.gridview_tablas_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridview_tablas_faltantes2_KeyDown);
+            // 
+            // CorrerTb2
+            // 
+            this.CorrerTb2.HeaderText = "Column1";
+            this.CorrerTb2.Name = "CorrerTb2";
+            this.CorrerTb2.ReadOnly = true;
             // 
             // groupBox9
             // 
@@ -790,12 +855,23 @@
             this.gridview_tablas_faltantes1.AllowUserToOrderColumns = true;
             this.gridview_tablas_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridview_tablas_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridview_tablas_faltantes1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerTb1});
             this.gridview_tablas_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.gridview_tablas_faltantes1.Name = "gridview_tablas_faltantes1";
             this.gridview_tablas_faltantes1.ReadOnly = true;
             this.gridview_tablas_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.gridview_tablas_faltantes1.TabIndex = 114;
+            this.gridview_tablas_faltantes1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_tablas_faltantes1_CellClick);
+            this.gridview_tablas_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridview_tablas_faltantes1_CellContentDoubleClick);
+            this.gridview_tablas_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridview_tablas_faltantes1_CellPainting);
             this.gridview_tablas_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridview_tablas_faltantes1_KeyDown);
+            // 
+            // CorrerTb1
+            // 
+            this.CorrerTb1.HeaderText = "";
+            this.CorrerTb1.Name = "CorrerTb1";
+            this.CorrerTb1.ReadOnly = true;
             // 
             // tabPage3
             // 
@@ -858,12 +934,23 @@
             this.GridView_vistas_faltantes2.AllowUserToDeleteRows = false;
             this.GridView_vistas_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_vistas_faltantes2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerVw2});
             this.GridView_vistas_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.GridView_vistas_faltantes2.Name = "GridView_vistas_faltantes2";
             this.GridView_vistas_faltantes2.ReadOnly = true;
             this.GridView_vistas_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.GridView_vistas_faltantes2.TabIndex = 114;
+            this.GridView_vistas_faltantes2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_vistas_faltantes2_CellClick);
+            this.GridView_vistas_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_vistas_faltantes2_CellContentDoubleClick);
+            this.GridView_vistas_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_vistas_faltantes2_CellPainting);
             this.GridView_vistas_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_vistas_faltantes2_KeyDown);
+            // 
+            // CorrerVw2
+            // 
+            this.CorrerVw2.HeaderText = "";
+            this.CorrerVw2.Name = "CorrerVw2";
+            this.CorrerVw2.ReadOnly = true;
             // 
             // groupBox12
             // 
@@ -971,12 +1058,23 @@
             this.GridView_vistas_faltantes1.AllowUserToOrderColumns = true;
             this.GridView_vistas_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_vistas_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_vistas_faltantes1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CorrerVw1});
             this.GridView_vistas_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.GridView_vistas_faltantes1.Name = "GridView_vistas_faltantes1";
             this.GridView_vistas_faltantes1.ReadOnly = true;
             this.GridView_vistas_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.GridView_vistas_faltantes1.TabIndex = 114;
+            this.GridView_vistas_faltantes1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_vistas_faltantes1_CellClick);
+            this.GridView_vistas_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_vistas_faltantes1_CellContentDoubleClick);
+            this.GridView_vistas_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_vistas_faltantes1_CellPainting);
             this.GridView_vistas_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_vistas_faltantes1_KeyDown);
+            // 
+            // CorrerVw1
+            // 
+            this.CorrerVw1.HeaderText = "";
+            this.CorrerVw1.Name = "CorrerVw1";
+            this.CorrerVw1.ReadOnly = true;
             // 
             // tabPage5
             // 
@@ -1039,12 +1137,23 @@
             this.GridView_funciones_faltantes2.AllowUserToDeleteRows = false;
             this.GridView_funciones_faltantes2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_faltantes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_funciones_faltantes2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Correr2});
             this.GridView_funciones_faltantes2.Location = new System.Drawing.Point(6, 38);
             this.GridView_funciones_faltantes2.Name = "GridView_funciones_faltantes2";
             this.GridView_funciones_faltantes2.ReadOnly = true;
             this.GridView_funciones_faltantes2.Size = new System.Drawing.Size(300, 158);
             this.GridView_funciones_faltantes2.TabIndex = 114;
+            this.GridView_funciones_faltantes2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_funciones_faltantes2_CellClick);
+            this.GridView_funciones_faltantes2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_funciones_faltantes2_CellContentDoubleClick);
+            this.GridView_funciones_faltantes2.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_funciones_faltantes2_CellPainting);
             this.GridView_funciones_faltantes2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_funciones_faltantes2_KeyDown);
+            // 
+            // Correr2
+            // 
+            this.Correr2.HeaderText = "";
+            this.Correr2.Name = "Correr2";
+            this.Correr2.ReadOnly = true;
             // 
             // groupBox15
             // 
@@ -1152,12 +1261,27 @@
             this.GridView_funciones_faltantes1.AllowUserToOrderColumns = true;
             this.GridView_funciones_faltantes1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridView_funciones_faltantes1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_funciones_faltantes1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Correr});
             this.GridView_funciones_faltantes1.Location = new System.Drawing.Point(10, 37);
             this.GridView_funciones_faltantes1.Name = "GridView_funciones_faltantes1";
             this.GridView_funciones_faltantes1.ReadOnly = true;
             this.GridView_funciones_faltantes1.Size = new System.Drawing.Size(300, 158);
             this.GridView_funciones_faltantes1.TabIndex = 114;
+            this.GridView_funciones_faltantes1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_funciones_faltantes1_CellClick);
+            this.GridView_funciones_faltantes1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridView_funciones_faltantes1_CellContentDoubleClick);
+            this.GridView_funciones_faltantes1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridView_funciones_faltantes1_CellPainting);
             this.GridView_funciones_faltantes1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridView_funciones_faltantes1_KeyDown);
+            // 
+            // Correr
+            // 
+            this.Correr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Correr.FillWeight = 50F;
+            this.Correr.HeaderText = "";
+            this.Correr.Name = "Correr";
+            this.Correr.ReadOnly = true;
+            this.Correr.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Correr.ToolTipText = "Crear";
             // 
             // groupBox1
             // 
@@ -1822,5 +1946,15 @@
         private System.Windows.Forms.Button btn_script_funciones_diferentes;
         private System.Windows.Forms.GroupBox groupBox_Resumen;
         public System.Windows.Forms.TextBox txt_resumen;
+        private System.Windows.Forms.DataGridViewButtonColumn Correr;
+        private System.Windows.Forms.DataGridViewButtonColumn Correr2;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerSp2;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerSp1;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerTr2;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerTr1;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerVw2;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerVw1;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerTb2;
+        private System.Windows.Forms.DataGridViewButtonColumn CorrerTb1;
     }
 }

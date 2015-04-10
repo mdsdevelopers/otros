@@ -35,6 +35,7 @@
             this.lbl_longitud_elemento_2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox2 = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label6
@@ -93,11 +94,23 @@
             this.textBox2.TabIndex = 128;
             this.textBox2.Text = "";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(13, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 12);
+            this.label2.TabIndex = 129;
+            this.label2.Text = "Ctrl+A: Selec. todo";
+            // 
             // FrmComparacionDeElementos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 537);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_longitud_elemento_2);
@@ -111,6 +124,7 @@
             this.Text = "Comparación de elementos";
             this.Load += new System.EventHandler(this.FrmComparacionDeElementos_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,5 +136,6 @@
         private System.Windows.Forms.Label lbl_longitud_elemento_2;
         private System.Windows.Forms.RichTextBox textBox1;
         private System.Windows.Forms.RichTextBox textBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -31,7 +31,30 @@ namespace AppLogic
             this._nombre = nombre;
         }
 
-      
+
+
+        public  void CrearElemento(string direccion_servidor, string usuario, string password, string script)
+        {
+
+            DAL.DbSqlManager.EjecutarScriptCreacionElemento(direccion_servidor, this._nombre, script);
+
+        }
+
+        public  void CrearElemento(string direccion_servidor, string script)
+        {
+            try
+            {
+                DAL.DbSqlManager.EjecutarScriptCreacionElemento(direccion_servidor, this._nombre, script);
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+           
+
+        }
+
         public List<StoredProcedure> Procedimientos(string direccion_servidor, string base_datos,string usuario, string password)
         {
             List<StoredProcedure> lista_de_procedimientos = new List<StoredProcedure>();
@@ -42,6 +65,10 @@ namespace AppLogic
             }
             return lista_de_procedimientos;
         }
+
+
+
+
 
 
         public List<StoredProcedure> Procedimientos(string direccion_servidor, string base_datos)
@@ -330,7 +357,12 @@ namespace AppLogic
                 throw ex;
             }
        }
-              
+
+
+      
+
+
+
         public string ObtenerTextoDeProcedimiento(string nombre_procedimiento, string nombre_servidor)
         {
             try
