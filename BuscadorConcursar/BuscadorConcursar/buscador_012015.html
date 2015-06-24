@@ -94,7 +94,9 @@
                     url: "BuscadorSrv.asmx/BuscarPostulacionesPorDocumento",
                     type: "POST",
                     data: JSON.stringify({
-                        documento: txt_buscar.val()
+                        documento: txt_buscar.val(),
+                        llamado: 1,
+                        anio: 2015
                     }),
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",

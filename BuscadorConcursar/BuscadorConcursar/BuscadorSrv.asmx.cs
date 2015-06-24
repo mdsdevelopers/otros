@@ -21,7 +21,7 @@ namespace BuscadorConcursar
     {
         [WebMethod(EnableSession = true)]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public string BuscarPostulacionesPorDocumento(int documento)
+        public string BuscarPostulacionesPorDocumento(int documento, int llamado, int anio)
         {
             try
             {
@@ -32,6 +32,8 @@ namespace BuscadorConcursar
                 un_comando.CommandText = "BUCO_BuscarPostulacionesPorDocumento";
                 un_comando.CommandType = System.Data.CommandType.StoredProcedure;
                 un_comando.Parameters.Add(new SqlParameter("documento", documento));
+                un_comando.Parameters.Add(new SqlParameter("llamado", llamado));
+                un_comando.Parameters.Add(new SqlParameter("anio", anio));
 
                 var resultado_consulta = un_comando.ExecuteReader();
                 var postulaciones = new List<Postulacion>();
