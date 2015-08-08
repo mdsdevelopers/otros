@@ -14,6 +14,7 @@
     <AssemblyName>BuscadorConcursar</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,10 +53,10 @@
   <ItemGroup>
     <Content Include="buscador.css" />
     <Content Include="BuscadorSrv.asmx" />
+    <Content Include="index.html" />
+    <Content Include="buscador012015.html" />
     <Content Include="listadodeactas.css" />
     <Content Include="listadodeactas.html" />
-    <Content Include="index_fer.html" />
-    <Content Include="index.html" />
     <Content Include="jquery-1.11.1.min.js" />
     <Content Include="json3.min.js" />
     <Content Include="list.js" />

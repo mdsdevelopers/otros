@@ -23,8 +23,8 @@ namespace BuscadorConcursar
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public string BuscarPostulacionesPorDocumento(int documento, int llamado, int anio)
         {
-            try
-            {
+            //try
+            //{
 
                 var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQLConection"].ConnectionString);
                 conn.Open();
@@ -53,11 +53,11 @@ namespace BuscadorConcursar
 
                 conn.Close();
                 return JsonConvert.SerializeObject(postulaciones);
-            }
-            catch (Exception e)
-            {
-                return e.InnerException.Message;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    return e.InnerException.Message;
+            //}
         }
 
         [WebMethod(EnableSession = true)]
