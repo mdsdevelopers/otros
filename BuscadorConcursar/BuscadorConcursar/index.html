@@ -134,6 +134,7 @@
                             vista_acta.find("#lbl_estado").text(postulacion.EstadoPostulacion);
                             vista_acta.find("#lbl_observacion").text(postulacion.Observaciones);
                             vista_acta.find("#lnk_acta").attr("href", "Actas/" + postulacion.Acta);
+                            vista_acta.find("#lnk_acta").attr("target", "_newtab");
                             vista_ultimo_puesto.find("#cont_actas").append(vista_acta);
                         }//);
                     },
