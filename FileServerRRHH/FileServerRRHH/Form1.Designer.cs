@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.txtLog = new System.Windows.Forms.TextBox();
+            this.chkAutoScroll = new System.Windows.Forms.CheckBox();
+            this.btnBorrarCache = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtLog
@@ -37,17 +39,40 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLog.Location = new System.Drawing.Point(12, 12);
+            this.txtLog.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.txtLog.Multiline = true;
             this.txtLog.Name = "txtLog";
             this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(579, 303);
+            this.txtLog.Size = new System.Drawing.Size(710, 392);
             this.txtLog.TabIndex = 0;
+            // 
+            // chkAutoScroll
+            // 
+            this.chkAutoScroll.AutoSize = true;
+            this.chkAutoScroll.Location = new System.Drawing.Point(26, 415);
+            this.chkAutoScroll.Name = "chkAutoScroll";
+            this.chkAutoScroll.Size = new System.Drawing.Size(77, 17);
+            this.chkAutoScroll.TabIndex = 1;
+            this.chkAutoScroll.Text = "Auto Scroll";
+            this.chkAutoScroll.UseVisualStyleBackColor = true;
+            // 
+            // btnBorrarCache
+            // 
+            this.btnBorrarCache.Location = new System.Drawing.Point(619, 411);
+            this.btnBorrarCache.Name = "btnBorrarCache";
+            this.btnBorrarCache.Size = new System.Drawing.Size(103, 23);
+            this.btnBorrarCache.TabIndex = 2;
+            this.btnBorrarCache.Text = "Borrar Cache";
+            this.btnBorrarCache.UseVisualStyleBackColor = true;
+            this.btnBorrarCache.Click += new System.EventHandler(this.btnBorrarCache_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 328);
+            this.ClientSize = new System.Drawing.Size(736, 444);
+            this.Controls.Add(this.btnBorrarCache);
+            this.Controls.Add(this.chkAutoScroll);
             this.Controls.Add(this.txtLog);
             this.Name = "Form1";
             this.Text = "File Server";
@@ -60,6 +85,8 @@
         #endregion
 
         public System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.CheckBox chkAutoScroll;
+        private System.Windows.Forms.Button btnBorrarCache;
     }
 }
 
