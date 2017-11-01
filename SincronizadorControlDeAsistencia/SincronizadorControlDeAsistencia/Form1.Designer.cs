@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnDescargar = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnDescargar
@@ -42,19 +42,19 @@
             this.btnDescargar.UseVisualStyleBackColor = true;
             this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
-            // dateTimePicker1
+            // dtpFechaDesde
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(92, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpFechaDesde.Location = new System.Drawing.Point(12, 12);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(92, 20);
+            this.dtpFechaDesde.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(116, 77);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.btnDescargar);
             this.Name = "Form1";
             this.Text = "Sincronizador";
@@ -65,7 +65,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnDescargar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
     }
 }
 
