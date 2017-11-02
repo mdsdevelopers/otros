@@ -34,9 +34,12 @@
             // 
             // btnDescargar
             // 
-            this.btnDescargar.Location = new System.Drawing.Point(12, 42);
+            this.btnDescargar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDescargar.Location = new System.Drawing.Point(12, 38);
             this.btnDescargar.Name = "btnDescargar";
-            this.btnDescargar.Size = new System.Drawing.Size(92, 23);
+            this.btnDescargar.Size = new System.Drawing.Size(553, 38);
             this.btnDescargar.TabIndex = 0;
             this.btnDescargar.Text = "Descargar";
             this.btnDescargar.UseVisualStyleBackColor = true;
@@ -44,16 +47,18 @@
             // 
             // dtpFechaDesde
             // 
+            this.dtpFechaDesde.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpFechaDesde.Location = new System.Drawing.Point(12, 12);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
-            this.dtpFechaDesde.Size = new System.Drawing.Size(92, 20);
+            this.dtpFechaDesde.Size = new System.Drawing.Size(553, 20);
             this.dtpFechaDesde.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(116, 77);
+            this.ClientSize = new System.Drawing.Size(577, 88);
             this.Controls.Add(this.dtpFechaDesde);
             this.Controls.Add(this.btnDescargar);
             this.Name = "Form1";

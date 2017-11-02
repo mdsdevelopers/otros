@@ -21,63 +21,51 @@ namespace SincronizadorControlDeAsistencia
 
         private void btnDescargar_Click(object sender, EventArgs e)
         {
-            var conexion_db = new ConexionBDSQL("Data Source=10.80.5.5;Initial Catalog=DB_RRHH_DESA;Integrated Security=True");
+            var conexion_db = new ConexionBDSQL("Data Source=10.80.5.5;Initial Catalog=DB_RRHH;Integrated Security=True");
             var file_system = new FileSystem();
 
             var parametros = new Dictionary<string, object>();
-            parametros.Add("@fecha_desde", dtpFechaDesde.Text);
-            var tablaDatos = conexion_db.Ejecutar("dbo.FS_SubirArchivo", parametros);
-            var repo_imagenes = new RepositorioDeImagenes(conexion_db);
+            parametros.Add("@fecha_desde", dtpFechaDesde.Value);
+            var tablaIds = conexion_db.Ejecutar("dbo.Acre_GetImagenesUltimasCredenciales", parametros);
+
+
+            tablaIds.Rows.ForEach((row) =>
+            {
+                var id_foto = row.GetInt("IdFoto");
+                parametros = new Dictionary<string, object>();
+                parametros.Add("@id", id_foto);
+                var tabla_resultado = conexion_db.Ejecutar("dbo.FS_IniciarPedidoArchivo", parametros);
+            });
 
             var imagenes_descargadas = new List<int>();
 
-            while (tablaDatos.Rows.Count < imagenes_descargadas.Count)
+            while (tablaIds.Rows.Count > imagenes_descargadas.Count)
             {
-                tablaDatos.Rows.ForEach((row) =>
+                tablaIds.Rows.ForEach((row) =>
                 {
-                    if (imagenes_descargadas.Contains(row.GetInt("IdFoto"))) return;
-                    var imagen = repo_imagenes.GetImagen(row.GetInt("IdFoto"));
-                    if (!imagen.reintentar)
+                    var id_foto = row.GetInt("IdFoto");
+                    if (imagenes_descargadas.Contains(id_foto)) return;
+
+                    parametros = new Dictionary<string, object>();
+                    parametros.Add("@id", id_foto);
+                    var tabla_resultado = conexion_db.Ejecutar("dbo.FS_ObtenerArchivoPedido", parametros);
+
+                    string bytes_imagen;
+                    if (!(tabla_resultado.Rows[0].GetObject("bytes_file") is DBNull))
                     {
-                        imagenes_descargadas.Add(row.GetInt("IdFoto"));
-                        file_system.guardarImagenEnPath("", imagen.bytes);
+                        bytes_imagen = tabla_resultado.Rows[0].GetString("bytes_file");
+                        imagenes_descargadas.Add(id_foto);
+
+                        byte[] imageBytes = Convert.FromBase64String(bytes_imagen);
+                        MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+
+                        ms.Write(imageBytes, 0, imageBytes.Length);
+                        Image imagen = Image.FromStream(ms, true);
+                        imagen.Save("c:\\imagenes\\bla\\" + row.GetInt("nroDocumento") + ".jpg");
                     }
+
                 });
             }
-
-            //var imagenes = Directory.GetFiles(path, "*.jpg")
-            //                             .Select(p => Path.GetFileName(p))
-            //                             .ToList();
-
-            //imagenes.ForEach(nombre_imagen =>
-            //{
-            //    try
-            //    {
-
-            //        Image img = file_system.getImagenFromPath(path + "\\" + nombre_imagen);
-            //        var ms = new MemoryStream();
-            //        img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            //        byte[] imageBytes = ms.ToArray();
-            //        var bytesImagen = Convert.ToBase64String(imageBytes);
-
-            //        var parametros_subir_imagen = new Dictionary<string, object>();
-            //        parametros_subir_imagen.Add("@bytes", bytesImagen);
-            //        var id_imagen = int.Parse(conexion_db.EjecutarEscalar("dbo.FS_SubirArchivo", parametros_subir_imagen).ToString());
-
-            //        var documento = nombre_imagen.ToLower().Replace(".jpg", "");
-            //        var parametros_asignar_imagen = new Dictionary<string, object>();
-            //        parametros_asignar_imagen.Add("@documento", documento);
-            //        parametros_asignar_imagen.Add("@id_imagen", id_imagen);
-            //        conexion_db.Ejecutar("dbo.GEN_AsignarImagenAPersona", parametros_asignar_imagen);
-
-            //        file_system.moverArchivo(path + "\\" + nombre_imagen, path + "\\ImagenesSubidas");
-            //    }
-            //    catch (Exception)
-            //    {
-
-            //    }
-
-            //});
         }
     }
 }
