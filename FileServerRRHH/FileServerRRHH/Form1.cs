@@ -142,5 +142,10 @@ namespace FileServerRRHH
         {
             BorrarCache();
         }
+
+        private void txtLog_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
