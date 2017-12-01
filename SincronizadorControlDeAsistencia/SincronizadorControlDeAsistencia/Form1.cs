@@ -83,7 +83,7 @@ namespace SincronizadorControlDeAsistencia
                             Directory.CreateDirectory(txt_destino.Text); 
                         }
                        
-                        imagen.Save(txt_destino.Text + row.GetInt("nroDocumento") + ".jpg");
+                        imagen.Save(txt_destino.Text + '\\' + row.GetInt("nroDocumento") + ".jpg");
                     }
 
                 });
@@ -141,11 +141,11 @@ namespace SincronizadorControlDeAsistencia
                                               Select(column => column.ColumnName).
                                               ToArray();
 
-            var header = string.Join(",", columnNames);
+            var header = string.Join(";", columnNames);
             lines.Add(header);
 
             var valueLines = tablaIds.AsEnumerable()
-                               .Select(row => string.Join(",", row.ItemArray));
+                               .Select(row => string.Join(";", row.ItemArray));
             lines.AddRange(valueLines);
 
             if (!Directory.Exists(txt_destinoCredenciales.Text))
