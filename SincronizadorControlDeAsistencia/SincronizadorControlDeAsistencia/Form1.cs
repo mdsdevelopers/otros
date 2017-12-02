@@ -10,6 +10,7 @@ using General.Repositorios;
 using General.Modi;
 using System.IO;
 using System.Configuration;
+using ClosedXML.Excel;
 
 namespace SincronizadorControlDeAsistencia
 {
@@ -122,6 +123,9 @@ namespace SincronizadorControlDeAsistencia
             {
                      
 
+
+               
+
             var connectionString = ConfigurationManager.ConnectionStrings["Sql"].ConnectionString;
                 
             // var conexion_db = new ConexionBDSQL("Data Source=10.80.5.5;Initial Catalog=DB_RRHH_DESA;Integrated Security=True");
@@ -135,6 +139,50 @@ namespace SincronizadorControlDeAsistencia
             if (!tablaIds.Rows.Any()) { MessageBox.Show("No se encontraron credenciales", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
 
             //
+
+            //
+
+            //DataTable tablaExcel = new DataTable();
+            //tablaExcel.TableName = "CredencialesActivas";
+
+            //foreach (DataColumn dc in tablaIds.Columns)
+            //{
+            //    tablaExcel.Columns.Add(dc.ColumnName);
+            //}
+
+
+            //tablaIds.Rows.ForEach((row) =>
+            //{
+            //    var dr = tablaExcel.NewRow();
+            //    foreach (var dr1 in tablaIds .Rows)
+            //    {
+            //        tablaExcel.Rows.Add(dr1);
+            //      //  dr[dc.ColumnName] = (dc.ColumnName);
+            //    }
+
+            //   // tablaExcel.Rows.Add(dr);
+            //});
+
+            //var workbook = new XLWorkbook();
+
+            //var dataTable_detalle = tablaExcel;
+            //workbook.Worksheets.Add(dataTable_detalle);
+
+
+            //using (var ms = new MemoryStream())
+            //{
+            //    workbook.SaveAs(txt_destinoCredenciales.Text + "\\" + "Credenciales.xlsx");
+
+            //   // return Convert.ToBase64String(ms.ToArray());
+            //}
+
+
+            //----------------------------
+
+
+                //
+
+
             var lines = new List<string>();
 
             string[] columnNames = tablaIds.Columns.Cast<DataColumn>().
