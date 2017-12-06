@@ -137,51 +137,7 @@ namespace SincronizadorControlDeAsistencia
             var tablaIds = conexion_db.Ejecutar("dbo.Acre_MigracionCredencialesActivas");
             
             if (!tablaIds.Rows.Any()) { MessageBox.Show("No se encontraron credenciales", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
-
-            //
-
-            //
-
-            //DataTable tablaExcel = new DataTable();
-            //tablaExcel.TableName = "CredencialesActivas";
-
-            //foreach (DataColumn dc in tablaIds.Columns)
-            //{
-            //    tablaExcel.Columns.Add(dc.ColumnName);
-            //}
-
-
-            //tablaIds.Rows.ForEach((row) =>
-            //{
-            //    var dr = tablaExcel.NewRow();
-            //    foreach (var dr1 in tablaIds .Rows)
-            //    {
-            //        tablaExcel.Rows.Add(dr1);
-            //      //  dr[dc.ColumnName] = (dc.ColumnName);
-            //    }
-
-            //   // tablaExcel.Rows.Add(dr);
-            //});
-
-            //var workbook = new XLWorkbook();
-
-            //var dataTable_detalle = tablaExcel;
-            //workbook.Worksheets.Add(dataTable_detalle);
-
-
-            //using (var ms = new MemoryStream())
-            //{
-            //    workbook.SaveAs(txt_destinoCredenciales.Text + "\\" + "Credenciales.xlsx");
-
-            //   // return Convert.ToBase64String(ms.ToArray());
-            //}
-
-
-            //----------------------------
-
-
-                //
-
+                         
 
             var lines = new List<string>();
 
@@ -189,19 +145,22 @@ namespace SincronizadorControlDeAsistencia
                                               Select(column => column.ColumnName).
                                               ToArray();
 
-            var header = string.Join(",", columnNames);
+            var header = string.Join(";", columnNames);
             lines.Add(header);
 
+         
+
             var valueLines = tablaIds.AsEnumerable()
-                               .Select(row => string.Join(",", row.ItemArray));
+                             .Select(row => string.Join(";", row.ItemArray));                            
             lines.AddRange(valueLines);
 
+          
             if (!Directory.Exists(txt_destinoCredenciales.Text))
             {
                 Directory.CreateDirectory(txt_destinoCredenciales.Text);
             }
            
-            File.WriteAllLines(txt_destinoCredenciales.Text+"\\"+ "Credenciales.csv", lines);
+            File.WriteAllLines(txt_destinoCredenciales.Text+"\\"+ "Credenciales.csv", lines, Encoding.UTF8);
             Cursor.Current = Cursors.Default;
             MessageBox.Show("Proceso finalizado. Se encontraron " + tablaIds.Rows.Count.ToString() + " registros", "Resultado de Operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //
