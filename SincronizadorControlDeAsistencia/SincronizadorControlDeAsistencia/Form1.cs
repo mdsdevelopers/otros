@@ -10,6 +10,7 @@ using General.Repositorios;
 using General.Modi;
 using System.IO;
 using System.Configuration;
+using ClosedXML.Excel;
 
 namespace SincronizadorControlDeAsistencia
 {
@@ -122,6 +123,9 @@ namespace SincronizadorControlDeAsistencia
             {
                      
 
+
+               
+
             var connectionString = ConfigurationManager.ConnectionStrings["Sql"].ConnectionString;
                 
             // var conexion_db = new ConexionBDSQL("Data Source=10.80.5.5;Initial Catalog=DB_RRHH_DESA;Integrated Security=True");
@@ -133,8 +137,8 @@ namespace SincronizadorControlDeAsistencia
             var tablaIds = conexion_db.Ejecutar("dbo.Acre_MigracionCredencialesActivas");
             
             if (!tablaIds.Rows.Any()) { MessageBox.Show("No se encontraron credenciales", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
+                         
 
-            //
             var lines = new List<string>();
 
             string[] columnNames = tablaIds.Columns.Cast<DataColumn>().
@@ -144,16 +148,18 @@ namespace SincronizadorControlDeAsistencia
             var header = string.Join(";", columnNames);
             lines.Add(header);
 
-            var valueLines = tablaIds.AsEnumerable()
-                               .Select(row => string.Join(";", row.ItemArray));
+         
+
+            var valueLines = tablaIds.AsEnumerable().Select(row => string.Join(";", row.ItemArray));                            
             lines.AddRange(valueLines);
 
+          
             if (!Directory.Exists(txt_destinoCredenciales.Text))
             {
                 Directory.CreateDirectory(txt_destinoCredenciales.Text);
             }
            
-            File.WriteAllLines(txt_destinoCredenciales.Text+"\\"+ "Credenciales.csv", lines);
+            File.WriteAllLines(txt_destinoCredenciales.Text+"\\"+ "Credenciales.csv", lines, Encoding.UTF8);
             Cursor.Current = Cursors.Default;
             MessageBox.Show("Proceso finalizado. Se encontraron " + tablaIds.Rows.Count.ToString() + " registros", "Resultado de Operación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             //
